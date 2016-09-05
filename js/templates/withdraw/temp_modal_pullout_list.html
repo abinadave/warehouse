@@ -1,0 +1,51 @@
+                            <div class="modal fade" id="modalPullOutList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" style="width: 1000px" id="div-modalPullOutList">
+                                  <form id="form-save-withdraw-form-items">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="myModalLabel">List to withdraw</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                                
+                                                      <label style="margin-bottom: 3px">linked to (Job order)
+                                                            <input type="text" name="linked_to" id="linked-to" class="form-control" style="width: 220px; height: 33px"/>
+                                                      </label>
+                                                      <label style="margin-top: -30px">Requested by(Name)
+                                                            <input type="text" id="requested-by" name="requested_by" class="form-control" style="width: 220px; height: 33px">
+                                                      </label>
+                                                      <label>Requested by(Position)
+                                                            <input type="text" id="position-withdraw" name="position" class="form-control" style="width: 220px; height: 33px">
+                                                      </label>
+                                                  <hr/>
+                                             
+                                              <table class="table table-hover table-bordered table-condensed">
+
+                                                  <thead>
+                                                     <tr>
+                                                         <th>Qty</th>
+                                                         <th>Unit</th>
+                                                         <th>Item</th>
+                                                         <th>Remarks</th>
+                                                         <th>Stock ID</th>
+                                                         <th width="1"></th>
+                                                     </tr>
+                                                  </thead>
+                                                  <tbody id="list-of-pullouts"></tbody>
+                                                  
+                                              </table>
+                                              
+                                                 
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div id="output-save-withdraw" style="position: absolute"></div>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary" id="btnWithdrawOnly">Withdraw</button>
+                                            <button type="submit" class="btn btn-primary" id="btnWithdrawAndDeliver">Withdraw and Deliver</button>
+                                        </div>
+                                    </div>
+                                    </form>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>

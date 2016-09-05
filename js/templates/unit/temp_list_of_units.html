@@ -1,0 +1,7 @@
+<% library.forEach(function(model) { %>
+
+    <li class="list-group-item" id="supplier-<%= model.id %>"><%= model.name %> 
+        <a style="cursor: pointer" id="<%= model.id %>"><span style="cursor: pointer" class="glyphicon glyphicon-remove pull-right text-danger"></span></a>
+    </li>
+
+<% }); %>

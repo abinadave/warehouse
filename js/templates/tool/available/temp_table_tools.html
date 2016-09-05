@@ -1,0 +1,116 @@
+  
+            <div class="col-lg-12" style="margin: 15px 0 0 -25px;">
+                <div class="panel panel-default" >
+                      <div class="panel-footer" style="">
+
+                         <% if(Number(sessionStorage.getItem('usertype')) !== 1){ %>
+
+                            <a href="#CheckOutBorrowTools" class="btn btn-xs btn-default">Borrow tools &nbsp;&nbsp;&nbsp;<span class="badge"></span></a>
+
+                             <a href="#CheckOutTransferTools" class="btn btn-xs btn-default">Transfer tools &nbsp;&nbsp;&nbsp;<span class="badge" id="CheckOutTransferToolsBadge"></span></a>
+                             
+                            <div class="btn-group pull-right">
+                                <button type="button" class="btn btn-xs btn-danger">Action</button>
+                                <button type="button" class="btn btn-xs btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <span class="caret"></span>
+                                  <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                  <li>
+                                     <a href="#toolReports" id="tool-classificatin" style="text-decoration: none"><label class="label label-info"></label>Tool reports </a>
+                                  </li>
+                                  <li>
+                                     <a href="#newTool" style="text-decoration: none"> Add tool</a>   </li>
+                                  <li><a href="#toolClassification" id="tool-classificatin" style="text-decoration: none">Tool Classifications</a></li>
+                                  <li role="separator" class="divider"></li>
+                                  <li><a href="#ToolsToBeReturn">Tools to be return</a></li>
+                                </ul>
+                            </div>
+                              
+                         <% } %>
+
+                      </div>
+                </div>
+            </div>
+       
+                <div class="col-lg-12" style="margin: -10px 0 0 -25px;">
+                    <div class="panel panel-default" id="panel-tool">
+                        <div class="panel-heading">
+                     
+                            Available Tools
+                            
+                        </div>
+                        
+                        <div class="panel-body">
+
+                           <div>
+
+                                <div>            
+
+                                     <input type="text" class="input-sm form-control pull-right" id="search-box" style="width: 250px; margin-bottom: 10px" placeholder="Search here.">
+                                   
+                                      <a href="#borrowTool" class="text-info hide-this"><span class="glyphicon glyphicon-road" style="margin-left: 10px; cursor: pointer"></span> <b>Borrow</b></a>
+                                      <a href="#transferTool" class="text-info hide-this"><span class="glyphicon glyphicon-plane" style="margin-left: 10px; cursor: pointer"></span> <b>Transfer</b></a>
+                                      <a href="#repairTool" class="text-info hide-this"><span class="glyphicon glyphicon-wrench" style="margin-left: 10px; cursor: pointer"></span> <b>Repair</b></a>
+                                      <a style="cursor: pointer" id="decommissionTool" class="text-info hide-this"><span class="glyphicon glyphicon-wrench" style="margin-left: 10px; cursor: pointer"></span> <b>Decommission</b></a>
+                                      <!-- Split button -->
+                                      
+                                      <div id="div-admin-side" style="display: inline">
+                                        Choose Warehouse: <label>
+                                            <select class="form-control" id="display-by-warehouse-admin" style="width: auto">
+                                                <option>Selection</option>
+                                            </select>
+                                        </label>
+                                      </div>  
+                                      
+                                      <a id="btnPrintTable" style="text-decoration: none; cursor: pointer; margin: 10px"><i class="fa fa-print fa-2x"></i></a>
+
+                                      <span style="padding-left: 10px"><b><span class="badge">No. of tools <b id="nor">loading..</b></span></b></span>
+                                      
+                                    </div>
+
+                              </div>
+
+                              <div class="table-responsive" id="div-table-tools" style="overflow: auto; font-size: 12px"> 
+
+                              <table class="table table-hover table-striped table-bordered" id="table-tools" style="width: 1800px">
+                             
+                                 <thead>
+                                    <tr>
+                                       <% if(sessionStorage.getItem('usertype') == 1){ %>
+                                          <th class="to-hide" id="warehouse_code">Warehouse</th>
+                                       <% } %>
+                                       <th id="tool_id">Tool Id</th>
+                                       <th id="classification">Classification</th>
+                                       <th id="model">Model</th>
+                                       <th id="size">Size</th>
+                                       <th id="unit">Unit</th>
+                                       <th id="serial">Serial No.</th>
+                                       <th id="remarks">Remarks</th>
+                                       <th id="area">Area Located</th>
+                                       <th id="shelf">Shelf</th>
+                                       <th id="row">Row</th>
+                                   </tr>
+                                 </thead>
+
+                                 <tbody id="list-of-available-tools" style="cursor: pointer"><tr><td colspan="9">Initializing data...</td></tr></tbody>
+
+                               
+  
+                              </table>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="panel-footer">
+                            
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div id="placeholder-modals"></div>
+                    <input type="hidden" id="hidden-tool">
+                </div>
+               
+

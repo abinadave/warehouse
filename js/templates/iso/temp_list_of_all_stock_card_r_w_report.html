@@ -1,0 +1,98 @@
+<style type="text/css">
+   th, td {
+      padding: 2px;
+      font-size: 10px;
+   }
+   #div-w-r-report-all th, td {
+      font-size: 12px;
+   }
+   .tbl-w-r-report th {
+      text-align: center;
+   }
+   .tbl-w-r-report td {
+      text-align: center;
+   }
+</style>
+<div id="div-w-r-report-all">
+<% library.forEach(function(model) { %>
+<div>
+    <div style="position: absolute; margin-top: -3px">
+      <img src="bootstrap/docs/ez.png" style="width: 80px; height 80px">
+    </div>   
+    <div style="margin-left: 80px;">
+      <p style="font-size: 14px; font-family: Harabara; margin-top: -4px">Ezjones Construction, Inc.</p>
+      <p style="font-size: 8px; margin-top: -4px">Sitio Buchasan, Brgy. Cawayan<br/>
+      Catarman N. Samar</p>
+    </div>
+</div>
+<h4 class="text-center">Stock Card</h4>
+<table class="table table-hover table-bordered table-condensed" style="font-size: 10px">
+    <tr>
+        <th width="130">Item</th><td width="600"><%= model.name %></td>
+        <th width="130">Re-order Point</th><td width="600"><%= model.reorder_point %></td>
+    </tr>
+    <tr>
+        <th width="200">Location</th><td><%= model.warehouse_code %></td>
+        <th width="200">Additional Description</th><td><%= model.add_desc %></td>
+    </tr>
+</table>   
+
+  <table class="table table-hover table-bordered table-condensed tbl-w-r-report" style="page-break-after: always; font-size: 10px">
+     <thead>
+         <tr>
+            <th colspan="7" style="text-align: center">For Receiving</th>
+            <th colspan="6" style="text-align: center">For Issuance</th>
+         </tr>
+         <tr>
+            <th width="140">Date</th>
+            <th>DR/Invoice</th>
+            <th width="140">RR No.</th>
+            <th width="140">Received by</th>
+            <th>Qty</th>
+            <th>Unit</th>
+            <th width="10">Remarks</th>
+
+            <th width="120">Date</th>
+            <th width="160">WS No.</th>
+            <th width="160">Issued To</th>
+            <th>Qty</th>
+            <th>Unit</th>
+            <th width="160">Remarks</th>
+         </tr>
+     </thead>
+     <tbody>
+         <% var list = self.getWithdrawAndReceived(model.id) %>
+         <% if(!list.length) { %>
+            <tr>
+                <td colspan="15" style="text-align: left; font-weight: bolder">No history was found for this Stock Card</td>
+            </tr>
+         <% } %>
+         <% list.forEach(function(report) { %>
+           <% if (report.type === 'receive') { %>
+              <tr>
+                  <td><%= moment(report.date).format('MMMM DD, YYYY') %></td>
+                  <td><%= report.id %></td>
+                  <td><%= report.crm_id %></td>
+                  <td><%= report.received_by %></td>
+                  <td><%= report.qty %></td>
+                  <td><%= report.unit %></td>
+                  <td><%= report.remarks %></td>
+                  <td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+           <% }else if(report.type === 'withdraw'){ %>
+                <tr>
+                  <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                  <td><%= moment(report.date).format('MMMM DD, YYYY') %></td>
+                  <td><%= report.no %></td>
+                  <td><%= report.requested_by %></td>
+                  <td><%= report.qty %></td>
+                  <td><%= report.unit %></td>
+                  <td><%= report.remarks %></td>
+                </tr>
+           <% } %>
+           
+        <% }); %>
+     </tbody>
+  </table>
+<% }) %>
+</div>

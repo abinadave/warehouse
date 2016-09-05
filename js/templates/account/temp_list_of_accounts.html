@@ -1,0 +1,14 @@
+
+<% library.forEach(function(model) { %>
+    <tr>
+        <td><%= model.firstname %></td>
+        <td><%= model.lastname %></td>
+        <td><%= model.username %></td>
+        <td><%= model.password.substr(0,20) %></td>
+        <td><%= AccountModule.getUsertypeName(model.usertype) %></td>
+        <td><%= (model.email == '') ? '-' : model.email %></td>
+        <td style="text-align: center"><a href="#editAccount/<%= model.id %>"> <span class="glyphicon glyphicon-edit"></span></a>
+        </td>
+        <td style="text-align: center"><a href="#removeAccount/<%= model.id %>"><span class="glyphicon glyphicon-trash"></span></a></td>
+    </tr>
+<% }) %>

@@ -1,0 +1,49 @@
+                    <br/>
+                    
+                            <form class="">Date range:
+                               <label><input id="from" type="text" class="form-control input-sm" style="width: 200px" placeholder="From"></label>   
+                               <label><input id="to" type="text" class="form-control input-sm" style="width: 200px" placeholder="To"></label>  
+                               <button type="reset" class="btn btn-default btn-sm" id="btnReset" style="margin-right: 40px">Reset</button>
+                               <button type="button" id="btnRefreshData" class="btn btn-default btn-sm"><i class="fa fa-refresh fa-1x"></i></button>
+                               <a href="#products" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-step-backward"></span></a>
+                               <button class="btn btn-default btn-sm" type="button" id="btnPrintBorrowerForm"><i class="fa fa-print"></i></button>
+                            </form>
+
+                            <div class="input-group pull-right" style="width: 300px; margin-top: -96px; margin-bottom: 10px">
+                                <input type="text" id="search-borrower-pform" class="form-control" placeholder="Search for...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">Search</button>
+                                </span>
+                            </div>
+                    
+                          <div class="table-responsive" id="div-table-history-borrow" style="font-size: 11px; overflow: auto; margin-top: 30px">
+                            
+                            <table class="table table-hover table-bordered" id="table-history-borrow" >
+                              <div id="header-report-placeholder-borrow"></div>
+                                <thead style="cursor: pointer">
+                                     <tr>
+                                         <th colspan="2" class="remove-this"></th>
+                                         <th style="text-align: left" id="date">Date</th>
+                                         <th style="text-align: center" id="time">Time</th>
+                                         <th style="text-align: center" id="no">BS No.</th>
+                                         <th class="text-center" id="purpose">Purpose</th>
+                                         <th class="text-center" id="borrowed_by">Borrowed by</th>
+                                         <th class="remove-this text-center" id="borrowed_by_position">Borrowers position</th>
+                                         <th class="text-center" id="issued_by">Issued by</th>
+                                         <th class="remove-this text-center" id="issued_by_position">Issuers position</th>
+                                         <th class="text-center" id="noted_by">Noted by</th>
+                                         <th class="remove-this text-center" id="noted_by_position">Noted by position</th>
+                                     </tr>
+                                </thead>
+
+                                <tbody id="list-of-borrower-pforms"></tbody>
+
+                             </table>
+
+                           </div>
+
+                   
+                <div>
+                    <div id="placeholder-modal-history-borrow"></div>
+                </div>
+               

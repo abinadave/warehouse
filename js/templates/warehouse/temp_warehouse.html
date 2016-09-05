@@ -1,0 +1,50 @@
+                <div class="col-lg-12" style="margin: 30px 0 0 -15px">
+                    <div class="panel panel-default" id="panel-warehouse">
+                        <div class="panel-heading">
+                              <div id="placeholder-form-create-warehouse-branch"></div>
+                        </div>
+                        <div class="panel-body" style="font-size: 12px">
+                           
+                           
+                            <div class="col-md-12">
+                             <a class="pull-right" style="cursor: pointer; text-decoration: none" id="btnShowWarehouseMen"><i class="glyphicon glyphicon-user"></i> warehousemen</a>
+                              <a class="pull-right" style="cursor: pointer; text-decoration: none" id="btnViewStocks"><i class="glyphicon glyphicon-list"></i> Stocks list &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+
+                               <div class="input-group" style="margin-bottom: 10px">
+                                <span class="input-group-btn">
+                                  <button class="btn btn-default" type="button">Search</button>
+                                </span>
+                                <input type="text" class="form-control" id="search" placeholder="Search for..." style="width: 240px">
+                              </div><!-- /input-group -->
+
+
+                            <table class="table table-hover table-bordered" id="table-warehouses">
+                              <thead>
+                                <tr>
+                                    <th width="350px">Warehouse Code</th>
+                                    <th>Location</th>
+                                    <th>Receipt Location</th>
+                                    <th width="200" style="text-align: center">No. of workers</th>
+                                    <th width="2"></th>
+                                    <% if(sessionStorage.getItem('usertype') == 2){ %>
+                                        <th width="1"></th>
+                                    <% } %>
+                                    
+                                </tr>
+                              </thead>
+                              <tbody id="list-of-warehouse-branches"></tbody>
+                            </table>
+                            </div>
+                             
+                        </div>
+                       
+                      
+                    </div>    
+                </div>
+                
+               <div>
+                   <div id="placeholder-form-add-warehousemen"></div>
+                   <div id="placeholder-modal-table-warehousemens"></div>
+                   <div id="placeholder-form-edit-warehousemen"></div>
+                   <input type="hidden" id="hidden-warehouse-location-table">
+               </div>

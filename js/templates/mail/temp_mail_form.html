@@ -1,0 +1,42 @@
+                            
+                            <div class="modal fade" id="modalMailForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" id="div-modalMailForm" style="width: 630px; max-height: 500px">
+                                   <form id="form-mail">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="myModalLabel">Mail Form</h4>
+                                        </div>
+                                        <div class="modal-body" >
+                                            <div style="padding: 15px">
+                                                <label>
+                                                    To
+                                                    <input type="text" class="form-control" id="recipient" name="recipient" >
+                                                </label><br/>
+                                                <label>
+                                                    Subject
+                                                    <input type="text" class="form-control" name="subject" style="width: 540px">
+                                                </label>
+                                                <label>
+                                                    Message
+                                                    <textarea class="form-control" name="message" cols="63" rows="5"></textarea>
+                                                </label><br/>
+                                                <label>
+                                                   <a style="cursor: pointer">
+                                                      <span id="attach-file-mail"></span>
+                                                   </a>
+                                                </label>
+                                                <div id="list-of-attached-files" style="width: 400px"></div>  
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div id="output-send-email" style="position: absolute; text-align: left; margin-top: 70px; width: 400px"></div>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="submit" id="btnSendMail" class="btn btn-primary">Send email</button>
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                    </form>
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>

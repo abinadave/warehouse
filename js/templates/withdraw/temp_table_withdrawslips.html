@@ -1,0 +1,64 @@
+<div style="margin-top: 20px" id="panel-withdraw-reports">  
+<div class="input-group pull-right" style="width: 220px; margin-top: -60px">
+                                  <input type="text" id="search" class="form-control" placeholder="Search for...">
+                              </div>  
+                          <form>
+                          Filter:
+
+                               <label><input type="text" class="form-control" style="width: 150px" id="date-from" placeholder="From"></label>
+
+                               <label><input type="text" class="form-control" style="width: 150px" id="date-to" placeholder="To"></label>  
+
+                               <button type="reset" class="btn btn-sm btn-default"  id="reset">reset</button>
+                                <a href="#products" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-step-backward"></span></a>
+
+                               <button type="reset" class="btn btn-sm btn-default" id="btnRefreshWithdraws"><i class="fa fa-refresh"></i></button>
+                               <button type="reset" class="btn btn-sm btn-default withdraw-print" id="btnPrint"><i class="fa fa-print"></i></button>
+                                                      
+                               <div class="btn-group pull-right">
+                                <button type="button" class="btn btn-xs btn-primary">Summary</button>
+                                <button type="button" class="btn btn-xs btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <span class="caret"></span>
+                                  <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                  <li>
+                                     <a id="btnSummary" style="cursor:pointer"><label class="label label-info"></label>Daily</a>
+                                  </li>
+                                  <li>
+                                     <a id="btnSummaryOfPullout" style="cursor: pointer">Pullout</a>   </li>
+                                  </ul>
+                              </div>
+                           </form>
+                        
+                           <div class="table-responsive" style="overflow: auto; margin-top: 10px" id="div-table-withdrawalslip">
+                            <div id="header-withdrawalslip-reports"></div>
+                            <table class="table table-hover table-bordered table-striped" style="font-size: 12px" id="table-withdrawalslip">
+                           
+                                <thead style="cursor: pointer">
+                                   <tr>
+                                      <th width="1" class="remove-this"></th>
+                                      <th id="date">Date</th>
+                                      <th id="time">Time</th>
+                                      <th id="linked_to">Linked to</th>
+                                      <th id="no">WS No.</th>
+                                      <th id="requested_by">Requested by</th>
+                                      <th class="remove-this" id="requested_by_position">Requested by(Position)</th>
+                                      <th id="issued_by">Issued by</th>
+                                      <th class="remove-this" id="issued_by_position">Issued by(Position)</th>
+                                   </tr>
+                                </thead>
+
+                                <tbody id="list-of-withdrawalslips" style="cursor: pointer">
+                                   
+                                </tbody>
+                                
+                            </table>
+
+                           </div> 
+                      
+                    
+                <div>
+                   <div id="placeholder-modal-withdraw-items"></div>
+                </div>
+</div>        

@@ -1,0 +1,9 @@
+<% library.forEach(function(model) { %>
+<tr>
+     <td><%= model.qty %></td>
+     <td><%= model.unit %></td>
+     <td><%= model.name %></td>
+     <td><%= model.id %></td>
+     <td><a style="cursor: pointer; text-decoration: none"><span class="glyphicon glyphicon-remove"></span></a></td>
+</tr>
+<% }); %>

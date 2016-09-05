@@ -1,0 +1,12 @@
+<% library.forEach(function(model) { %>
+<% console.log(model); %>
+<% var status = (parseInt(model.status) == 0) ? 'return' : '<i class="fa fa-check-circle fa-2x"></i>' %>
+<tr>
+     <td><%= model.id %></td>
+     <td><%= model.qty %></td>
+     <td><%= model.unit %></td>
+     <td><%= model.remarks %></td>
+     <td><a id="<%= model.stock_id %>-<%= model.borrower_id %>-<%= model.id %>" 
+     href="#returnBorrowedItem/<%= model.stock_id %>-<%= model.borrower_id %>-<%= model.id %>"><%= status %></a></td>
+</tr>
+<% }); %>

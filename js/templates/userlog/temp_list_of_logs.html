@@ -1,0 +1,12 @@
+<% library.forEach(function(model) { %>
+<tr class="selected">
+    <td width="1"><input type="checkbox" value="<%= model.id %>" style="display: none"></td>
+    <td id="activity" class="text-primary"><%= model.activity %></td>
+    <td style="text-align: center"><%= moment(model.date).format('dddd MMMM DD, YYYY') %></td>
+    <td style="text-align: center"><%= model.time %></td>
+    <td style="text-align: center"><%= model.user %></td>
+    <td style="text-align: center"><%= AccountModule.getUsertype(model.usertype) %></td>
+    <td style="text-align: center"><%= moment(model.date).fromNow() %></td>
+</tr> 
+<% }); %>
+

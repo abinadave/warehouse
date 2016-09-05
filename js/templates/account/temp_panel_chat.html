@@ -1,0 +1,82 @@
+                            <div class="modal fade" id="modalPanelChat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" id="div-modalPanelChat" style="width: 750px">
+                                    <div class="modal-content">
+                                       
+                                        <div class="modal-body">
+
+                                        <div>
+                                       
+                                            <div class="panel panel-green" style="width: 200px; float: right">
+                                                <div class="panel-heading">
+                                                    Users
+                                                </div>
+                                               <!--  <div class="panel-body"> -->
+                                                        <div class="list-group" style="font-size: 10px" id="list-of-online-users">
+                                                          
+                                                        </div>
+                                               <!--  </div> -->
+                                                
+                                            </div>
+                                        
+                                                <div class="chat-panel panel panel-red" style="width: 500px">
+                                                    <div class="panel-heading">
+                                                        <i class="fa fa-comments fa-fw"></i>
+                                                        Chat
+                                                        <div class="btn-group pull-right">
+                                                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                                                <i class="fa fa-chevron-down"></i>
+                                                            </button>
+                                                            <ul class="dropdown-menu slidedown">
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <i class="fa fa-refresh fa-fw"></i> Refresh
+                                                                    </a>
+                                                                </li>
+                                                               
+                                                                <li>
+                                                                    <a style="cursor: pointer" id="attach-file">
+                                                                        <i class="glyphicon glyphicon-paperclip"></i> Attach
+                                                                    </a>
+                                                                </li>
+                                                                <li class="divider"></li>
+                                                                <li>
+                                                                    <a style="cursor: pointer" id="delete-conversation">
+                                                                        Delete Converstion <span class="glyphicon glyphi"></span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.panel-heading -->
+                                                    
+                                                    <div class="panel-body" id="div-chat-conversation">
+                                                        <ul class="chat" id="list-ofconversation">
+                                                            
+                                                        </ul>
+                                                    </div>
+                                                    
+                                                    <!-- /.panel-body -->
+                                                    <form id="form-submit-chat">
+                                                    <div class="panel-footer">
+                                                        <div class="input-group">
+                                                          
+                                                            <input id="input-chat" type="text" name="input_chat" class="form-control input-sm" placeholder="Type your message here..." />
+                                                            <span class="input-group-btn">
+                                                                <button type="submit" class="btn btn-warning btn-sm" id="btn-chat">
+                                                                    Send
+                                                                </button>
+                                                            </span>
+                                                          
+                                                        </div>
+                                                    </div>
+                                                    </form>    
+                                                    <!-- /.panel-footer -->
+                                                </div>
+
+
+                                                </div>
+                                        <input type="hidden" id="current-chat">
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>
+                    

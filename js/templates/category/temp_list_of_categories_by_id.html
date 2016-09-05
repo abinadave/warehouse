@@ -1,0 +1,17 @@
+
+<% ids.forEach(function(model) { %>
+<% var category = categories.get(model); %>
+   <tr id="<%= category.get('id') %>">
+       <td>
+          <input type="checkbox" name="" value="<%= category.get('id') %>" placeholder="" />
+       </td>
+       <td><%= category.get('id') %></td>
+       <td><%= category.get('name') %> (<%= categories.findItemLength(category.get('id')) %>)</td>
+       <td>
+          <a type="button" href="#update-category/<%= category.get('id') %>" class="btn btn-primary btn-outline btn-circle"><span class="glyphicon glyphicon-edit"></span></i></a>
+       </td>
+       
+   </tr>
+   
+<% }); %>
+

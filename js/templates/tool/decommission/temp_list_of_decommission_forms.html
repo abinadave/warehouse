@@ -1,0 +1,9 @@
+<% library.forEach(function(model) { %>
+  <tr>
+      <td><a style="cursor: pointer" id="<%= model.id %>"><i class="glyphicon glyphicon-plus" ></i></a></td>
+      <td width="350"><%= moment(model.date).format('dddd MMMM DD, YYYY') %> &nbsp;&nbsp;&nbsp; (<%= moment(model.date).fromNow() %>)</td>
+      <td><%= model.reason %></td>
+      <td><%= model.transactor %></td>
+      <td><%= wm.getWarehouseLocation(model.warehouse_code) %></td>
+  </tr>
+<% }); %>

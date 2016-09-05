@@ -1,0 +1,69 @@
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="modalInputQtyCart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" id="div-modalInputQtyCart" style="width: 370px; padding: 10px; margin-top: 140px">
+
+                                  <form id="form-input-qty-cart">
+
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="myModalLabel">Receive item</h4>
+                                        </div>
+
+                                        <div class="modal-body">
+
+                                                  <input type="hidden" name="hidden_id" id="hidden-id">
+
+                                                  <label>
+                                                       Qty: <input type="number" name="qty" id="qty" class="form-control" placeholder="Enter quantity">
+                                                  </label ><br/>
+
+                                                  <label>
+                                                       Remarks: <input type="text" name="remarks" id="remarks" class="form-control" placeholder="Enter Remarks">
+                                                  </label>
+                                              <div class=""><h5>Item details</h5>
+                                                  <table class="table table-hover">
+                                                      <tr width="70">
+                                                          <th>Name</th>
+                                                          <td id="name"></td>
+                                                      </tr>
+                                                      <tr>
+                                                          <th>Running Bal</th>
+                                                          <td id="running_bal"></td>
+                                                      </tr>
+                                                      <tr>
+                                                          <th>Area</th>
+                                                          <td id="area"></td>
+                                                      </tr>
+                                                      <tr>
+                                                          <th>Row</th>
+                                                          <td id="row"></td>
+                                                      </tr>
+                                                      <tr>
+                                                          <th>Shelf</th>
+                                                          <td id="shelf"></td>
+                                                      </tr>
+                                                      <tr>
+                                                          <th>Unit</th>
+                                                          <td id="unit"></td>
+                                                      </tr>
+                                                  </table>
+                                               </div>
+                                              
+                                        </div>
+                                        
+                                        <div class="modal-footer">
+                                            <div id="output-update-product" style=""></div>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="submit" id="btnSaveCart" class="btn btn-primary">Save changes</button>
+                                        </div>
+
+                                        </form> 
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>
+                            <!-- /.modal -->
+                       

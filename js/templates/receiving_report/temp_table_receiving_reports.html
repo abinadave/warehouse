@@ -1,0 +1,50 @@
+<div style="margin-top: 20px">
+                          <form>Date range:
+
+                               <label><input type="text" class="form-control" style="width: 200px" id="from" placeholder="From"></label>
+
+                               <label><input type="text" class="form-control" style="width: 200px" id="to" placeholder="To"></label>                    
+                               <button type="reset" class="btn btn-sm btn-default" id="reset" style="margin-right: 40px">reset</button>
+
+                               <a href="#products" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-step-backward" ></span></a>
+                               <button type="reset" class="btn btn-sm btn-default" id="btnRefreshReports"><i class="fa fa-refresh"></i></button>
+                               <button type="reset" class="btn btn-sm btn-default" id="btnPrint"><i class="fa fa-print"></i></button>
+
+                              <div class="input-group pull-right" style="width: 220px; margin-top: -60px">
+                                  <input type="text" id="search" class="form-control" placeholder="Search for...">
+              
+                              </div>
+                               
+                           </form>
+
+                            <div>
+                           
+                               <div style="overflow: auto; margin-top: 10px" class="table-responsive" id="div-table-receiving-reports">    
+                               <div id="header-report-placeholder-receiving"></div>
+                                   <table id="table-receiving-reports" class="table table-hover table-bordered" style="font-size: 12px; ">
+                                         <thead style="cursor: pointer">
+                                            <tr>
+                                              <th class="remove-this" width="1"></th>
+                                              <th id="date" style="text-align: center">Date</th>
+                                              <th id="time" style="text-align: center">Time</th>
+                                              <th id="location_receive" style="text-align: center">From</th>
+                                              <th id="supplier_name" style="text-align: center">Supplier name</th>
+                                              <th id="crm_id" style="text-align: center">RR No.</th>
+                                              <th style="text-align: center">Received_by</th>
+                                            </tr>  
+                                         </thead>
+                                         <tbody id="list-of-receiving-reports" style="cursor: pointer"></tbody>
+                                   </table>
+
+                               </div>
+
+
+                         
+                        
+
+               
+               <div>
+                   <div id="placeholder-modal-show-all-receive-items"></div>
+               </div>
+
+</div>

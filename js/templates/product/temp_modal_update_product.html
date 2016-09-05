@@ -1,0 +1,76 @@
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="modalUpdateProduct" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" style="width: 690px; padding: 10px">
+
+                                 <form id="form-update-product">    
+
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <a style="margin-right: 10px; text-decoration: none; cursor: pointer" class="pull-right" id="item-setting">Option <i class="fa fa-caret-down"></i></a>
+
+                                            <h4 class="modal-title" id="myModalLabel"><span class="text-info">Update Stock card</span></h4>
+                                        </div>
+
+                                        <div class="modal-body">
+                                             
+
+                                                 <label> Product name
+                                                      <input type="text" name="name" id="prod-name" class="form-control" placeholder="enter name"/>
+                                                 </label>
+
+                                                 <label> Category
+                                                      <select class="form-control" name="category" id="prod-category-update">
+                                                          
+                                                      </select>
+                                                 </label> 
+
+                                                 <label> Area
+                                                      <input id="hidden-area" type="hidden" >
+                                                      <input type="text" name="area" class="form-control" id="prod-area" style="height: 33px; width: 200px">
+                                                 </label> 
+
+                                                 <label> Row
+                                                       <input id="hidden-row" type="hidden" >
+                                                       <input type="text" name="row" class="form-control" id="prod-row" style="height: 33px; width: 200px">
+                                                 </label> 
+
+                                                  <label> Shelf
+                                                       <input id="hidden-shelf" type="hidden" >
+                                                       <input type="text" name="shelf" class="form-control" id="prod-shelf" style="height: 33px; width: 200px">
+                                                 </label> 
+
+                                                 <label> Re-order point
+                                                      <input type="number" id="reorder-point" class="form-control" name="reorder_point" placeholder="Enter reorder point"/>
+                                                 </label> 
+
+                                                 <label> Running Balance
+                                                      <input type="number" id="running-bal" class="form-control" name="running_bal" placeholder="Enter Running balance" readonly />
+                                                 </label>
+
+                                                 <label> Unit
+                                                      <input id="unit" class="form-control" name="unit" placeholder="Enter unit"/>
+                                                 </label>
+
+                                                 <label style="margin-top: 10px"> Additional Description (optional)
+                                                      <textarea placeholder="Enter description" id="add-desc" name="add_desc" class="form-control" rows="3" cols="71" style="margin-left: 5px; margin-top: 8px"></textarea>
+                                                 </label> 
+
+                                            
+                                        </div>
+                                        
+                                        <div class="modal-footer">
+                                            <div id="output-update-product" style=""></div>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="submit" id="btnUpdateItem" class="btn btn-primary">Save changes</button>
+                                        </div>
+
+
+                                        </form> 
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>
+                            <!-- /.modal -->
+                       

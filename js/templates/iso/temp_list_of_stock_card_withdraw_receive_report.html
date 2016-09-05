@@ -1,0 +1,82 @@
+<style type="text/css">
+   th, td {
+      padding: 2px;
+   }
+   #div-w-r-report th, td {
+      font-size: 12px;
+   }
+   #tbl-w-r-report th {
+      text-align: center;
+   }
+   #tbl-w-r-report td {
+      text-align: center;
+   }
+</style>
+
+<div id="div-w-r-report">
+
+<h4 class="text-center">Stock Card</h4>
+<table class="table table-hover table-bordered table-condensed">
+    <tr>
+        <th width="130">Item</th><td><%= model.name %></td>
+        <th width="130">Re-order Point</th><td><%= model.reorder_point %></td>
+    </tr>
+    <tr>
+        <th width="150">Location</th><td><%= model.warehouse_code %></td>
+        <th width="150">Additional Description</th><td><%= model.add_desc %></td>
+    </tr>
+</table>   
+
+
+  <table id="tbl-w-r-report" class="table table-hover table-bordered table-condensed">
+     <thead>
+         <tr>
+            <th colspan="7" style="text-align: center">For Receiving</th>
+            <th colspan="6" style="text-align: center">For Issuance</th>
+         </tr>
+         <tr>
+            <th>Date</th>
+            <th>DR/Invoice</th>
+            <th>RR No.</th>
+            <th>Received by</th>
+            <th>Qty</th>
+            <th>Unit</th>
+            <th>Remarks</th>
+
+            <th>Date</th>
+            <th>WS No.</th>
+            <th>Issued To</th>
+            <th>Qty</th>
+            <th>Unit</th>
+            <th>Remarks</th>
+         </tr>
+     </thead>
+     <tbody>
+        <% library.forEach(function(report) { %>
+           <% if (report.type === 'receive') { %>
+              <tr>
+                  <td><%= moment(report.date).format('MMMM DD, YYYY') %></td>
+                  <td><%= report.id %></td>
+                  <td><%= report.crm_id %></td>
+                  <td><%= report.received_by %></td>
+                  <td><%= report.qty %></td>
+                  <td><%= report.unit %></td>
+                  <td><%= report.remarks %></td>
+                  <td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+           <% }else if(report.type === 'withdraw'){ %>
+                <tr>
+                  <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                  <td><%= moment(report.date).format('MMMM DD, YYYY') %></td>
+                  <td><%= report.no %></td>
+                  <td><%= report.requested_by %></td>
+                  <td><%= report.qty %></td>
+                  <td><%= report.unit %></td>
+                  <td><%= report.remarks %></td>
+                </tr>
+           <% } %>
+        <% }); %>
+     </tbody>
+  </table>  
+
+</div>

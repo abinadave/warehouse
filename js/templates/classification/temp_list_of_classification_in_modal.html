@@ -1,0 +1,4 @@
+<option disabled selected>Select</option>
+<% library.forEach(function(model) { %>
+<option id="<%= model.id %>" value="<%= model.id %>"><%= model.name %></option>
+<% }); %>

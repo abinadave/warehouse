@@ -1,0 +1,14 @@
+<% library.forEach(function(model) { %>
+   <tr id="<%= model.id %>">
+        <td><%= model.no %></td>
+        <td><%= moment(model.date).format('dddd MMMM DD, YYYY') %> &nbsp;&nbsp;&nbsp;&nbsp;(<%= moment(model.date).fromNow() %>)</td>
+        <td><%= model.time %></td>
+        <td><%= model.purpose %></td>
+        <td><%= model.issued_by %></td>
+        <td><%= model.noted_by %></td>
+        <td><%= btm.getByStatus(model, '0') %></td>
+        <td><%= btm.getByStatus(model, '1') %></td>
+        <td><%= btm.getBorrowToolsTotal(model) %></td>
+        <td><a style="cursor: pointer" id="<%= model.id %>">view</a></td>
+   </tr>
+<% }); %>

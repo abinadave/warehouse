@@ -1,0 +1,5 @@
+
+<option value="0">Select all</option>
+<% library.forEach(function(model) { %>
+    <option value="<%= model.id %>" id="up-<%= model.id %>"><%= model.name %></option>
+<% }); %>

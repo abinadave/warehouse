@@ -1,0 +1,12 @@
+<% library.forEach(function(model) { %>
+<% var a = moment(model.date_needed) %>
+<% var b = moment(model.date_requested) %>
+   <tr id="<%= model.id %>" data-toggle="popover" title="tool detail">
+       <td><a style="cursor: pointer" id="<%= model.id %>"><span class="glyphicon glyphicon-plus"></span></a></td>
+       <td style="text-align: center"><%= model.reason %></td>
+       <td style="text-align: center"><%= model.repair_no %></td>
+       <td style="text-align: center"><%= model.date_needed %></td>
+       <td style="text-align: center"><%= model.date_requested %></td>
+       <td style="text-align: center"><%= moment(model.date).fromNow() %></td>
+   </tr>
+<% }); %>

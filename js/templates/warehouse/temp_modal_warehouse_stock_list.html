@@ -1,0 +1,75 @@
+                            <div class="modal fade" id="modalStockList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" style="width: 90%">
+                                    <div class="modal-content">
+                                                            <div class="panel panel-primary">
+                                                                <div class="panel-heading">
+                                                                   <h4 class="modal-title" id="myModalLabel">Stocks in <b><%= model.location %></b> Branch</h4>
+                                                                </div>
+                                                                <!-- /.panel-heading -->
+                                                                <div class="panel-body">
+                                                                    <!-- Nav tabs -->
+                                                                    <ul class="nav nav-tabs">
+                                                                        <li class="active"><a href="#home" data-toggle="tab">Items &nbsp;&nbsp;<span class="badge" id="no-of-current-items">0</span></a>
+                                                                        </li>
+                                                                        <li><a href="#profile" data-toggle="tab">Tools &nbsp;&nbsp;<span class="badge">0</span></a>
+                                                                        </li>
+                                                                    </ul>
+                                        
+                                                                    <!-- Tab panes -->
+                                                                    <div class="tab-content"><br><br>   
+                                                                        <div class="tab-pane fade in active" id="home" style="font-size: 12px">
+                                                                           <table class="table table-hover table-bordered table-condensed" id="table-current-stocks">
+                                                                                <thead>
+                                                                                    <tr style="cursor: pointer" id="tr-product">
+                                                                                        <th id="id" style="text-align: center">Stock ID</th>
+                                                                                        <th id="category">Classification</th>
+                                                                                        <th id="name">Item</th>
+                                                                                        <th id="running_bal" style="text-align: center">Running Bal</th>
+                                                                                        <th id="reorder_point" style="text-align: center">Re-order</th>
+                                                                                        <th class="text-center" id="area">Area</th>
+                                                                                        <th id="shelf" style="text-align: center">Shelf</th>
+                                                                                        <th id="row" style="text-align: center">Row</th>
+                                                                                        <th id="unit" style="text-align: center">Unit</th>
+                                                                                        <th id="add_desc">Description</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody id="list-of-current-stocks">
+                                                                                    <tr>
+                                                                                         <td colspan="10"><span class="fa fa-spinner fa-spin"></span> Loading data. please wait.............. </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                           </table>
+                                                                        </div>
+                                                                        <div class="tab-pane fade" id="profile" style="overflow: auto; font-size: 12px">
+                                                                             <table class="table table-hover table-striped table-bordered" id="table-tools" style="width: 1800px">
+                                                                                 <thead>
+                                                                                    <tr>
+                                                                                       <% if(sessionStorage.getItem('usertype') == 1){ %>
+                                                                                          <th class="to-hide" id="warehouse_code">Warehouse</th>
+                                                                                       <% } %>
+                                                                                       <th id="tool_id">Tool Id</th>
+                                                                                       <th id="classification">Classification</th>
+                                                                                       <th id="model">Model</th>
+                                                                                       <th id="size">Size</th>
+                                                                                       <th id="unit">Unit</th>
+                                                                                       <th id="serial">Serial No.</th>
+                                                                                       <th id="remarks">Remarks</th>
+                                                                                       <th id="area">Area Located</th>
+                                                                                       <th id="shelf">Shelf</th>
+                                                                                       <th id="row">Row</th>
+                                                                                   </tr>
+                                                                                 </thead>
+
+                                                                                 <tbody id="list-of-available-tools-json" style="cursor: pointer"><tr><td colspan="9">Initializing data...</td></tr></tbody>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- /.panel-body -->
+                                                            </div>
+                                                            <!-- /.panel -->
+                                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>

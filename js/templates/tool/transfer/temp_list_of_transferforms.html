@@ -1,0 +1,24 @@
+<% library.forEach(function(model) { %>
+
+  <tr id="<%= model.id %>" data-toggle="popover" title="Receivable" class="my-popovers">
+       <!-- <td><input type="checkbox" value="<%= model.id %>"></td> -->
+       <% if(tfm.ifBelongsHere(model) == true){ %>
+          <td class="remove-this"><a id="receive-<%= model.id %>" style="cursor:pointer"><span class="glyphicon glyphicon-circle-arrow-up"></span></a></td>
+          <td class="remove-this"><a id="print-<%= model.id %>" style="cursor:pointer"s<span class="glyphicon glyphicon-print"></span></a></td>
+       <% }else { %>
+          <td colspan="2" class="remove-this"><a id="print-<%= model.id %>" style="cursor:pointer"s<span class="glyphicon glyphicon-print"></span></a></td>
+       <% } %>
+       <td><%= moment(model.date).format('dddd MMMM DD, YYYY') %> <span class="remove-this">(<%= moment(model.date).fromNow() %>)</span></td>
+       <td><%= model.time %></td>
+       <td><%= model.no %></td>
+       <td><%= WM.getWarehouseLocation(model.warehouse_code) %></td>
+       <td><%= model.to_warehouse %></td>
+       <td><%= model.sender_name %></td>
+       <td class="remove-this"><%= model.sender_position %></td>
+       <td><%= model.recipient_name %></td>
+       <td class="remove-this"><%= model.recipient_position %></td>
+       <td><%= model.noter_name %></td>
+       <td class="remove-this"><%= model.noter_position %></td>
+  </tr>
+
+<% }); %>

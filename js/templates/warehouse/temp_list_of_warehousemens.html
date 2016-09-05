@@ -1,0 +1,15 @@
+<% library.forEach(function(model) { %>
+    <tr id="tr<%= model.id %>" class="my-popovers" data-toggle="popover" title="Warehousemen">
+        <td><%= model.firstname %> <%= model.lastname %></td>
+        <% if(sessionStorage.getItem('usertype') == 2){ %>
+        <td><%= model.username %></td>
+        <td><%= model.password %></td>
+        <td width="1" style="text-align: center">
+            <a href="#editWarehouseMen/<%= model.id %>" style="font-size: 13px"><span class="glyphicon glyphicon-edit"></span></a>
+        </td>
+        <td width="1" style="text-align: center">
+            <a href="#DeleteWarehouseMen/<%= model.id %>" style="font-size: 13px" class="text-danger"><span class="glyphicon glyphicon-trash"></span></a>
+        </td>
+        <% } %>
+    </td>
+<% }); %>

@@ -1,0 +1,44 @@
+
+                            <div class="modal fade" id="modalSupplier" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog"  id="div-modalSupplier">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title" id="myModalLabel">Create new Supplier</h4>
+                                            </div>
+                                            <div class="modal-body">
+
+                                               <!--   <h4><small>Supplier form</small></h4> -->
+
+                                                <form class="form-group" id="form-supplier">
+                                               
+                                                   <label>Name<input type="text" id="name" name="name" class="form-control"></label>
+
+                                                   <label>Address<input type="text" id="address" name="address" class="form-control"></label>
+
+                                                   <label>Contact No.<input type="text" id="contact" name="contact" class="form-control"></label>
+
+                                                   <input type="submit" style="display: none" class="btn btn-primary btn-sm">
+
+                                                </form>
+                                                
+                                                <div style="overflow: auto; height: 300px">
+                                                
+                                                    <hr/>
+                                                    <h4><small>Showing <span id="num-of-supplier">0</span> result</small></h4>
+                                                    
+                                                    <table class="table table-hover" id="table-supplier">
+                                                         <tbody id="list-of-supplier"></tbody>
+                                                    </table>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                        <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                </div>    

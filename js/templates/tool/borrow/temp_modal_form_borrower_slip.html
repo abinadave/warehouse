@@ -1,0 +1,69 @@
+                            <div class="modal fade" id="modalFormBorrowerSlip" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog"  id="div-modalFormBorrowerSlip" style="width: 750px">
+                                   <form id="form-submit-borrowerslip">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="myModalLabel">Borrower slip</h4>
+                                        </div>
+                                        <div class="modal-body" style="font-size: 12px">
+                                           
+                                           <div id="div-borrowerslip">
+                                               <label>Purpose
+                                                  <input type="text"  name="purpose" id="purpose" class="form-control" placeholder="Purpose">
+                                               </label> <hr/>
+
+
+                                               <label>
+                                                    <input type="hidden" name="issued_by" id="issued-by" class="form-control autos" placeholder="Issued by" value="<%= sessionStorage.getItem('name') %>">
+                                               </label>
+
+                                               <label>
+                                                    <input type="hidden" name="issued_by_position" id="issued-by-position" class="form-control" placeholder="Issued by position" value="warehousemen">
+                                               </label>
+
+                                                <label>Borrowed by
+                                                    <input type="text" name="borrowed_by" id="borrowed-by" class="form-control autos" placeholder="Borrower name">
+                                               </label>
+
+                                               <label>
+                                                    <input type="text" name="borrowed_by_position" id="borrowed-by-position" class="form-control autos" placeholder="position">
+                                               </label>
+
+                                               <label>Noted by
+                                                    <input type="text" name="noted_by" id="noted-by" class="form-control autos" placeholder="Noter name" style="height: 33px">
+                                               </label>
+
+                                               <label>
+                                                    <input type="text" name="noted_by_position" id="noted-by-position" class="form-control autos" placeholder="position" style="height: 33px">
+                                               </label><br/>
+                                               <hr>
+
+                                           </div>
+
+                                           <div id="placeholder-transfer-slip-form"></div>
+
+                                           <table class="table table-hover table-bordered table-stiped" >
+                                               <thead>
+                                                   <tr>
+                                                       <th style="text-align: center">Qty</th>
+                                                       <th style="text-align: center">Unit</th>
+                                                       <th style="text-align: center">Item Description</th>
+                                                       <th style="text-align: center">Tool ID</th>
+                                                       <th width="1"></th>
+                                                   </tr>
+                                               </thead>
+                                               <tbody id="list-of-pawns"></tbody>
+                                           </table>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div id="output-save-borrower_form" style="position: absolute; margin-top: 60px"></div>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                    </form>   
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>

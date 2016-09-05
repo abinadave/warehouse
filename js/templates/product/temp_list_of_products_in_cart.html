@@ -1,0 +1,16 @@
+
+<% library.forEach(function(model) { %>
+    <tr id="<%= model.id %>">
+       <td><a href="#addToCart/<%= model.id %>" class="btn btn-info btn-outline btn-xs" >Add to cart</a></td>
+       <td style="text-align: center"><%= model.id %></td>
+       <td><%= categories.getName(model.category) %></td>
+       <td><%= model.name %></td>
+       <td>Container <%= model.area %></td>
+       <td style="text-align: center"><%= model.shelf %></td>
+       <td style="text-align: center"><%= model.row %></td>
+       <td><%= model.add_desc %></td>
+       <td style="text-align: center"><%= model.reorder_point %></td>
+       <td style="text-align: center"><%= model.running_bal %></td>
+       <td><%= model.unit.toLowerCase() %></td>
+  </tr>
+<% }); %>

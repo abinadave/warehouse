@@ -1,0 +1,15 @@
+<% library.forEach(function(model) { %>
+    <tr id="<%= model.tool_id %>">
+        <td style="text-align: center"><%= model.qty %></td>
+        <td style="text-align: center"><%= model.unit %></td>
+        <td style="text-align: center"><%= model.name %></td>
+        <td style="text-align: center"><%= model.tool_id %></td>
+        <% if(model.status == 0){ %>
+           <td style="text-align: center"><a class="<%= model.tool_id  %>-<%= model.transfer_id %>" style="cursor: pointer" id="<%= model.tool_id  %>,<%= model.transfer_id %>">receive</a></td>
+        <% }else { %>
+           <td style="text-align: center"><span class="glyphicon glyphicon-ok"></span></td>
+        <% } %>
+    </tr>
+<% }); %>
+
+

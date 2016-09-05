@@ -1,0 +1,12 @@
+<% library.forEach(function(model) { %>
+<% var duration = moment(model.date).fromNow() %>
+   <tr id="<%= model.id %>">
+       <td class="remove-this"><a id="<%= model.id %>" data-placement="left" title="Click this to print"><span class="glyphicon glyphicon-print"></span></a></td>
+       <td style="text-align: center"><%= moment(model.date).format('dddd MMMM DD, YYYY ') %> <span class="remove-this">(<%= duration %>)</span></td>
+       <td style="text-align: center"><%= model.time %></td>
+       <td style="text-align: center"><%= (model.location_receive != '') ? model.location_receive : '-' %></td>
+       <td style="text-align: center"><%= (model.supplier_name != '') ? model.supplier_name : '-' %></td>
+       <td style="text-align: center"><%= model.crm_id %></td>
+       <td style="text-align: center"><%= model.received_by %></td>
+   </tr>
+<% }) %>

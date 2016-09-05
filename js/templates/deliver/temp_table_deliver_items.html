@@ -1,0 +1,31 @@
+                            <div class="modal fade" id="modalDeliverItems" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content" id="div-modalDeliverItems">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="myModalLabel">Incomming Items</h4>
+                                            <h4>From: <b class="text-primary"><%= model.from_location %></b></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                        <div id="test"></div>
+                                              <table class="table table-hover">
+                                                   <thead>
+                                                       <tr>
+                                                           <th>Item Id</th>
+                                                           <th>Name</th>
+                                                           <th>Qty</th>
+                                                           <th>unit</th>
+                                                           <th width="1"><input type="checkbox" id="check-all-deliver-items"></th>
+                                                       </tr>
+                                                   </thead>
+                                                   <tbody id="list-of-deliver-items"></tbody>
+                                              </table>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <input type="hidden" id="hidden-id">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary" id="btnReceive">Receive</button>
+                                        </div>
+                                    </div>   
+                                </div>
+                            </div>

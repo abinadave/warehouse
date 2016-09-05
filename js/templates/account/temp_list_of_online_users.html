@@ -1,0 +1,16 @@
+
+<% model1.forEach(function(model) { %>
+   <% if(model.id !== sessionStorage.getItem('uid') && AM.isOnline(model.id)) { %>
+       <a id="a-<%= model.id %>" class="list-group-item text-primary" style="font-weight: bolder"><%= model.firstname %><img class="pull-right" src="images/dot.gif"></a>
+   <% }else { %>
+       <a id="a-<%= model.id %>" class="list-group-item"><%= model.firstname %></a>
+   <% }%>
+<% }); %>
+
+<% model2.forEach(function(model) { %>
+   <% if(model.id !== sessionStorage.getItem('uid') && AM.isOnline(model.id)) { %>
+       <a id="a-<%= model.id %>" class="list-group-item text-danger" style="font-weight: bolder"><%= model.firstname %><img class="pull-right" src="images/dot.gif"></a>
+   <% }else { %>
+       <a id="a-<%= model.id %>" class="list-group-item"><%= model.firstname %></a>
+   <% }%>
+<% }); %>

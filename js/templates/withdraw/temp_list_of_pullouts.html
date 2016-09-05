@@ -1,0 +1,11 @@
+<% library.forEach(function(model) { %>
+<%= console.log(model) %>
+   <tr>
+      <td><%= model.qty %></td>
+      <td><%= ProductModule.getUnit(model.id) %></td>
+      <td><%= ProductModule.getName(model.id) %></td>
+      <td><%= model.remarks %></td>
+      <td><%= model.id %></td>
+      <td><a href="#remove-pullout/<%= model.id %>"><span class="glyphicon glyphicon-remove"></span></a></td>
+   </tr>
+<% }) %>

@@ -1,0 +1,49 @@
+                            <div class="modal fade" id="modalDeliveryForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" style="width: 360px">
+                                   <form id="form-deliver-receipt">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="myModalLabel">Delivery Form</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                             
+                                             <label>to (Location)
+                                                 <!-- <input type="text" name="to_location" class="form-control" id="to-location" placeholder="location" autofocus/> -->
+                                                 <select class="form-control" id="to-location" name="to_location_id">
+                                                     <option>Select location</option>
+                                                 </select>
+
+                                             </label>
+
+                                             <input type="hidden" name="to_location" id="hidden-to-location" />
+
+                                             <label>to (Person)
+                                                 <input type="text" name="to_person" class="form-control" id="to-person" placeholder="person" autofocus/>
+                                             </label>
+
+                                             <label>Delivered by
+                                                 <input type="text" name="delivered_by" class="form-control" id="delivered-by" placeholder="name" autofocus/>
+                                             </label>
+
+                                             <label>Delivered by
+                                                 <input type="text" name="delivered_by_position" class="form-control" id="delivered-by-position" placeholder="position" autofocus/>
+                                             </label>
+
+                                             <input type="hidden" name="prepared_by" value="<%= sessionStorage.getItem('name') %>">
+                                             <input type="hidden" name="prepared_by_position" value="<%= sessionStorage.getItem('usertype') %>">
+
+                                             <input type="hidden" name="code" value="<%= sessionStorage.getItem('code') %>">
+                                             
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div id="output-save-deliver-form" style="width: 570px; text-align: left; margin-top: 55px; position: absolute"></div>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                   </form> 
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>

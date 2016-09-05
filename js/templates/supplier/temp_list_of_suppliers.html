@@ -1,0 +1,9 @@
+<% library.forEach(function(model) { %>
+
+<tr id="<%= model.id %>">
+    <td data-index="name" id="supplier-<%= model.id %>"><%= model.name %></td>
+    <td data-index="address"><%= model.address %></td>
+    <td data-index="contact"><%= model.contact %></td>
+    <td><a style="cursor: pointer" id="li-<%= model.id %>"><span style="cursor: pointer" class="glyphicon glyphicon-remove pull-right text-danger"></span></a></td>
+</tr>
+<% }); %>

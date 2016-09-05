@@ -1,0 +1,4 @@
+<option disabled selected>Select location</option>
+<% library.forEach(function(model) { %>
+<option value="<%= model.id %>" class="model.location" id="code-<%= model.id %>"><%= model.location %></option>
+<% }) %>

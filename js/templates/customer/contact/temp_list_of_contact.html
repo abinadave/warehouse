@@ -1,0 +1,9 @@
+<% library.forEach(function(model) { %>
+<% console.log(model) %>
+   <tr> 
+        <td width="1"><input type="checkbox" value="<%= model.id %>"></td>
+        <td width="130"><%= model.name %></td>
+        <td width="440"><%= model.message.substr(0,50) %>...</td>
+        <td style="text-align: right"><span class="badge text-info"><%= moment(model.date).fromNow() %></span></td>
+   </tr>
+<% }); %>

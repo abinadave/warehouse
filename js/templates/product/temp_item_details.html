@@ -1,0 +1,57 @@
+                <div class="col-lg-12" style="margin: 15px 0 0 -25px;">
+                    <div class="panel panel-primary" id="panel-image-details">
+                        <div class="panel-heading">
+                            Item Details
+                        </div>
+                        <div class="panel-body" style="font-size: 12px">
+                            <div style="float: left">
+                            <img id="image-item" class="img-thumbnail" style="width: 300px; height: 300px" style="cursor: pointer"></div>
+                            <div style="float: left" class="col-md-7" style="margin-top:10px">
+                                <form id="form-update-item" style="margin-left: 20px">
+                                    <label>Classification: 
+                                       <select id="prod-category" name="classification" class="form-control" style="width: 216px" >
+                                           <option>Select classification</option>
+                                       </select>
+                                    </label>
+                                    <label>Name: 
+                                        <input type="text" name="name" id="name" />
+                                    </label>
+                                    <label>Area:
+                                        <input type="text" name="area" id="area" />
+                                    </label>
+                                    <label>Shelf: 
+                                        <input type="text" name="shelf" id="shelf" />
+                                    </label>
+                                    <label>Row: 
+                                        <input type="text" name="row" id="row" />
+                                    </label>
+                                    <label>
+                                        <input type="hidden" id="id" readonly />
+                                    </label>
+                                    <label>Additional Description
+                                        <input type="text" name="add_desc" id="add_desc" />
+                                    </label>
+                                    <label>Area located
+                                        <input type="text" name="reorder_point" id="reorder_point" />
+                                    </label>
+                                    <label>Running Balance
+                                        <input type="text" name="running_bal" id="running_bal" />
+                                    </label>
+                                    <label>Unit
+                                        <input type="text" name="unit" id="unit" />
+                                    </label><br/>
+
+                                </form>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <button id="btnUpdateItemImage" class="btn btn-danger btn-xs">update photo <span class="glyphicon glyphicon-edit"></span></button>
+                            <div id="item-history">History of this item will appear here.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div id="placeholder-modal"></div>
+                </div>
+               

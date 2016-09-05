@@ -1,0 +1,11 @@
+<% library.forEach(function(model) { %>
+<tr>
+    <td><%= moment(model.date).format('dddd MMMM DD, YYYY') %></td>
+    <td><%= model.time %></td>
+    <td><%= model.no %></td>
+    <td><%= model.requested_by %></td>
+    <td><%= model.qty %></td>
+    <td><%= model.unit %></td>
+    <td><%= model.remarks %></td>
+</tr>
+<% }); %>

@@ -1,0 +1,82 @@
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="modalAddProduct" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+                                <div class="modal-dialog" style="width: 690px; padding: 10px">
+
+                                 <form id="form-add-product">    
+
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                         <a style="margin-right: 10px; text-decoration: none; cursor: pointer" class="pull-right" id="item-setting">Option <i class="fa fa-caret-down"></i></a>
+                                            <h4 class="modal-title" id="myModalLabel"><span class="text-info">Add New Stock Card</span></h4>
+                                        </div>
+
+                                        <div class="modal-body">
+                                             
+                                                 <label>Name
+                                                      <input type="text" name="prodName" id="prod-name" class="form-control" placeholder="enter name"/>
+                                                 </label>
+
+                                                 <label> Category
+                                                      <input type="hidden" name="prodCategory">
+                                                      <input type="text" class="form-control" id="prod-category" style="height: 33px; width: 200px"/>
+                                                 </label> 
+
+                                                 <label> Area
+                                                      <input id="hidden-area" type="hidden" name="prodArea">
+                                                      <input type="text" class="form-control" id="prod-area" style="height: 33px; width: 200px">
+                                                 </label> 
+
+                                                 <label> Row
+                                                       <input id="hidden-row" type="hidden" name="prodRow">
+                                                       <input type="text" class="form-control" id="prod-row" style="height: 33px; width: 200px">
+                                                 </label> 
+
+                                                  <label> Shelf
+                                                       <input id="hidden-shelf" type="hidden" name="prodShelf">
+                                                       <input type="text" class="form-control" id="prod-shelf" style="height: 33px; width: 200px">
+                                                 </label> 
+
+                                                 <label> Re-order point
+                                                      <input type="number" id="reorder-point" class="form-control" name="reorderPoint" placeholder="Enter reorder point"/>
+                                                 </label> 
+
+                                                 
+
+                                                 <label> Unit
+                                                      <input id="unit" class="form-control" name="unit" placeholder="Enter unit"/>
+                                                 </label> <br/>
+
+                                                
+
+
+                                                 <label style="margin-top: 10px"> Additional Description (optional)
+                                                      <textarea placeholder="Enter description" id="add-desc" name="prodAddDesc" class="form-control" rows="3" cols="71" style="margin-left: 5px; margin-top: 8px"></textarea>
+                                                 </label><br/>
+
+                                                 <label><input type="checkbox" id="chk-running-bal"> initial item</label><br/>
+
+                                                 <span id="div-running-bal" style="display: none">
+                                                       <label> Running Balance
+                                                            <input id="running-bal" class="form-control" type="text" name="runningBal" value="0" placeholder="Enter Running balance"/>
+                                                       </label>
+                                                 </span>
+                                            
+                                        </div>
+                                        
+                                        <div class="modal-footer">
+                                            <div id="output-save-product" style="position: absolute"></div>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="submit" id="btnSaveItem" class="btn btn-primary js-loading-button" data-loading-text="Please wait..">Save item</button>
+                                        </div>
+
+
+                                        </form> 
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>
+                            <!-- /.modal -->
+                       

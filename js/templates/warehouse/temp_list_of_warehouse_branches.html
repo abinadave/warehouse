@@ -1,0 +1,13 @@
+ 
+<% library.forEach(function(model) { %>
+    <tr id="<%= model.id %>">
+        <td><%= model.id %></td>
+        <td><%= model.location %></td>
+        <td><%= model.receipt_loc %></td>
+        <td style="text-align: center"><%= module.getNumOfWorkers(model.id) %></td>
+        <% if(sessionStorage.getItem('usertype') == 2){ %>
+           <td><a href="#addWarehousemen/<%= model.id %>" class="btn btn-xs">add warehousemen</a></td>
+        <% } %>
+        <td><a href="#removeWarehouse/<%= model.id %>"><span class="glyphicon glyphicon-trash text-danger"></span></a></td>
+    </td>
+<% }) %>

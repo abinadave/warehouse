@@ -1,0 +1,5 @@
+
+<option id="default-value"></option>
+<% library.forEach(function(model) { %>
+    <option value="<%= model.id %>" id="up-<%= model.id %>"><%= model.name %></option>
+<% }); %>

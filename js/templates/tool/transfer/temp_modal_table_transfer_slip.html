@@ -1,0 +1,92 @@
+                            <div class="modal fade" id="modalTransferSlip" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" style="width: 600px" id="div-modalTransferSlip">
+                                    <div class="modal-content">
+
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="myModalLabel">Receipt</h4>
+                                        </div>
+
+                                        <div class="modal-body" style="font-size: 12px" id="div-print-transferslip">
+
+                                        <div>
+
+                                           <div style="float: left; margin-top: 0px">
+                                               <div style="position: absolute; margin-top: 0px">
+                                                  <img src="bootstrap/docs/ez.png" style="width: 80px; height 80px">
+                                               </div>   
+                                               <div style="margin-left: 80px; margin-top: 0px;">
+                                                  <p style="font-size: 12px">Ezjones Construction, Inc.<br/>
+                                                  <p style="font-size: 12px; margin-top: -4px">Sitio Buchasan, Brgy. Cawayan<br/>
+                                                  Catarman N. Samar</p></p>
+                                               </div>
+                                           </div> 
+
+                                           <div style="float: left; margin-top: 0px; border: 2px solid #ddd; padding: 14px; border-radius: 4px" class="pull-right">
+                                                <center style="font-size: 11px"><b>E.T.S No.</b></center>
+                                                <p id="ets-no" class="text-danger" style="font-size: 11px"></p>
+                                           </div>
+                                           
+                                         </div><br/><br/><br/><br/>
+
+                                         <h3 style="text-align: center; font-size: 12px">Equipment Transfer Slip</h3>  
+
+                                           <table class="table table-hover table-bordered" >
+                                               <thead>
+                                                   <tr>
+                                                       <th class="text-left">Date</th>
+                                                       <td class="text-left" id="th-date">-</td>
+                                                       <th class="text-left">Time</th>
+                                                       <td class="text-left" id="th-time">-</td>
+                                                   </tr>
+                                                   <tr>
+                                                       <th width="160">To Warehouse Location</th>
+                                                       <td id="th-to-warehouse" colspan="3">-</td>
+                                                   </tr>
+                                               </thead> 
+                                            </table>
+
+                                             <table class="table table-hover table-bordered" style="margin-top: -10px">
+                                                   <thead>
+                                                        <tr>
+                                                            <th class="text-center">Qty</th>
+                                                            <th class="text-center">Unit</th>
+                                                            <th class="text-center">Name</th>
+                                                            <th class="text-center">Tool-ID</th>
+                                                        </tr>
+                                                   </thead>
+                                                   <tbody id="list-of-transfer-items"></tbody>
+                                              </table>
+
+                                              <table class="table table-hover table-condensed table-bordered" 
+                                        style="margin-top: -10px">
+                                          <tr>
+                                              <th class="text-center" width="150">Sender</th>
+                                              <td class="text-center"><label id="sender-name">-</label> (
+                                                  <span id="sender-position"></span>)
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                             <th class="text-center" width="150">Noted by</th>
+                                             <td class="text-center">
+                                                  <label id="noted-by">-</label> (
+                                                  <span id="noted-by-position"></span>)
+                                             </td>
+                                          </tr>
+                                           <tr>
+                                             <th class="text-center" width="150">Recipient</th>
+                                             <td class="text-center">
+                                                <label id="recipient-name">-</label> (
+                                                <span id="recipient-position"></span>)
+                                             </td>
+                                          </tr>
+                                        </table>
+                                    </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" id="btnPrintTransferSlip">Print <i class="fa fa-print"></i></button>
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>

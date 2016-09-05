@@ -1,0 +1,11 @@
+<% library.forEach(function(model) { %>
+<% var the_id = (_.has(model,'tool_id') == true) ? model.tool_id : model.stock_id %>
+    <tr>
+        <td style="font-size: 12px; text-align: center; padding: 2px"><%= model.qty %></td>
+        <td style="font-size: 12px; text-align: center; padding: 2px"><%= model.unit %></td>
+        <td style="font-size: 12px; text-align: center; padding: 2px"><%= model.name %></td>
+        <td style="font-size: 12px; text-align: center; padding: 2px"><%= the_id %></td>
+        <td style="font-size: 12px; text-align: center; padding: 2px"><%= model.date_return %></td>
+        <td style="font-size: 12px; text-align: center; padding: 2px"><%= model.time_return %></td>
+    </tr>
+<% }); %>

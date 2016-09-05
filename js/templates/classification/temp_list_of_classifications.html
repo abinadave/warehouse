@@ -1,0 +1,3 @@
+<% library.forEach(function(model) { %>
+<li id="li-class-<%= model.id %>" class="list-group-item"><%= model.name %> (<%= CM.NumOfToolsWithCIdOf(model.id) %>)<a href="#removeClassification/<%= model.id %>" class="pull-right"> <span class="glyphicon glyphicon-remove"></span></a></li>
+<% }); %>

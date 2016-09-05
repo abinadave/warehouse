@@ -1,0 +1,16 @@
+<% ids.forEach(function(model) { %>
+    <% var product = products.get(model) %>
+    <tr id="<%= product.get('id') %>">
+       <!-- <td><input type="checkbox" value="<%= product.get('id') %>"></td> -->
+       <td data-index="id" style="text-align: center"><%= product.get('id') %></td>
+       <td data-index="category"><%= categories.getName(product.get('category')) %></td>
+       <td data-index="name"><a id="<%= product.get('id') %>" data-toggle="popover" class="popup" title="Item photo"style="font-weight: bold" href="#viewProductDetails/<%= product.get('id') %>" ><%= product.get('name') %></a></td>
+       <td data-index="running_bal" style="text-align: center"><%= product.get('running_bal') %></td>
+       <td data-index="reorder_point" style="text-align: center"><%= product.get('reorder_point') %></td>
+       <td data-index="area" style="text-align: center"><%= product.get('area') %></td>
+       <td data-index="shelf" style="text-align: center"><%= product.get('shelf') %></td>
+       <td data-index="row" style="text-align: center"><%= product.get('row') %></td>
+       <td data-index="unit"><%= product.get('unit') %></td>
+       <td data-index="add_desc"><%= product.get('add_desc') %></td>  
+    </tr>
+<% }); %>

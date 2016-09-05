@@ -1,0 +1,42 @@
+<h4>Transfer Slip Form</h4>
+<form id="form-save-transer-slip">
+
+   <label>From
+      <input type="text" class="form-control" id="form-location" readonly />
+   </label>
+
+   <label>To Warehouse (Location)
+       <select style="width: 210px" id="to-warehouse-location" class="form-control">
+           <option>select warehouse</option>
+       </select>
+   </label>
+   
+   <input type="hidden" name="to_warehouse" id="to-warehouse" style="width: 100px" />
+
+   <label>
+       <input type="hidden" name="sender_name" id="sender-name" placeholder="Name" value="<%= sessionStorage.getItem('name') %>">
+   </label>
+
+   <label>
+       <input type="hidden" name="sender_position" id="sender-position" placeholder="Position" value="warehousemen">
+   </label>
+
+   <label>Recipient (Name)
+       <input type="text" name="recipient_name" id="recipient-name" placeholder="Name" required>
+   </label><br/>
+
+   <label>Recipient (Position)
+       <input type="text" name="recipient_position" id="recipient-position" placeholder="Position" required>
+   </label>
+
+   <label>Noted by (Name)
+       <input type="text" name="noter_name" id="noter-name" placeholder="Name" required>
+   </label>
+
+   <label>Noted by (Position)
+       <input type="text" name="noter_position" id="noter-position" placeholder="Position" required>
+   </label>
+   
+   <br><hr>
+   
+</form>

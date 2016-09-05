@@ -1,0 +1,76 @@
+                            <div class="modal fade" id="modalWithDrawItemTable" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" id="div-modalWithDrawItemTable" style="width: 800px">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                                      
+                                        </div>
+                                        <div class="modal-body" id="myDivToPrint" style="font-size: 12px">
+
+                                          <div id="image-table-withdrawitems" style="margin-top: 40px">
+                                              
+                                          </div>
+                                          <div style="float: left; margin-top: -70px; border: 2px solid #ddd; padding: 11px; border-radius: 4px; font-size: 11px" class="pull-right">
+                                                <center style="font-size: 10px" >W.S no</center>
+                                                <p  style="font-size: 10px" id="no"></p>
+                                           </div>
+                                          <h5 class="text-center">Withdrawal slip</h5>
+                                          
+                                            <table class="table table-hover table-bordered">
+                                                <tr>
+                                                    <th width="100">Date Issued</th>
+                                                    <td id="date-issued" colspan="">-</td>
+                                                    <th width="100">Time Issued</th>
+                                                    <td id="time-issued" colspan="">-</td>
+                                                </tr>  
+                                                <tr>
+                                                    <th width="100">Linked to</th>
+                                                    <td id="linked-to" width="400" colspan="3">-</td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <table class="table table-hover table-bordered"> 
+                                                 <thead>
+                                                 <tr>
+                                                    <th>Qty</th>
+                                                    <th>Unit</th>
+                                                    <th>Item Description</th>
+                                                    <th>Remarks/Purpose</th>
+                                                    <th>Stock ID</th>
+                                                 </tr>
+                                                 </thead>
+                                                 <tbody id="list-of-withdrawitem"></tbody>
+                                            </table>
+
+                                            
+                                            
+                                    <table class="table table-hover table-bordered" 
+                                        style="margin-top: 10px">
+                                          <tr>
+                                              <th width="150">Requested by</th>
+                                              <td><label id="requested-by">-</label> (<span id="requested-by-position"></span>)</td>
+                                             
+                                          </tr>
+                                       
+                                           <tr>
+                                             <th width="150">Issued by</th>
+                                             <td>
+                                                 <label id="issued-by">-</label> (
+                                                 <span id="issued-by-position"></span>)
+                                             </td>
+                                          </tr>
+
+                                        </table>
+                                        
+                                        <div id="slip-footer"></div>
+
+                                        </div>
+                                        
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary" id="btnPrintWithdrawSlip"><span class="glyphicon glyphicon-print"></span> Print</button>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                                
+                            </div>

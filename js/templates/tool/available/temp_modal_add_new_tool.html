@@ -1,0 +1,79 @@
+                            <div class="modal fade" id="tempModalAddNewTool" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" id="div-tempModalAddNewTool">
+                                   <form id="form-add-new-tool">
+                                    <div class="modal-content">
+                                        <div class="modal-header"> 
+                                            <a style="margin-right: 10px; text-decoration: none; cursor: pointer" class="pull-right" id="item-setting">Option <i class="fa fa-caret-down"></i></a>
+                                            <h4 class="modal-title" id="myModalLabel">Add new tool</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                             
+                                                 <label>Model
+                                                      <input type="text" class="form-control" name="model" id="model">
+                                                 </label>
+
+                                                 <label>Size
+                                                      <input type="text" class="form-control" name="size" id="size">
+                                                 </label>
+
+                                                 <label>Serial no.
+                                                      <input type="text" class="form-control" name="serial_no" id="serial-no">
+                                                 </label>
+
+                                                 <label>Remarks
+                                                      <input type="text" class="form-control" name="remarks" id="remarks">
+                                                 </label>
+
+                                                 <label>Area Located
+                                                      <input id="hidden-area" type="hidden" name="area_located">
+                                                      <input type="text" class="form-control" id="prod-area" style="height: 33px; width: 200px">
+                                                 </label>
+
+                                                 <label>Shelf
+                                                      <input id="hidden-shelf" type="hidden" name="shelf">
+                                                      <input type="text" class="form-control" id="prod-shelf" style="height: 33px; width: 200px">
+                                                 </label>
+
+                                                 <label>Row
+                                                      <input id="hidden-row" type="hidden" name="row">
+                                                      <input type="text" class="form-control" id="prod-row" style="height: 33px; width: 200px">
+                                                 </label>
+
+                                                 <label>Unit
+                                                      <input type="text" class="form-control unit-autocomplete" name="unit" id="unit">
+                                                 </label>    
+
+                                                <!--  <div id="div-classification" style="display: none">
+                                                    <form id="form-classification-onthefly">
+                                                    <hr>
+                                                        <label>Classification name: </label>
+                                                        <input type="text" class="form-control input-sm" id="classification-onthefly" name="name" style="width: 200px">
+                                                        <button id="btnSaveClassification" class="btn btn-xs btn-info" style="display: none">save</button>
+                                                    </form>
+                                                    <hr>
+                                                 </div> -->
+
+                                                 <label>Classification<br/>
+                                                     <input type="text" class="form-control" id="search-classification">
+                                                     <ul class="list-group" id="list-searched-classification" style="position: absolute; font-size: 12px; width: 250px; overflow: auto; height: 300px"></ul>
+                                                 </label>
+                                                 <input type="hidden" name="classification" id="hidden-classification">
+                                               
+                                                 <a id="addClassificationOnTheFly" style="cursor: pointer; font-size: 10px" class="text-info">add</a>
+
+
+                                                                         
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div id="output-save-tool" style="position: absolute"></div>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="submit" id="btnSaveTool" class="btn btn-primary">Save</button>
+                                        </div>
+                                    </div>
+                                   </form> 
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>
+
+                            <div id="placeholder-classification"></div>

@@ -1,0 +1,15 @@
+<% library.forEach(function(model) { %>
+<% var rs = transfer_items.where({transfer_id: model.id}) %>
+<tr>
+    
+    <td><%= moment(model.date).format('dddd MMMM DD, YYYY') %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<%= moment(model.date).fromNow() %>)</td>
+    <td style="text-align: center"><%= WM.getWarehouseLocation(model.warehouse_code) %></td>
+    <td style="text-align: center"><%= model.sender_name %></td>
+    <td style="text-align: center"><%= model.recipient_name %></td>
+    <td style="text-align: center"><%= model.noter_name %></td>
+    <td style="text-align: center"><%= TFM.getRP(model.id, '1') %></td>
+    <td style="text-align: center"><%= TFM.getRP(model.id, '0') %></td>
+    <td style="text-align: center"><%= rs.length %></td>
+    <td class="text-right"><a style="cursor: pointer" id="<%= model.id %>" data-toggle="popover" title="Teceivable tools">view items</a></td>
+</tr>
+<% }); %>

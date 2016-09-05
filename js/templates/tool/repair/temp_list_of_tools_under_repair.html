@@ -1,0 +1,12 @@
+<% library.forEach(function(model) { %>
+    <tr id="<%= model.id %>">
+      <td style="text-align: center"><%= model.tool_id %></td>
+      <td style="text-align: center"><%= ClassificationModule.getName(model.classification) %></td>
+      <td class="text-info" style="font-weight: bolder"><a href="#viewTool/<%= model.id %>"><%= model.model %></a></td>
+      <td style="text-align: center"><%= model.size %></td>
+      <td style="text-align: center"><%= model.unit %></td>
+      <td style="text-align: center"><%= model.serial_no %></td>
+      <td style="text-align: center"><%= model.remarks %></td>
+      <td style="text-align: center"><%= model.area_located %></td>
+    </tr>
+<% }); %>

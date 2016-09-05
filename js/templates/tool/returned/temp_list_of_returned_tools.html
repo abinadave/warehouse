@@ -1,0 +1,10 @@
+<% library.forEach(function(model) { %>
+<% var str = model.tool_id %>
+<% var res = str.split('-') %>
+  <tr>
+      <td><a href="#viewTool/<%= res[1] %>"><%= model.tool_id %></a></td>
+      <td><%= moment(model.date).format('dddd MMMM DD, YYYY') %> &nbsp;&nbsp;&nbsp;(<%= moment(model.date).fromNow() %>)</td>
+      <td><%= model.time %></td>
+      <td><%= model.warehousemen %></td>
+  </tr> 
+<% }); %>

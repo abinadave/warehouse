@@ -1,0 +1,21 @@
+<% library.forEach(function(model) { %>
+    <tr id="<%= model.id %>">
+      <% if(sessionStorage.getItem('usertype') == 1){ %>
+        <td class="to-hide" id="warehouse_code" style="text-align: center">
+        <a style="text-decoration: none" class="tooltipster" id="<%= model.warehouse_code %>" title="This is my link's tooltip message!"><%= model.warehouse_code %></a></td>
+      <% } %>
+      <td><%= model.tool_id %></td>
+      <td data-index="classification"><%= ClassificationModule.getName(model.classification) %></td>
+      <td class="text-info" data-index="model"><a class="tool_popovers" id="<%= model.id %>" data-toggle="popover" title="Tool photo" href="#viewTool/<%= model.id %>"><%= model.model %></a></td>
+      <td data-index="size"><%= model.size %></td>
+      <td data-index="unit"><%= model.unit %></td>
+      <td data-index="serial_no"><%= fn.ifEmpty(model.serial_no) %></td>
+      <td data-index="remarks"><%= fn.ifEmpty(model.remarks) %></td>
+      <td data-index="area_located"><%= model.area_located %></td>
+      <td data-index="shelf"><%= fn.ifEmpty(model.shelf) %></td>
+      <td data-index="row"><%= fn.ifEmpty(model.row) %></td>
+      <!-- <td><a href="#deleteTool/<%= model.id %>"><span class="glyphicon glyphicon-remove"></span></a></td> -->
+    </tr>
+<% }); %>
+
+

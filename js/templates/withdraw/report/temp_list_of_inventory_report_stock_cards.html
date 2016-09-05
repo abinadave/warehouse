@@ -1,0 +1,63 @@
+<div>
+    <div style="position: absolute; margin-top: -3px">
+      <img src="bootstrap/docs/ez.png" style="width: 80px; height 80px">
+    </div>   
+    <div style="margin-left: 80px;">
+      <p style="font-size: 14px; font-family: Harabara; margin-top: -4px">Ezjones Construction, Inc.</p>
+      <p style="font-size: 8px; margin-top: -4px">Sitio Buchasan, Brgy. Cawayan<br/>
+      Catarman N. Samar</p>
+    </div>
+</div>
+<p class="text-center" style="margin-top: -5px"><b>Inventory Report</b></p>
+<table class="table table-bordered table-condensed" style="font-size: 12px; margin-top: -9px">
+    <tr>
+       <th width="100" style="padding: 2px; vertical-align: middle; text-align: center">Date Prepared</th><td width="480"><%= moment().format('MMMM DD, YYYY dddd') %></td>
+       <th width="80" style="padding: 2px; vertical-align: middle; text-align: center">Location</th><td width="270"><%= self.getWarehouseName() %></td>
+       <th width="60" style="padding: 2px; vertical-align: middle; text-align: center">Page No.</th><td style="text-align: center; vertical-align: middle"><%= model.page_no %></td>
+    </tr>
+</table>
+<table class="table table-bordered table-condensed" style="font-size: 12px; margin-top: -12px">
+    <thead>
+      <tr>
+        <th width="450" style="padding: 2px; vertical-align: middle; text-align: center">Item Description</th>
+        <th width="150" style="padding: 2px; vertical-align: middle; text-align: center">Location</th>
+        <th style="padding: 2px; vertical-align: middle; text-align: center">Additional Description</th>
+        <th style="padding: 2px; vertical-align: middle; text-align: center" width="50">Running Balance</th>
+        <th style="padding: 2px; vertical-align: middle; text-align: center">Unit</th>
+        <th style="padding: 2px; vertical-align: middle; text-align: center" width="50">Actual Running Balance</th>
+        <th width="50" style="padding: 2px; vertical-align: middle; text-align: center">Unit</th>
+      </tr>
+    </thead>
+    <tbody>
+       <% library.forEach(function(model) { %>
+          <tr>
+            <td style="padding: 2px"><%= model.name %></td>
+            <td style="padding: 2px; text-align: center"><%= model.area %>, <%= model.shelf %>, <%= model.row %></td>
+            <td style="padding: 2px"><%= model.add_desc %></td>
+            <td style="padding: 2px; text-align: center"><%= model.running_bal %></td>
+            <td style="padding: 2px; text-align: center"><%= model.unit.toUpperCase() %></td>
+            <td style="padding: 2px"></td>
+            <td style="padding: 2px"></td>
+          </tr>
+       <% }) %>
+    </tbody>
+</table>
+
+<table class="table table-bordered table-condensed" style="font-size: 12px; margin-top: -10px; page-break-after: always">
+    <tr>
+        <td style="padding: 2px; vertical-align: middle; text-align: center" width="80"><b>Prepare by</b> (Name & Sig)</td>
+        <td style="width: 28%; font-style:italic; text-align: center; vertical-align: middle"><%= sessionStorage.getItem('name') %></td>
+        <td style="padding: 2px; vertical-align: middle; text-align: center" width="80"><b>Noted by</b> (Name & Sig)</td>
+        <td></td>
+        <td style="padding: 2px; vertical-align: middle; text-align: center" width="80"><b>Checked by</b> (Name & Sig)</td>
+        <td></td>
+    </tr>
+    <tr>
+       <td colspan="6" style="padding: 2px; vertical-align: middle; text-align: center">
+          <b>Form No.</b> FM-WHS-04 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <b>Revision No.</b> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <b>Eff. Date</b> August 20, 2016
+       </td>
+    </tr>
+</table>
+<hr>

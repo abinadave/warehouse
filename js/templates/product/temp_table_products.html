@@ -1,0 +1,96 @@
+
+<div style="margin-top: 15px; margin-left: -15px" class="panel panel-info" >
+    <div class="panel-footer bg-info">
+        checkout
+        <% if(sessionStorage.getItem('usertype') != 1){ %>
+                <a href="#viewCart" class="btn btn-primary btn-xs" >receiving &nbsp;<span id="badge-receiving" class="badge">0</span></a>
+                <a href="#viewPullout" class="btn btn-danger btn-xs" style="margin-left: 10px">Withdraw &nbsp;<span id="badge-withdraw" class="badge">0</span></a>
+                <a href="#borrowItem" class="btn btn-success btn-xs" style="margin-left: 10px">Borrower &nbsp;<span id="badge-borrower" class="badge">0</span></a>
+                <a style="margin-right: 10px; text-decoration: none; cursor: pointer"  class="text-success pull-right" id="btnCreateStockCards" onclick="$('#modalAddProduct').modal('show')"> / &nbsp;&nbsp; <b>Add</b></a>
+                <a style="margin-right: 10px; text-decoration: none; cursor: pointer" id="update-product" class="text-info pull-right"><b>Edit</b> </a>
+        <% } %>
+       <a href="#itemReports" class="pull-right" style="margin-right: 10px; text-decoration: none"> <b>Reports</b> / </a>
+    </div>
+</div>
+
+      <div class="panel panel-default" style="margin-top: 15px; margin-left: -15px" id="panel-stock-cards">
+
+                        <div class="panel-heading">
+                             Stock cards
+                             <div class="pull-right">
+                                <a href="#stockCardInventoryReport"><b>Inventory Report </b></a> &nbsp; / &nbsp;
+                                <a href="#stockCardInventoryReportWithdrawalReceiving"><b>Stock Card Report </b></a>
+                             </div>
+                        </div>  
+
+                         <div class="" style="margin-top: 15px; margin-left: 15px">
+                             <div id="div-admin-side" style="display: inline">
+                                        Choose Warehouse: <label>
+                                            <select class="form-control" id="display-by-warehouse-admin" style="width: auto">
+                                                <option>Selection</option>
+                                            </select>
+                                        </label> &nbsp;&nbsp;||&nbsp;&nbsp;
+                                      </div>  
+                                      
+                            <input id="search-product" type="text" class="form-control pull-right" style="width: 220px; margin-right: 30px; border-radius: 16px" placeholder="Search for stock cards"/>
+                            Category <select id="products-display-by-category" class="form-control" style="width: 200px; display: inline">
+                                <option>Select all</option>
+                            </select>
+
+                            <a id="btnBorrowItem" style="cursor: pointer; margin-left: 20px"><span class="glyphicon glyphicon-minus"></span> borrow</a>
+                            <a id="btnReceiveItem" style="cursor: pointer; margin-left: 10px"><span class="glyphicon glyphicon-plus"></span> receive </a>
+                            <a id="btnPulloutItem" style="cursor: pointer; padding-right: 50px"><span class="glyphicon glyphicon-minus"></span> pull out </a>
+                            
+                            item/s <span class="badge"><b id="num-of-stocks">..</b></span>
+
+                         </div>
+                                                                                 
+                        <div class="panel-body">
+                            <div class="table-responsive" style="overflow: auto; font-size: 12px">
+                                <table style="width: 1800px" class="table table-hover table-bordered" id="table-products">
+                                    <thead>
+                                        <tr style="cursor: pointer" id="tr-product">
+                                            
+                                            <th id="id" style="text-align: center">Stock ID</th>
+                                            <th id="category">Classification</th>
+                                            <th id="name">Item</th>
+                                            <th id="running_bal" style="text-align: center">Running Balance</th>
+                                            <th id="reorder_point" style="text-align: center">Re-order point</th>
+                                            <th class="text-center" id="area">Area</th>
+                                            <th id="shelf" style="text-align: center">Shelf</th>
+                                            <th id="row" style="text-align: center">Row</th>
+                                            
+                                            <th id="unit">Unit</th>
+                                            <th id="add_desc">Additional description</th>
+                                            
+                                        </tr>
+                                    </thead>
+
+                                    <tbody id="list-of-products">
+                                         <tr>
+                                            <td colspan="12">Loading items......</td>
+                                         </tr>
+                                    </tbody>
+
+                                </table>
+                            </div>     
+                </div>
+
+            </div>
+ 
+<div id="modal-table-product">
+    <div id="modal-add-product"></div>
+    <div id="placeholder-modal-update-product"></div>
+    <div id="placeholder-modal-input-qty-cart"></div>
+    <div id="placeholder-modal-input-qty-pull-out"></div>
+    <div id="placeholder-modal-list-of-all-carts"></div>       
+    <div id="placeholder-modal-list-of-all-pullouts"></div> 
+    <div id="placeholder-modal-delivery-form"></div>       
+    <input type="hidden" name="hidden_pid" id="hidden-pid" />     
+    <input type="hidden" id="selected-category-prodcut" name="selected_category_product" />   
+    <div id="placeholder-modal-show-all-receive-items"></div>
+    <div id="placeholder-modal-withdraw-items"></div>
+    <div id="placeholder-modal-table-deliver-items"></div>
+    <div id="placeholder-modal-stock-card-inventory-report"></div>
+    <div id="placeholder-all-stock-card-r-w-report"></div>
+</div>

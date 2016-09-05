@@ -1,0 +1,30 @@
+
+   <% if(model.file == 1){ %>
+             <li class="right clearfix">
+              <small class=" text-muted">
+                          <i class="fa fa-clock-o fa-fw"></i> <%= moment(model.time).fromNow() %></small>
+                      <strong class="pull-right primary-font"><%= model.name %></strong>
+              <div class="chat-body clearfix">
+                  <div class="header">
+            
+                  </div>
+                  <p>
+                     <a style="cursor: pointer" id="download-file-<%= model.id %>"><%= model.chat %></a>
+                  </p>
+              </div>
+           </li>
+    <% }else { %>
+           <li class="right clearfix">
+             <small class=" text-muted">
+                         <i class="fa fa-clock-o fa-fw"></i> <%= moment(model.time).fromNow() %></small>
+                     <strong class="pull-right primary-font text-info">me</strong>
+             <div class="chat-body clearfix">
+                 <div class="header">
+            
+                 </div>
+                 <p>
+                     <%= model.chat %>
+                 </p>
+             </div>
+          </li>
+    <% } %> 

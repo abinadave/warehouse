@@ -1,0 +1,64 @@
+                            <div class="modal fade" id="modalAddInitialTool" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <form id="form-add-initial-tool">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="myModalLabel">Add Initial tool (No receiving report)</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                              <label>Tool id
+                                                      <input type="text" class="form-control" name="tool_id" id="tool-id">
+                                              </label>
+                                              <label>Classification<br/>
+                                                     <input type="text" class="form-control" id="search-classification" style="height: 33px; width: 220px">
+                                                 </label>
+                                                 
+                                                 <input type="hidden" name="classification" id="hidden-classification">
+                                              <label>Model
+                                                      <input type="text" class="form-control" name="model" id="model">
+                                                 </label>
+
+                                                 <label>Size
+                                                      <input type="text" class="form-control" name="size" id="size">
+                                                 </label>
+
+                                                 <label>Serial no.
+                                                      <input type="text" class="form-control" name="serial_no" id="serial-no">
+                                                 </label>
+
+                                                 <label>Remarks
+                                                      <input type="text" class="form-control" name="remarks" id="remarks">
+                                                 </label>
+
+                                                 <label>Area Located
+                                                      <input id="hidden-area" type="hidden" name="area_located">
+                                                      <input type="text" class="form-control" id="prod-area" style="height: 33px; width: 213px">
+                                                 </label>
+
+                                                 <label>Shelf
+                                                      <input id="hidden-shelf" type="hidden" name="shelf">
+                                                      <input type="text" class="form-control" id="prod-shelf" style="height: 33px; width: 213px">
+                                                 </label>
+
+                                                 <label>Row
+                                                      <input id="hidden-row" type="hidden" name="row">
+                                                      <input type="text" class="form-control" id="prod-row" style="height: 33px; width: 213px">
+                                                 </label>
+
+                                                 <label>Unit
+                                                      <input type="text" class="form-control unit-autocomplete" name="unit" id="unit" style="width: 213px">
+                                                 </label> 
+
+                                                
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Save tool</button>
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                   </form>
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>

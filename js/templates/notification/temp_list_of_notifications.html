@@ -1,0 +1,10 @@
+<% library.forEach(function(model) { %>
+    <li>
+       <a href="<%= model.href %>">
+            <div>
+                <i class="<%= model.icon %>"></i> <%= model.message %>
+                <span class="pull-right text-muted small"><%= moment(model.date).fromNow() %></span>
+            </div>
+        </a>
+    </li>
+<% }); %>

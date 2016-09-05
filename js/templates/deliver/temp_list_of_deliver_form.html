@@ -1,0 +1,24 @@
+<% library.forEach(function(model) { %>
+   <tr style="text-align: center" id="<%= model.id %>">
+      <% if(dfm.ifBelongsHere(model) == true){ %>
+          <td class="remove-this">
+               <a id="receive-<%= model.id %>" style="cursor:pointer"><span class="glyphicon glyphicon-circle-arrow-up"></span></a>
+          </td>
+          <td class="remove-this">
+                <a id="print-<%= model.id %>" style="cursor:pointer"s<span class="glyphicon glyphicon-print"></span></a>
+          </td>
+       <% }else { %>
+          <td class="remove-this" colspan="2"><a style="cursor: pointer" id="print-<%= model.id %>"><span class="glyphicon glyphicon-print"></span></a></td>
+      <% } %>
+      <td><%= moment(model.date).format('dddd MMMM DD, YYYY') %> <span class="remove-this">(<%= moment(model.date).fromNow() %>)</span></td>
+      <td><%= model.time %></td>
+      <td><%= model.from_location %></td>
+      <td><%= model.no %></td>
+      <td><%= model.to_person %></td>
+      <td><%= model.to_location %></td>
+      <td><%= model.prepared_by %></td>
+      <td class="remove-this"><%= WarehousemenModule.getUsertype(model.prepared_by_position) %></td>
+      <td><%= model.delivered_by %></td>
+      <td class="remove-this"><%= model.delivered_by_position %></td>
+   </tr>
+<% }) %>

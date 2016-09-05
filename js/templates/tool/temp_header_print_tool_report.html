@@ -1,0 +1,30 @@
+<div style="font-size: 12px">
+      <div>
+       <div style="position: absolute; margin-top: -10px">
+          <img src="bootstrap/docs/ez.png" style="width: 80px; height: 80px">
+       </div>   
+       <div style="margin-left: 84px">
+          <h3>Ezjones Construction, Inc.</h3>
+          <small>Sitio Buchasan, Brgy. Cawayan<br/>
+          Catarman N. Samar</small>
+       </div>
+   </div>
+
+   <div style="margin-top: -40px" class="pull-right">
+      <div >
+           <span class="pull-right"><b><%= moment().format('dddd, MMMM DD, YYYY') %></b></span><br/>
+           <span><b>Inventory Location: 
+              <% if(sessionStorage.getItem('code') != 0){ %>
+                  <span><%= wm.getWarehouseLocation(sessionStorage.getItem('code')) %></span>
+              <% }else { %>
+                  <% if(tm.selectedWarehouse != 0){ %>
+                     <span><%= wm.getWarehouseLocation(tm.selectedWarehouse) %></span>
+                  <% }else { %>
+                     <span>All warehouse branches</span>
+                  <% } %>
+              <% } %>
+           </b></span><br/>
+           <span class="pull-right"><b><%= router.getCurrectHour() %></span>
+      </div>
+   </div>
+</div><br/>

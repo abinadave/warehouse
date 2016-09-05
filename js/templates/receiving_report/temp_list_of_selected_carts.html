@@ -1,0 +1,12 @@
+<% library.forEach(function(model) { %>
+  <tr style="text-align:center">
+     <td id="<%= model.id %>" class="edit-qty">
+          <%= model.qty %>
+     </td>
+     <td><%= ProductModule.getUnit(model.id) %></td>
+     <td><%= ProductModule.getName(model.id) %></td>
+     <td><%= model.remarks %></td>
+     <td><%= model.id %></td>
+     <td style="cursor: pointer"><a href="#removeCartFormTheList/<%= model.id %>"><span class="glyphicon glyphicon-remove-circle text-danger"></span></a></td>
+  </tr>
+<% }); %>

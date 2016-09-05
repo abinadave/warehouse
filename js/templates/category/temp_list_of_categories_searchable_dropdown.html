@@ -1,0 +1,11 @@
+<div style="overflow: scroll; max-height: 400px; min-width: 260px; font-size: 11px">
+<li class="list-group-item" id="<%= 0 %>">Select all</li>
+  <ul class="list-group">
+      <% ids.forEach(function(id) { %>
+          <% var model = categories.get(id) %>
+          <li class="list-group-item" id="<%= model.id %>"><%= model.get('name') %></li>
+      <% }); %>
+  </ul>
+
+</div>
+

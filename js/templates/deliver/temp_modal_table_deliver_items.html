@@ -1,0 +1,90 @@
+                            <div class="modal fade" id="modalTableDeliverItems" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" id="div-modalTabeDeliverItems" style="width: 700px">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <!-- <h4 class="modal-title" id="myModalLabel">Delivered Items</h4> -->
+                                        </div>
+                                        <div class="modal-body" id="print-delivery">
+
+                                          <div id="division-modal" >
+                                          
+                                              <div id="ezjones-image" style="position: absolute; margin-top: 0px">
+                                                 <img src="bootstrap/docs/ez.png" style="width: 80px; height: 80px">
+                                              </div>   
+                                              <div style="margin-left: 90px">
+                                                 <p  style="font-size: 12px" id="ezjones">Ezjones Construction, Inc.</p>
+                                                 <p style="font-size: 12px" >Sitio Buchasan, Brgy. Cawayan<br/>
+                                                 Catarman N. Samar</p>
+                                              </div>
+                                              <div class="pull-right" style="margin-top: -30px">
+                                                 <center style="font-size: 10px"><b>DR No.<br/>
+                                                 <span style="font-size: 10px" id="rr-no" class="text-danger"></span></b></center
+                                              </div>
+                                          </div><br/>
+
+                                            <div >
+                                               <div id="specific-name" style="display:inline-block; vertical-align:top; border: 2px solid red; border-radius: 2px; width: 150px; height: 20px; margin-bottom: 7px; text-align: center"></div>
+                                               <div style="display:inline-block; vertical-align:top; margin-left: 150px"><h5 style="font-size: 11px">Delivery Receipt</h5></div>
+                                            </div>
+                                            <table class="table table-hover table-bordered" style="font-size: 12px">
+                                               <tr>
+                                                   <th width="100">Date Issued</th>
+                                                   <td id="date-issued">-</td>
+                                                   <th width="100">Time Issued</th>
+                                                   <td id="time-issued">-</td>
+                                               </tr>
+                                               <tr>
+                                                   <th width="130">From (Location)</th>
+                                                   <td colspan="3" id="from-location">-</td>
+                                               </tr>  
+                                               <tr>
+                                                   <th width="100">To (Person)</th>
+                                                   <td id="to-person">-</td>
+                                                   <th width="100">To (Location)</th>
+                                                   <td id="to-location">-</td>
+                                               </tr>  
+                                            </table>
+
+                                            <table class="table table-hover table-bordered" style="font-size: 12px">
+                                               <thead>
+                                                   <tr>
+                                                       <th>Qty</th>
+                                                       <th>Unit</th>
+                                                       <th>Item Description</th>
+                                                       <th>Remarks/Purpose</th>
+                                                       <th>Stock ID</th>
+                                                   </tr>
+                                               </thead>
+                                               <tbody id="list-of-delivered-items-by-id"></tbody>
+                                            </table>
+
+                                            <table class="table table-hover table-bordered">
+                                                <tr>
+                                                    <th width="80">Prepared By</th>
+                                                    <td id="prepared-by"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Delivered By</th>
+                                                    <td id="delivered-by"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Received By</th>
+                                                    <td id="receive-by"></td>
+                                                </tr>
+                                            </table>  
+
+                                            <div id="slip-footer"></div>
+ 
+
+                                             <div style="page-break-before: always"></div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary" id="btnPrintDeliveryReceipt"><span class="glyphicon glyphicon-print" ></span> Print</button>
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>

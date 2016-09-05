@@ -1,0 +1,8 @@
+<% library.forEach(function(model) { %>
+  <tr>
+     <td style="text-align: center; padding: 2px; font-size: 9px"><%= model.qty %></td>
+     <td style="text-align: center; padding: 2px; font-size: 9px"><%= model.unit %></td>
+     <td style="text-align: center; padding: 2px; font-size: 9px" class="text-info"><a href="#viewTool/<%= model.tool_id %>"><%= model.name %></a></td>
+     <td style="text-align: center; padding: 2px; font-size: 9px"><%= model.tool_id %></td>
+  </tr>
+<% }); %>

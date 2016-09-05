@@ -1,0 +1,25 @@
+
+<% var ctr = 0%>
+<% library.forEach(function(model) { %>
+<% ctr++ %>
+
+  <tr id="<%= model.id %>" class="tooltip-bottom" data-toggle="popover" title="Returnables" style="page-break-after: always">
+      <td class="remove-this text-center"><a style="cursor: pointer" id="return-<%= model.id %>" ><span class="glyphicon glyphicon-plus"></span></a></td>
+      <td class="remove-this text-center"><a style="cursor: pointer" id="print-<%= model.id %>"><span class="glyphicon glyphicon-print"></span></a></td>
+      <td cellspacing="0" cellpadding="0"><%= moment(model.date).format('dddd MMMM DD, YYYY') %> 
+      <span class="remove-this">(<%= moment(model.date).fromNow() %>)</span></td>
+      <td class="text-center" cellspacing="0" cellpadding="0"><%= model.time %></td>
+      <td class="text-center" cellspacing="0" cellpadding="0"><%= model.no %></td>
+      <td class="text-center"><%= model.purpose %></td>
+      <td class="text-center"><%= model.borrowed_by %></td>
+      <td class="remove-this text-center"><%= model.borrowed_by_position %></td>
+      <td class="text-center"><%= model.issued_by %></td>
+      <td class="remove-this text-center"><%= model.issued_by_position %></td>
+      <td class="text-center"><%= model.noted_by %></td>
+      <td class="remove-this text-center"><%= model.noted_by_position %></td>
+  </tr>
+
+
+
+<% }); %>
+

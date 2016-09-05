@@ -1,0 +1,9 @@
+<% library.forEach(function(model) { %>
+  <tr>
+      <th style="text-align: center">1</th>
+      <th style="text-align: center"><%= model.unit %></th>
+      <th style="text-align: center"><%= model.model %></th>
+      <th style="text-align: center"><%= model.tool_id %></th>
+      <th style="text-align: center"><a href="#removePawn/<%= model.id %>"><span class="glyphicon glyphicon-remove"></span></a></th>
+  </tr>
+<% }) %>

@@ -1,0 +1,34 @@
+<div><button type="button" id="btnPrint"><i class="fa fa-print"></i></button></div>
+
+<div id="tbl-to-print" style="padding: 10px">
+<div>
+    <div style="position: absolute; margin-top: -3px">
+      <img src="bootstrap/docs/ez.png" style="width: 80px; height 80px">
+    </div>   
+    <div style="margin-left: 80px;">
+      <p style="font-size: 14px; font-family: Harabara; margin-top: -4px">Ezjones Construction, Inc.</p>
+      <p style="font-size: 8px; margin-top: -4px">Sitio Buchasan, Brgy. Cawayan<br/>
+      Catarman N. Samar</p>
+    </div>
+</div>
+
+<h5 id="page-header" class="text-center" style="font-weight: bolder"></h5>
+<table class="table table-hover table-bordered table-condensed">
+    <thead>
+        <th class="text-center" width="200">CATEGORY</th>
+        <th>ITEM DESCRIPTION</th>
+        <th width="60" class="text-center">PULLOUT</th>
+        <th width="100" class="text-center">UNIT</th>
+    </thead>
+    <tbody>
+        <% library.forEach(function(model){ %>
+           <tr>
+               <td class="text-center"><%= self.findCategory(model) %></td>
+               <td><%= $.trim(model.name) %></td>
+               <td class="text-center"><%= model.qty %></td>
+               <td class="text-center"><%= model.unit %></td>
+           </tr>
+        <% }) %>
+    </tbody>
+</table>
+</div>

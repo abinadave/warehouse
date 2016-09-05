@@ -1,0 +1,38 @@
+                            <div class="modal fade" id="modalRepairedToolsToBeReturn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" id="div-modalRepairedToolsToBeReturn">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="myModalLabel">Tool to be return</h4>
+                                        </div>
+                                        
+                                        <div class="modal-footer">
+                                             <table class="table table-hover">
+                                                  <thead>
+                                                      <tr>
+                                                         <th>Tool id</th>
+                                                         <th>Model</th>
+                                                         <th>Unit</th>
+                                                         <th>Status</th>
+                                                      </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                      <tr class="text-info">
+                                                         <th><%= model.tool_id %></th>
+                                                         <th><%= model.name %></th>
+                                                         <th><%= model.unit %></th>
+                                                         <% if(model.status == 0){ %>
+                                                            <th><a class="<%= model.tool_id %>" id="<%= model.tool_id %>,<%= model.repair_id %>" style="cursor: pointer" class="text-danger">return</a></th>
+                                                         <% }else { %>
+                                                            <th><i class="fa fa-check"></i></th>
+                                                         <% } %>
+                                                      </tr>
+                                                  </tbody>
+                                             </table>
+
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>

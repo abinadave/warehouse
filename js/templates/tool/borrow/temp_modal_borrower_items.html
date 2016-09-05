@@ -1,0 +1,114 @@
+                            <div class="modal fade" id="modalBorrowerItems" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" style="width: 40%; margin-top: 2px" id="div-modalBorrowerItems">
+                                    <div class="modal-content" style="font-size: 8px"> 
+
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="myModalLabel"></h4>
+                                        </div>
+
+                                        <div class="modal-body" id="borrower-slip-resibo">
+                                        
+                                        <div style="">
+
+                                           <div style="float: left; margin-top: -2px">
+                                               <div style="position: absolute; margin-top: 4px">
+                                                  <img src="bootstrap/docs/ez.png" style="width: 80px; height 80px">
+                                               </div>   
+                                               <div style="margin-left: 80px">
+                                                  <p style="font-size: 12px">Ezjones Construction, Inc.</h5>
+                                                  <p style="margin-top: -8px; font-size: 12px">Sitio Buchasan, Brgy. Cawayan<br/>
+                                                  Catarman N. Samar</p>
+                                               </div>
+                                           </div> 
+                                           <div style="float: left; margin-top: 2px; border: 2px solid #ddd; padding: 12px; border-radius: 4px; font-size: 12px" class="pull-right">
+                                                <center>B.S No</center>
+                                                <p id="no"></p>
+                                           </div>
+                                         </div><br><br/>
+
+                                         <center style="margin-top: 45px" class=""><p  style="font-size: 12px; text-align: center">Borrower Slip</p>  </center>
+
+                                             <table class="table table-hover table-bordered" style="margin-top: -5px">
+                                           
+                                                  <tr>
+                                                       <th style="font-size: 12px; text-align: center; width: 102px; padding: 2px">Purpose</th>
+                                                       <td style="font-size: 12px; text-align: left; padding: 2px" id="purpose" colspan="3"></td>
+                                                   </tr> 
+                                                   <tr>
+                                                       <th style="font-size: 12px; text-align: center; width: 102px; padding: 2px">Date</th>
+                                                       <td style="font-size: 12px; text-align: left; padding: 2px" id="date"></td>
+                                                       <th style="font-size: 12px; text-align: center; width: 102px; padding: 2px">Time</th>
+                                                       <td style="font-size: 12px; text-align: left; padding: 2px" id="time"></td>
+                                                   </tr>
+                                            
+                                            </table>                                            
+                                        
+                                            <table class="table table-hover table-bordered" style="margin-top: -10px">       
+
+                                                   <tr>
+                                                       <th width="1" style="font-size: 12px; text-align: center; padding: 2px">Qty.</th>
+                                                       <th width="1" style="font-size: 12px; text-align: center; padding: 2px">Unit</th>
+                                                       <th style="font-size: 12px; text-align: center; padding: 2px">Item Description</th>
+                                                       <th style="font-size: 12px; text-align: center; padding: 2px" id="th-tool-id">Tool ID</th>
+                                                       <th style="font-size: 12px; text-align: center; padding: 2px">Date returned</th>
+                                                       <th style="font-size: 12px; text-align: center; padding: 2px">Time returned</th>
+                                                      
+                                                   </tr>
+                                            
+                                               <tbody id="list-of-borrow-items"></tbody>
+                                            </table>
+
+                                            <center style="margin-top: -15px"><span style="font-size: 12px">Borrowed the following tools in good condition</span></center>
+
+                                        <div>
+
+                                        <table class="table table-hover table-bordered" style="margin-top: 2px">
+
+                                           <tr>
+                                              <th style="text-align: center; font-size: 12px; padding: 2px" width="80">Borrowed by</th>
+                                              <td style="font-size: 12px; padding: 2px" id="borrowed_by"></td>
+                                           </tr>
+                                           <tr>
+                                              <th style="text-align: center; font-size: 12px; padding: 2px">Noted by </th>
+                                              <td style="font-size: 12px; padding: 2px" id="noted_by"></td>
+                                           </tr>
+                                           <tr>
+                                              <th style="text-align: center; font-size: 12px; padding: 2px">Issued by</th>
+                                              <td style="font-size: 12px; padding: 2px" colspan="3" id="issued_by"></td>
+                                           </tr>
+
+<!--                                           <tr>
+                                              <th style="padding: 2px" width="150">Borrowed by</th>
+                                              <td style="padding: 2px"><label id="borrowed-by">-</label> (<span id="borrowed-by-position"></span>)</td>
+                                             
+                                          </tr>
+                                          <tr>
+                                             <th width="150" style="padding: 2px">Issued by</th>
+                                             <td style="padding: 2px">
+                                                  <label id="issued-by">-</label> (
+                                                  <span id="issued-by-position"></span>)
+                                             </td>
+                                          </tr>
+                                           <tr>
+                                             <th width="150" style="padding: 2px">Noted by</th>
+                                             <td style="padding: 2px">
+                                                 <label id="noted-by">-</label> (
+                                                 <span id="noted-by-position"></span>)
+                                             </td>
+                                          </tr>
+ -->
+                                        </table>
+
+
+                                          </div>
+                                            
+                                        </div>
+                                        <div class="modal-footer" >                            
+                                            <button type="button" class="btn btn-primary" id="btnPrint">Print <i class="fa fa-print"></i> </button>
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>

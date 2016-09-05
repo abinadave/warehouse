@@ -1,0 +1,18 @@
+<% library.forEach(function(model) { %>
+<% console.log(model) %>
+<% if(!_.isEqual(model.id, ToolModule.getCurrentImageId()) && model.rand != ''){ %>
+   <% var thepath = 'images/tools/' + model.id +'-' +model.rand + '.jpg'; %>
+   <div id="<%= model.id %>" class="col-sm-3 col-xs-6 my-popovers" style="background-color: #dff0d8; padding: 15px" data-toggle="popover" title="Tool Detail">
+       <a href="#viewTool/<%= model.id%>" >
+           <img class="img-responsive img-thumbnail portfolio-item" src="<%= thepath %>" alt="" style="width: 330px; height: 200px">
+       </a>
+    </div>
+<% }else if(model.rand == ''){ %>
+   <div id="<%= model.id %>" class="col-sm-3 col-xs-6 my-popovers" style="background-color: #dff0d8; padding: 15px" data-toggle="popover" title="Tool Detail">
+       <a href="#viewTool/<%= model.id%>" >
+           <img class="img-responsive img-thumbnail portfolio-item" src="images/default_tool.png" alt="" style="width: 330px; height: 200px">
+       </a>
+    </div>
+<% } %>
+<% }); %>
+                    

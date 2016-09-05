@@ -1,0 +1,12 @@
+<% library.forEach(function(model) { %>
+   <tr id="<%= model.id %>">
+       <td>
+          <input type="checkbox" name="" value="<%= model.id %>" placeholder="" />
+       </td>
+       <td><%= model.name %> (<%= categories.findItemLength(model.id) %>)</td>
+       <td>
+          <a type="button" href="#update-category/<%= model.id %>" class="btn btn-primary btn-outline btn-circle"><span class="glyphicon glyphicon-edit"></span></i></a>
+       </td>
+   </tr>
+<% }); %>
+

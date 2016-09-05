@@ -1,0 +1,46 @@
+          
+                          <br/><form>Date range: 
+                             <label><input id="from" type="text" class="form-control input-sm" style="width: 200px" placeholder="From">  </label>   
+                             <label><input id="to" type="text" class="form-control input-sm" style="width: 200px" placeholder="To">   </label>  
+                             <button type="reset" class="btn btn-default btn-sm" id="btnReset" style="margin-right: 40px">reset</button>
+                             <button type="button" id="btnRefreshData" class="btn btn-default btn-sm"><i class="fa fa-refresh fa-1x"></i></button>
+                             <a type="reset" href="#availableTools" class="btn btn-default btn-sm" id="btnReset"><span class="glyphicon glyphicon-step-backward"></span></a>
+                             <button class="btn btn-sm btn-default" type="button" id="btnPrintTransferForm"><i class="fa fa-print"></i></button>
+                             
+                             <div class="input-group pull-right" style="width: 250px; margin-top: -60px; margin-bottom: 10px">
+                                  <input type="text" id="search-box" class="form-control" placeholder="Search for...">
+                                  <span class="input-group-btn">
+                                     <button class="btn btn-default" type="button">Search</button>
+                                  </span>
+                              </div>
+                          </form><br/>
+
+                            <div class="table-responsive" id="div-table-history-transferedtools">
+                                                                                  
+                             <table id="table-history-transferedtools" class="table table-hover table-bordered" style="font-size: 11px">
+                              <div id="header-report-placeholder-transfer"></div>
+                                  <thead style="cursor: pointer">
+                                      <tr>
+                                           <th class="remove-this" width="1" colspan="2">Action</th>
+                                           <th id="date">Date</th>
+                                           <th id="time">Time</th>
+                                           <th id="no">E.T.S No.</th>
+                                           <th id="to_warehouse">From</th>
+                                           <th id="to_warehouse_id">To</th>
+                                           <th id="sender_name">Sender</th>
+                                           <th class="remove-this" id="sender_position">Sender (Position)</th>
+                                           <th id="recipient_name">Recipient</th>
+                                           <th class="remove-this" id="recipient_name_position">Recipient (Position)</th>
+                                           <th id="noter_name">Noted by</th>
+                                           <th class="remove-this" id="noter_name_position">Noted by (Position)</th>
+                                       </tr>
+                                  </thead>
+                                  <tbody id="history-of-transfered-tool"></tbody>
+                             </table>
+
+                           </div>            
+
+                <div>
+                    <div id="modal-placeholder"></div>
+                </div>
+               

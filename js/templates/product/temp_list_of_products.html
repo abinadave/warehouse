@@ -1,0 +1,20 @@
+
+<% library.forEach(function(model) { %>
+    <tr id="<%= model.id %>">
+       <!-- <td><input type="checkbox" value="<%= model.id %>"></td> -->
+       <td data-index="id" style="text-align: center"><%= model.id %></td>
+       <td data-index="category"><%= categories.getName(model.category) %></td>
+       <td data-index="name">
+           <a id="<%= model.id %>" data-toggle="popover" class="popup" title="Item photo" style="font-weight: bold" href="#viewProductDetails/<%= model.id %>" ><%= model.name %></a>
+       </td>
+       <td data-index="running_bal" style="text-align: center"><%= model.running_bal %></td>
+       <td data-index="reorder_point" style="text-align: center"><%= model.reorder_point %></td>
+       <td data-index="area" style="text-align: center"><%= model.area %></td>
+       <td data-index="shelf" style="text-align: center"><%= model.shelf %></td>
+       <td data-index="row" style="text-align: center"><%= model.row %></td>
+       
+       <td data-index="unit"><%= model.unit.toLowerCase() %></td>
+       <td data-index="add_desc"><%= model.add_desc %></td>
+
+  </tr>
+<% }); %>

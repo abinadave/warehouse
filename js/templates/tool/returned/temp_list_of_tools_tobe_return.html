@@ -1,0 +1,15 @@
+<% library.forEach(function(model) { %>
+    <tr id="<%= model.id %>">
+      <td><%= model.tool_id %></td>
+      <td><%= ClassificationModule.getName(model.classification) %></td>
+      <td class="text-info" data-index="model"><a class="tool_popovers" id="<%= model.id %>" data-toggle="popover" title="Tool photo" href="#viewTool/<%= model.id %>"><%= model.model %></a></td>
+      <td data-index="size"><%= model.size %></td>
+      <td data-index="unit"><%= model.unit %></td>
+      <td data-index="serial_no"><%= fn.ifEmpty(model.serial_no) %></td>
+      <td data-index="remarks"><%= fn.ifEmpty(model.remarks) %></td>
+      <td data-index="area_located"><%= model.area_located %></td>
+      <td data-index="shelf"><%= fn.ifEmpty(model.shelf) %></td>
+      <td data-index="row"><%= fn.ifEmpty(model.row) %></td>
+      <!-- <td><a href="#deleteTool/<%= model.id %>"><span class="glyphicon glyphicon-remove"></span></a></td> -->
+    </tr>
+<% }); %>

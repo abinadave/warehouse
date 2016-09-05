@@ -1,0 +1,60 @@
+                            <div class="modal fade" id="modalShowAllReceivingItems" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" id="div-modalShowAllReceivingItems" style="width: 700px">
+
+                                    <div class="modal-content">
+                                        <div id="modal-content">
+                                        <div class="modal-header" >
+
+                                        </div>
+                                        <div class="modal-body" id="print-receivable">
+                                        
+                                            <div id="modalShowAllReceivingItems-header"></div>
+
+                                            <div>
+                                                <table class="table table-hover table-bordered" style="font-size: 12px; margin-top: -10px">
+                                                     <thead>
+                                                          <tr>
+                                                             <th width="1" style="text-align: center">Quantity</th>
+                                                             <th width="90" style="text-align: center">Unit</th>
+                                                             <th style="text-align: center">Item</th>
+                                                             <th>Remarks</th>
+                                                             <th width="90" style="text-align: center">Stock ID</th>
+                                                          </tr>
+                                                     </thead>
+                                                     <tbody id="list-of-receiving-items"></tbody>
+                                                </table>
+                                            </div>
+
+                                             <table class="table table-hover table-condensed table-bordered" 
+                                        style="margin-top: -10px">
+                                          <tr>
+                                              <th width="150">Received by</th>
+                                              <td><span id="received-by">-</span></td>
+                                             
+                                          </tr>
+                                          <tr>
+                                             <th width="150">Verified by</th>
+                                             <td>
+                                                  <span id="verifier">-</span> (
+                                                  <span id="position"></span>)
+                                             </td>
+                                          </tr>
+                                           
+
+                                        </table>
+
+                                        <div id="slip-footer"></div>
+
+
+                                        </div>
+                                        </div>
+                                        <div class="modal-footer" id="modalShowAllReceivingItems-footer">
+
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary" id="printReceivingReport"><span class="glyphicon glyphicon-print"></span> print</button>
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>

@@ -1,0 +1,44 @@
+<div>               
+                          <form style="padding: 17px">Date range:
+                               <label><input type="text" class="form-control" style="width: 200px" id="d-from" placeholder="From"></label>
+                               <label><input type="text" class="form-control" style="width: 200px" id="d-to" placeholder="To"></label> 
+                               <button type="reset" class="btn btn-sm btn-default" id="reset">reset</button>
+                                <a href="#products" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-step-backward"></span></a>
+                                 <button type="reset" class="btn btn-sm btn-default" id="btnRefreshDeliver"><i class="fa fa-refresh"></i></button>
+                               <button type="reset" class="btn btn-sm btn-default" id="btnPrint"><i class="fa fa-print"></i></button>
+ 
+                               <div class="input-group pull-right" style="width: 220px; margin-top: -60px">
+                                  <input type="text" id="search" class="form-control" placeholder="Search for...">
+                              </div>
+                           </form>
+                      
+                          <div class="table-responsive" style="overflow: auto; margin-top: 30px" id="div-table-delivery-reports">
+                            <div id="header-delivery-reports"></div>
+                            <table id="table-delivery-reports" class="table table-hover table-bordered" style="font-size: 12px">
+                                <thead style="cursor: pointer">
+                                    <tr>
+                                        <th class="remove-this" width="1" colspan="2"></th>
+                                        <th id="date" style="text-align: center">Date</th>
+                                        <th id="time" style="text-align: center">Time</th>
+                                        <th id="from_location" style="text-align: center">From (Location)</th>
+                                        <th id="no" style="text-align: center">DR No</th>
+                                        <th id="to_person" style="text-align: center">To (Person)</th>
+                                        <th id="to_location" style="text-align: center">To (Location)</th>
+                                        <th id="prepared_by" style="text-align: center">Prepared By (Name)</th>
+                                        <th class="remove-this" id="prepared_by_position" style="text-align: center">Prepared By (Position)</th>
+                                        <th id="delivered_by" style="text-align: center">Delivered By (Name)</th>
+                                        <th class="remove-this" id="delivered_by_position" style="text-align: center">Delivered By (Position)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="list-of-deliverforms" style="cursor: pointer"></tbody>
+                            </table>
+
+                           </div>   
+                       
+
+                   
+               
+               <div>
+                   <div id="placeholder-modal-table-deliver-items"></div>
+               </div>
+</div>                

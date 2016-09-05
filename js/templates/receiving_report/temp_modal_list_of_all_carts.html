@@ -1,0 +1,71 @@
+
+                         
+                            <div class="modal fade" id="modalListOfAllCarts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" style="width: 900px" id="div-modalListOfAllCarts">
+                                  
+                                  <form id="form-receive-item">
+
+                                    <div class="modal-content">
+                                        <div class="modal-header">           
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="myModalLabel">Receiving form</h4>
+                                        </div>
+
+                                        <div class="modal-body">  
+                                                    
+                                                    <% if(carts.isDelivered){ %>
+                                                        <label for="location">From (Location): 
+                                                           <input type="text" id="location" name="location_receive_from" class="form-control input-auto" placeholder="Location" style="width: 220px; height: 33px" readonly/>
+                                                        </label><br/>
+                                                    <% }else { %>
+                                                        <label>From (Supplier):
+                                                          <input type="text" class="form-control input-auto" id="supplier" name="receive_form"  placeholder="Supplier name" style="width: 210px; height: 33px"/>
+                                                        </label><br/>
+                                                    <% }  %>                 
+
+                                                    <label>Verified by:
+                                                        <input type="text" id="verified-by" name="verified_by" class="form-control" placeholder="Verified by" style="width: 220px; height: 33px"/>
+                                                    </label>
+                                                    
+                                                    <label>Position
+                                                        <input type="text" name="verifier_position" id="position" class="form-control" placeholder="Position" style="width: 210px; height: 33px"/>
+                                                    </label>
+
+                                                    <label class="pull-right" style="text-align: center; margin-top: -30px">RR No. 
+                                                         <br/><span class="text-info" id="cart-rr-no"></span>
+                                                    </label>
+
+                                                    <input type="hidden" name="cart_rr_no" id="hidden-cart-rr-no" />
+                                                         
+                                               <hr/>
+                                              <table class="table table-hover table-condensed table-bordered">
+
+                                                  <tr>
+                                                      <th style="text-align: center" width="100">Qty</th>
+                                                      <th style="text-align: center">Unit</th>
+                                                      <th style="text-align: center">Item Description</th>
+                                                      <th style="text-align: center">Remarks</th>
+                                                      <th style="text-align: center">Stock Id</th>
+                                                      <th width="1" style="text-align: center"></th>
+                                                  </tr>
+
+                                                  <tbody id="list-of-selected-carts"></tbody>
+
+                                              </table>
+
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <div id="output-modal-list-of-all-carts" style="position: absolute; display: none"></div>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="submit" id="btnReceiveItems" class="btn btn-primary">Receive Items</button>
+                                        </div>
+
+                                        </form> 
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
+                          
+                       
