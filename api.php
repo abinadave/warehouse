@@ -1,10 +1,23 @@
 <?php
-session_start();
+
 	require 'sb-admin2/Slim/Slim/Slim.php';
     require 'class/class.functions.php';
     
 	\Slim\Slim::registerAutoloader();
 	$app = new \Slim\Slim();
+
+	$app->get('/withdraw_form', function() use ($app){
+		include_once 'class/withdraw.php';
+		$withdraw = new Withdraw();
+		echo json_encode($withdraw->getForms());
+	});
+
+	$app->get('/receive_form', function() use ($app){
+		include_once 'class/class.receive_forms.php';
+		$receive_form = new Receive_forms();
+		$data = $receive_form::getReceivingForms();
+		echo json_encode($data);
+	});
 
 	$app->get('/warehouse', function() use ($app){
 		$model = new Model();

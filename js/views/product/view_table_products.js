@@ -12,7 +12,6 @@
         var ViewProducts = Backbone.View.extend({
         
                 initialize: function(){
-                    //console.log('View initialized..');
                     this.spinner = "<i class='fa fa-circle-o-notch fa-spin fa-fw'></i><span class='sr-only'>Loading...</span>";
                 },
         

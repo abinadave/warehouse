@@ -1,4 +1,5 @@
 <?php
+session_start();
 	/**
 	* 
 	*/
@@ -139,9 +140,10 @@
 		}
 
 
-		public static function getReceivingForms($code){
+		public static function getReceivingForms(){
+			$code = $_SESSION['code'];
 			if (!empty($code)) {
-				$sql = "SELECT * FROM receive_form WHERE warehouse_code = ?";
+				$sql = "SELECT * FROM receive_form WHERE warehouse_code = ? ORDER BY id DESC";
 				$query = self::$handler->prepare($sql);
 				$query->execute(array($code));
 				if ($query) {

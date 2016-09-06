@@ -58,7 +58,6 @@ define(
                     })).then(function() {
                         $.when(withdraw_forms.fetch({
                            silent: true,
-                           url: 'api.php/get_order_by/withdraw_form/id/desc'
                         })).then(function() {
                             require(['views/withdraw/view_list_of_withdrawalslips'], 
                               function(SubviewListOfWithdrawSlip){

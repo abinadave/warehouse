@@ -42,7 +42,8 @@ define(
                 $(function() {
                     $.when(receive_items.fetch({silent: true})).then(function(arguments) {
                         $.when(receive_forms.fetch({silent: true,
-                            url: 'api.php/get_order_by/receive_form/id/desc'
+                            /*url: 'api.php/get_order_by/receive_form/id/desc' */
+                            url: 'api.php/receive_form'
                         })).then(function(arguments) {
                             require(['views/receiving_report/view_list_of_receiving_forms'], 
                                 function(Subview){

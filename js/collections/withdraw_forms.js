@@ -6,7 +6,7 @@ define(
 	],  function(_, Backbone, Withdraw_form) {
    
     var Withdraw_forms = Backbone.Collection.extend({
-
+        url: 'api.php/withdraw_form',
     	model: Withdraw_form,
 
     	initialize: function(){
