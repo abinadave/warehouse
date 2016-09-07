@@ -14,11 +14,9 @@ define(
     	initialize: function(){
 
     		this.on('add', function(model){
-    			console.log('Warehouse added');
                 WarehouseModule.appendListOfWareHouseBranches();
     		});
     		this.on('remove', function(model){
-    			console.log('Warehouse removed');
                 WarehouseModule.appendListOfWareHouseBranches();
     		});
     	},
