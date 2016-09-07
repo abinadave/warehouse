@@ -37,6 +37,18 @@
                     var self = this;
 
                     $(function() {
+                        self.$el.find('#btnFilterBy').click(function(event) {
+                            var index = self.$el.find('#order-by').val(),
+                            type = self.$el.find('#type-by').val();
+
+                            var url = 'api.php/product/' +index+ '/' + type;
+                            products.fetch({silent: true,
+                                url: url
+                            });
+                        });
+                    });
+
+                    $(function() {
                         var output = '<tr><td style="font-size: 14px" colspan="12">'+self.spinner+' Loading items please wait....</td></tr>';
                         self.$el.find('tbody').html(output);
                     });

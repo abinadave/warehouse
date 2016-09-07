@@ -6,6 +6,10 @@
 	\Slim\Slim::registerAutoloader();
 	$app = new \Slim\Slim();
 
+	$app->get('/product/:index/:type', function($index, $type) use ($app){
+		/* some code here */
+	});
+
 	$app->get('/borrower_pform', function() use ($app){
 		include_once 'class/class.borrower_pforms.php';
 		$borrower_pforms = new Borrower_pforms();

@@ -10,6 +10,24 @@
                 <a style="margin-right: 10px; text-decoration: none; cursor: pointer" id="update-product" class="text-info pull-right"><b>Edit</b> </a>
         <% } %>
        <a href="#itemReports" class="pull-right" style="margin-right: 10px; text-decoration: none"> <b>Reports</b> / </a>
+
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          order by
+          <select id="order-by" class="form-control input-sm" style="width: 130px; display: inline">
+              <option value="id">Stock id</option>
+              <option value="name">Name</option>
+              <option value="running_bal">Running Bal</option>
+              <option value="reorder_point">Reorder point</option>
+          </select>
+
+        &nbsp;&nbsp;&nbsp;
+          Type
+          <select id="type-by" class="form-control input-sm" style="width: 120px; display: inline">
+              <option value="ASC">Ascending</option>
+              <option value="DESC" selected>Descending</option>
+          </select>
+          
+         <button class="btn btn-sm btn-default" id="btnFilterBy">Filter</button>
     </div>
 </div>
 
