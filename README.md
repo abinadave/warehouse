@@ -19,6 +19,7 @@
 4:31pm 9/7/2016
 
 # trim columns (stock cards)
+# UPDATE FOO set FIELD2 = TRIM(FIELD2);
 
 
 
