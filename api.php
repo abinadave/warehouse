@@ -10,6 +10,15 @@
 		/* some code here */
 	});
 
+	$app->post('/withdraw_item', function() use ($app){
+		$data = json_decode($app->request->getBody());
+		include 'class/withdraw.php';
+		$item =  (array) $data;
+		$withdraw = new Withdraw();
+		$model = new Model();
+		$withdraw->saveItem($item, $model);
+	});
+
 	$app->post('/withdraw_form', function() use ($app){
 		$data = json_decode($app->request->getBody());
 		$form =  (array) $data;

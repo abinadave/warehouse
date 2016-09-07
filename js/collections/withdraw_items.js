@@ -6,7 +6,7 @@ define(
 	],  function(_, Backbone, Withdraw_item) {
    
     var Withdraw_items = Backbone.Collection.extend({
-
+        url: 'api.php/withdraw_item',
     	model: Withdraw_item,
 
     	initialize: function(){

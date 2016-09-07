@@ -96,11 +96,21 @@ define(
                     warehouse_code: sessionStorage.getItem('code')
                 };
                 var withdraw_form = new Withdraw_form(form);
-                $.when(withdraw_forms.create(withdraw_form.attributes)).then((response) => {
-                    alert(1)
-                }, (errorResponse) => {
+                withdraw_forms.create(withdraw_form.attributes, {
+                    success: self.saveWithdrawItems
+                })              
+            },
 
-                })                
+            saveWithdrawItems(a, b, c){
+                var product = {};
+                extracts.forEach(function(model) {
+                    product = products.get(model.get('id'));
+                    withdraw_items.create({ withdraw_id: b.id, qty: model.get('qty'), remarks: model.get('remarks'), item: model.get('id'), name: product.get('name'), unit: product.get('unit') }, {
+                        success: function(a, b, c){
+                            console.log(b);
+                        }
+                    });
+                });
             },
 
             generateNo(linked_to){

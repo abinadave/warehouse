@@ -8,6 +8,15 @@ class Withdraw
 		self::$handler = Database::connect();
 	}
 
+	public function saveItem($item, $model)
+	{
+		include 'class.product.php';
+		$product = new Product();
+		$item['table'] = 'withdraw_item';
+		$result = $model::save($item);
+		echo json_encode($result);
+	}
+
 	public function getMaxId()
 	{
 		$sql = "SELECT MAX(id) as max_id FROM withdraw_form";
