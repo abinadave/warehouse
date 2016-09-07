@@ -14,6 +14,13 @@
 # trim all product name using this code = UPDATE 'table_name' SET 'field_name' = TRIM('field_name')
 
 
+======================================================
+
+4:31pm 9/7/2016
+
+# trim columns (stock cards)
+
+
 
 
 
