@@ -102,12 +102,13 @@ define(
             },
 
             saveWithdrawItems(a, b, c){
+                var self = this;
                 var product = {};
                 extracts.forEach(function(model) {
                     product = products.get(model.get('id'));
                     withdraw_items.create({ withdraw_id: b.id, qty: model.get('qty'), remarks: model.get('remarks'), item: model.get('id'), name: product.get('name'), unit: product.get('unit') }, {
                         success: function(a, b, c){
-                            console.log(b);
+                            product.save();
                         }
                     });
                 });

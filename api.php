@@ -10,6 +10,20 @@
 		/* some code here */
 	});
 
+	$app->put('/product/:id', function($id) use ($app){
+		$data = json_decode($app->request->getBody());
+		$product =  (array) $data;
+		unset($product['id']);
+		$model = new Model();
+		$rs = $model::update(array(
+			'table'  => 'products',
+			'values' => $product,
+			'prop'   => 'id',
+			'value'  => $data->id
+		));
+		echo json_encode(array('updated' => $rs));
+	});
+
 	$app->post('/withdraw_item', function() use ($app){
 		$data = json_decode($app->request->getBody());
 		include 'class/withdraw.php';
