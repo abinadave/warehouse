@@ -8,6 +8,7 @@
 
 	$app->get('/product/:index/:type', function($index, $type) use ($app){
 		/* some code here */
+		
 	});
 
 	$app->put('/product/:id', function($id) use ($app){
