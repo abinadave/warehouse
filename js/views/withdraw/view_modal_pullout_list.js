@@ -3,8 +3,9 @@ define(
 		'underscore',
 		'backbone',
 		'text!templates/withdraw/temp_modal_pullout_list.html',
-        'moment'
-	],  function(_, Backbone, template, moment) {
+        'moment',
+        'modules/withdrawform_module'
+	],  function(_, Backbone, template, moment, WFM) {
    
     var ViewPulloutList = Backbone.View.extend({
     
@@ -41,12 +42,10 @@ define(
                 jQuery(document).ready(function($) {
                     self.$el.find('#btnWithdrawOnly').click(function(event) {
                         event.preventDefault();
-                        require(['modules/withdrawform_module','moment'], function(module, moment){
-                            var date = moment().format("YYYY-MM-DD HH:mm:ss");
-                            var form = $('#form-save-withdraw-form-items').serialize();
-                            form += '&date='+ date;
-                            module.saveDB(form, 'w');                    
-                        });
+                        var date = moment().format("YYYY-MM-DD HH:mm:ss");
+                        var form = $('#form-save-withdraw-form-items').serialize();
+                        form += '&date='+ date;
+                        WFM.saveDB(form, 'w');                    
                     });
 
                     self.$el.find('#btnWithdrawAndDeliver').click(function(event) {

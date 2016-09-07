@@ -12,7 +12,6 @@ define(
     	model: Warehouse,
 
     	initialize: function(){
-
     		this.on('add', function(model){
                 WarehouseModule.appendListOfWareHouseBranches();
     		});
