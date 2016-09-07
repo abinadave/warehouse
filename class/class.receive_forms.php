@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 	/**
 	* 
 	*/
@@ -140,8 +140,8 @@ session_start();
 		}
 
 
-		public static function getReceivingForms(){
-			$code = $_SESSION['code'];
+		public static function getReceivingForms($session){
+			$code = $session['code'];
 			if (!empty($code)) {
 				$sql = "SELECT * FROM receive_form WHERE warehouse_code = ? ORDER BY id DESC";
 				$query = self::$handler->prepare($sql);
@@ -162,6 +162,28 @@ session_start();
 			
 		}
 
+		public function getFormsIncharge($code)
+		{
+			$sql = "SELECT * FROM receive_form WHERE warehouse_code = ? ORDER BY id DESC";
+			$query = self::$handler->prepare($sql);
+			$query->execute(array($code));
+			if ($query) {
+				$json = $query->fetchAll(PDO::FETCH_OBJ);
+				return $json;
+			}
+		}
+
+		public function getAllForms($code){
+			$sql = "SELECT * FROM receive_form ORDER BY id DESC";
+			$query = self::$handler->prepare($sql);
+			$query->execute();
+			if ($query) {
+				$json = $query->fetchAll(PDO::FETCH_OBJ);
+				return $json;
+			}
+		}
+
+	
 
 	}
  ?>

@@ -1,5 +1,4 @@
 <?php
-
 	require 'sb-admin2/Slim/Slim/Slim.php';
     require 'class/class.functions.php';
     
@@ -64,10 +63,15 @@
 		echo json_encode($withdraw->getForms());
 	});
 
-	$app->get('/receive_form', function() use ($app){
+	$app->get('/receive_form/:usertype/:code', function($usertype, $code) use ($app){
 		include_once 'class/class.receive_forms.php';
 		$receive_form = new Receive_forms();
-		$data = $receive_form::getReceivingForms();
+		$data = '';
+		if ($usertype == 3) {
+			$data = $receive_form->getFormsIncharge($code);
+		}else {
+			$data =  $receive_form->getAllForms();
+		}
 		echo json_encode($data);
 	});
 
