@@ -8,7 +8,7 @@ define(
 	],  function(_, Backbone, Warehouse, WarehouseModule) {
    
     var Warehouses = Backbone.Collection.extend({
-        url: '/warehouse',
+        url: 'api.php/warehouse',
     	model: Warehouse,
 
     	initialize: function(){
