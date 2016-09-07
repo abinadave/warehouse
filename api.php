@@ -8,7 +8,9 @@
 
 	$app->get('/product/:index/:type', function($index, $type) use ($app){
 		/* some code here */
-		
+		include 'class/class.product.php';
+		$product = new Product();
+		$product->getByIndexType($index, $type);
 	});
 
 	$app->put('/product/:id', function($id) use ($app){

@@ -70,7 +70,7 @@ define(['underscore','backbone'], function(_, Backbone) {
 
     		validateProducts: function(el) {
     			$(el).on('validate', function(evt, newValue) {
-
+    				newValue = $.trim(newValue);
     				var index = $(this).attr('data-index');
     				
     				if (index == 'category') {

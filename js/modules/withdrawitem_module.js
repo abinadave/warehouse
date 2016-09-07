@@ -121,7 +121,6 @@ define(
             }else {
                 console.log('cant find id with: '+rid+' in withdrawforms')
             }
-            
         },
 
         appendImageWithdrawSlip: function(){

@@ -6,7 +6,7 @@
             'text!templates/product/temp_table_products.html',
             'modules/product_module',
             'views/withdraw/report/view_inventory_report_stock_cards',
-            'views/iso/view_modal_all_stock_card_receiving_withdrawal_report'
+            'views/iso/view_modal_all_stock_card_receiving_withdrawal_report',
         ],  function(_, Backbone, template, ProductModule, SubviewModalReport, SubviewAllStockCardReport) {
        
         var ViewProducts = Backbone.View.extend({
@@ -38,13 +38,25 @@
 
                     $(function() {
                         self.$el.find('#btnFilterBy').click(function(event) {
+                            var $btn = $(this);
                             var index = self.$el.find('#order-by').val(),
                             type = self.$el.find('#type-by').val();
-
+                            $btn.text('Filtering .....');
                             var url = 'api.php/product/' +index+ '/' + type;
-                            products.fetch({silent: true,
+                            $.when(products.fetch({silent: true,
                                 url: url
+                            })).then( (response) => {
+                                ProductModule.appendAllProducts();
+
+                                setTimeout(function() {
+                                    $btn.text('Filter');
+                                }, 300);
+                                
+                            }, (errorResp) => {
+
                             });
+                            
+                            
                         });
                     });
 
