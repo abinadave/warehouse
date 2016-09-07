@@ -88,12 +88,10 @@ define(
                                                     var myCollection = WithDrawItemModule.getItemsWhereidOf(id);
                                                     WithDrawItemModule.appendListOfWithDrawItem(myCollection);
                                                     WithDrawItemModule.appendWithDrawalDetails(id);
-                                                    myCollection.forEach(function(model) {
-                                                        console.log(model.attributes); 
-                                                    });
+                                                    
                                                     setTimeout(function() {
-                                                         $('#modalWithDrawItemTable').modal('show');
-                                                        // $('#modalWithDrawItemTable').find('#btnPrintWithdrawSlip').trigger('click');
+                                                        $('#modalWithDrawItemTable').modal('show');
+                                                        $('#modalWithDrawItemTable').find('#btnPrintWithdrawSlip').trigger('click');
                                                     }, 1000);
 
                                                 }else {
