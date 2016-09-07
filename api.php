@@ -6,6 +6,13 @@
 	\Slim\Slim::registerAutoloader();
 	$app = new \Slim\Slim();
 
+	$app->get('/borrower_pform', function() use ($app){
+		include_once 'class/class.borrower_pforms.php';
+		$borrower_pforms = new Borrower_pforms();
+		$forms = $borrower_pforms->getForms();
+		echo json_encode($forms);
+	});
+
 	$app->get('/withdraw_form', function() use ($app){
 		include_once 'class/withdraw.php';
 		$withdraw = new Withdraw();

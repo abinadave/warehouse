@@ -37,7 +37,7 @@ define(['underscore','backbone','text!templates/product/borrow/temp_table_borrow
                     })).then(function(arguments) {
                         $.when(borrower_pforms.fetch({
                             silent: true,
-                            url: 'api.php/get_order_by/borrower_pforms/id/desc'
+                            url: 'api.php/borrower_pform'
                         })).then(function(arguments) {
                             require(['views/tool/borrow/view_list_of_borrower_pforms'], function(Subview){
                                 var view = new Subview({

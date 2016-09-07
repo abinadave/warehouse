@@ -1,7 +1,7 @@
 define(['underscore','backbone','models/borrower_pform'], function(_, Backbone, Borrower_pform) {
    
     var Borrower_pforms = Backbone.Collection.extend({
-    
+        url: 'api.php/borrower_pform',
     	model: Borrower_pform,
     		
     	initialize: function(){
