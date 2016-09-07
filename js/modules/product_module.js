@@ -28,18 +28,11 @@ define(
     	
             fetchData: function(){
                 var self = this;
-                if (products.length) {
-                    ProductModule.populateAll();
-                   
-                }else {
-                    $.getJSON('ajax/select/get_products.php',  function(json, textStatus) {
-                    }).success(function(json){
-                        json.forEach(function(model) {
-                           ProductModule.insert(model, 1);
-                        });
-                     self.populateAll();    
-                    });
-                }
+                $.when(products.fetch({silent: true})).then( () => {
+                    self.populateAll();   
+                }, () => {
+                    console.log('failed');
+                });  
             },
 
             callbackRows: function(value){

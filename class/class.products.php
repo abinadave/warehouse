@@ -109,7 +109,7 @@ session_start();
 					return $json;
 				}
 			}else {
-				$sql = "SELECT * FROM products WHERE warehouse_code = ?";
+				$sql = "SELECT * FROM products WHERE warehouse_code = ? ORDER BY id DESC";
 				$query = self::$handler->prepare($sql);
 				$query->execute(array($_SESSION['code']));
 				if ($query) {
@@ -144,7 +144,6 @@ session_start();
 		}
 
 		public function update(){
-			
 			if (isset(self::$id)) {
 				$sql = "UPDATE products SET 
 					category = ?, 

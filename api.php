@@ -42,12 +42,10 @@
 	});
 
 	$app->get('/product', function() use ($app){
-		include_once 'class/class.database.php';
-		$handler = Database::connect();
-		$sql = "SELECT * FROM products ORDER BY id DESC";
-		$query = $handler->query($sql);
-		$rows = $query->fetchAll(PDO::FETCH_OBJ);
-		echo json_encode($rows);
+		include 'class/class.products.php';
+		$products = new Products();
+		$data = $products::get_products();
+		echo json_encode($data);
 	});
 
 	$app->get('/receive_item', function() use ($app){
