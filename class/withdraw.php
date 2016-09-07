@@ -8,6 +8,14 @@ class Withdraw
 		self::$handler = Database::connect();
 	}
 
+	public function getMaxId()
+	{
+		$sql = "SELECT MAX(id) as max_id FROM withdraw_form";
+		$query = self::$handler->query($sql);
+		$row = $query->fetch(PDO::FETCH_OBJ);
+		echo json_encode($row);
+	}
+
 	public function getForms()
 	{
 		$code = $_SESSION['code'];

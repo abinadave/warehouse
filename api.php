@@ -10,6 +10,21 @@
 		/* some code here */
 	});
 
+	$app->post('/withdraw_form', function() use ($app){
+		$data = json_decode($app->request->getBody());
+		$form =  (array) $data;
+		$form['table'] = 'withdraw_form';
+		$model = new Model();
+		$response = $model::save($form);
+		echo json_encode($response);
+	});
+
+	$app->get('/withdraw_form/get_max_id', function() use ($app){
+		include 'class/withdraw.php';
+		$withdraw = new Withdraw();
+		$withdraw->getMaxId();
+	});
+
 	$app->get('/borrower_pform', function() use ($app){
 		include_once 'class/class.borrower_pforms.php';
 		$borrower_pforms = new Borrower_pforms();

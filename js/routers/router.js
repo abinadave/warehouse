@@ -643,21 +643,6 @@ function($, Backbone, _, mainView, AccountModule, ProductModule, WarehouseModule
         		    ExtractModule.appendListOfPullouts();
         		    WM.initAutocomplete('#linked-to').initSystemUsersAutocomplete('#requested-by');
         		    fn.initUsertypes('#position-withdraw');
-        		    
-        		    var jobOrder = [];
-        		    withdraw_forms.forEach(function(model) {
-        		    	if ($.isNumeric(model.get('linked_to'))) {
-        		    		jobOrder.push(parseInt(model.get('linked_to')));
-        		    	};
-        		    });
-        		    
-        		    if (jobOrder.length) {
-        		    	$('#linked-to').val(_.max(jobOrder) + 1);
-        		    }else {
-        		    	$('#linked-to').val(1);
-        		    }
-        		    
-               
         		});
         	}else {
         		this.alertify_error('0 item was selected');

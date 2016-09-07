@@ -14,7 +14,6 @@ define(
     	},
 
     	defaults: {
-    	    id: 0,
     	    linked_to: '',
     	    no: 0,
     	    requested_by: 0,
