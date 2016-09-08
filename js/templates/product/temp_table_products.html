@@ -2,8 +2,14 @@
 <div style="margin-top: 15px; margin-left: -15px" class="panel panel-info" >
     <div class="panel-footer bg-info">
         
-       <a href="#itemReports" class="pull-right" style="margin-right: 10px; text-decoration: none"> <b>Reports</b> / </a>
+       <% if(Number(sessionStorage.getItem('usertype')) === 3){ %>
 
+           <a style="margin-right: 10px; text-decoration: none; cursor: pointer"  class="text-success pull-right" id="btnCreateStockCards" onclick="$('#modalAddProduct').modal('show')"> / <b>Add</b></a>
+           <a style="margin-right: 10px; text-decoration: none; cursor: pointer" id="update-product" class="text-info pull-right"><b>Edit</b> </a>
+       <% } %>
+
+       <a href="#itemReports" class="pull-right" style="margin-right: 10px; text-decoration: none"> <b>Reports</b> / </a>
+       
        Order by
           <select id="order-by" class="form-control input-sm" style="width: 130px; display: inline">
               <option value="id">Stock id</option>
@@ -18,7 +24,7 @@
               <option value="ASC">Ascending</option>
               <option value="DESC" selected>Descending</option>
           </select>
-          
+          &nbsp;&nbsp;&nbsp;
          <button class="btn btn-sm btn-default" id="btnFilterBy">Filter</button>
     </div>
 </div>
@@ -27,12 +33,10 @@
 
                         <div class="panel-heading">
                              <% if(sessionStorage.getItem('usertype') != 1){ %>
-                <a href="#viewCart" class="btn btn-primary btn-xs" >receiving &nbsp;<span id="badge-receiving" class="badge">0</span></a>
-                <a href="#viewPullout" class="btn btn-danger btn-xs" style="margin-left: 10px">Withdraw &nbsp;<span id="badge-withdraw" class="badge">0</span></a>
-                <a href="#borrowItem" class="btn btn-success btn-xs" style="margin-left: 10px">Borrower &nbsp;<span id="badge-borrower" class="badge">0</span></a>
-                <a style="margin-right: 10px; text-decoration: none; cursor: pointer"  class="text-success pull-right" id="btnCreateStockCards" onclick="$('#modalAddProduct').modal('show')"> / &nbsp;&nbsp; <b>Add</b></a>
-                <a style="margin-right: 10px; text-decoration: none; cursor: pointer" id="update-product" class="text-info pull-right"><b>Edit</b> </a>
-        <% } %>
+                                <a href="#viewCart" class="btn btn-primary btn-xs" >receiving &nbsp;<span id="badge-receiving" class="badge">0</span></a>
+                                <a href="#viewPullout" class="btn btn-danger btn-xs" style="margin-left: 10px">Withdraw &nbsp;<span id="badge-withdraw" class="badge">0</span></a>
+                                <a href="#borrowItem" class="btn btn-success btn-xs" style="margin-left: 10px">Borrower &nbsp;<span id="badge-borrower" class="badge">0</span></a>
+                             <% } %>
                              <div class="pull-right">
                                 <a href="#stockCardInventoryReport"><b>Inventory Report </b></a> &nbsp; / &nbsp;
                                 <a href="#stockCardInventoryReportWithdrawalReceiving"><b>Stock Card Report </b></a>
