@@ -46,6 +46,7 @@ define(['underscore','backbone',
                             router.alertify_error('No withdraw item was found from: ' +d1 + ' to: ' +d2);
                         }else {
                             var collection = self.createReport(found);
+                            console.log(collection);
                             self.appendList(collection);
                         }
                     });
@@ -65,7 +66,7 @@ define(['underscore','backbone',
                         if (collection.where({item: item.get('item')}).length) {
                             var model = collection.where({item: item.get('item')}, true);
                             var qty = Number(model.get('qty')) + Number(item.get('qty'));
-                            model.set({qty: qty.toString()}, {silent: true});
+                            model.set({qty: qty}, {silent: true});
                         }else {
                             collection.add(item);
                         }
