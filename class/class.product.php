@@ -4,6 +4,7 @@ class Product
 	private static $handler;
 	function __construct()
 	{
+		require_once 'class.database.php';
 		self::$handler = Database::connect();
 	}
 
@@ -14,5 +15,26 @@ class Product
 		$rows = $query->fetchAll(PDO::FETCH_OBJ);
 		echo json_encode($rows);
 	}
+
+	public function fetch($usertype, $code)
+	{
+		if ($usertype == 3) {
+			return $this->getIncharge($code);
+		}else {
+			echo "FETCH ALL";
+		}
+	}
+	public function getIncharge($code)
+	{
+		require_once 'class.functions.php';
+		$model = new Model();
+		$sql = "SELECT * FROM products WHERE warehouse_code = ?";
+		$query = self::$handler->prepare($sql);
+		$query->execute(array($code));
+		$rows = $query->fetchAll(PDO::FETCH_ASSOC);
+		return $model->utf8_encode_all($rows);
+	}
+
+	
 
 }

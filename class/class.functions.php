@@ -10,6 +10,15 @@
 			# code...
 		}
 
+		public function utf8_encode_all($dat) // -- It returns $dat encoded to UTF8 
+		{ 
+			  if (is_string($dat)) return utf8_encode($dat); 
+			  if (!is_array($dat)) return $dat; 
+			  $ret = array(); 
+			  foreach($dat as $i=>$d) $ret[$i] = $this->utf8_encode_all($d); 
+			  return $ret; 
+		} 
+
 		public static function get($param){
 			$database = new Medoo();
 			$result = $database->get($param['table'], $param['column'], [

@@ -9,12 +9,16 @@ session_start();
 	{
 		public static $id, $name, $category, $area, $shelf, $row, $add_desc, $reorder_point, $running_bal, $unit, $handler;
 		private static $fn;
+
+
 		function __construct()
 		{
 			include_once 'class.functions.php';
 			self::$fn = new Model();
 			self::$handler = Database::connect();
 		}
+
+		
 
 		public function setId($value){
 			self::$id = $value;

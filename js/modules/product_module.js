@@ -28,10 +28,14 @@ define(
     	
             fetchData: function(){
                 var self = this;
-                $.when(products.fetch({silent: true})).then( () => {
+                var usertype = sessionStorage.getItem('usertype');
+                var code = sessionStorage.getItem('code');
+                $.when(products.fetch({silent: true,
+                    url: 'application.php/product_usertype_code/' + usertype + '/' + code
+                })).then( () => {
                     self.populateAll();   
                 }, () => {
-                    console.log('failed');
+                    alert('failed in fetching item (Stock cards)');
                 });  
             },
 
