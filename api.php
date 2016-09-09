@@ -9,7 +9,9 @@
 		/* some code here */
 		include 'class/class.product.php';
 		$product = new Product();
-		$product->getByIndexType($index, $type);
+		$model = new Model();
+		$items = $product->getByIndexType($index, $type, $model);
+		echo json_encode($items);
 	});
 
 	$app->put('/product/:id', function($id) use ($app){

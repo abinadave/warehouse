@@ -8,12 +8,12 @@ class Product
 		self::$handler = Database::connect();
 	}
 
-	public function getByIndexType($index, $type)
+	public function getByIndexType($index, $type, $model)
 	{
 		$sql = "SELECT * FROM products ORDER BY $index $type";
 		$query = self::$handler->query($sql);
-		$rows = $query->fetchAll(PDO::FETCH_OBJ);
-		echo json_encode($rows);
+		$rows = $query->fetchAll(PDO::FETCH_ASSOC);
+		return $model->utf8_encode_all($rows);
 	}
 
 	public function fetch($usertype, $code)
