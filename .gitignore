@@ -1,0 +1,10 @@
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+
+class.database.php
+medoo.php
+medoo.min.php
