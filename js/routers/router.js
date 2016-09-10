@@ -73,6 +73,7 @@ function($, Backbone, _, mainView, AccountModule, ProductModule, WarehouseModule
 			 'stockCardInventoryReport': 'printItemInventoryReport',
 			 'printInventoryReport': 'printStockCardReport',
 			 'stockCardInventoryReportWithdrawalReceiving': 'printStockCardReportWithdrawReceiving',
+			 'deleteStockCardForAdminOnly': 'removeStockCard',
 
 			 'backupDatabase': 'generateBackupFile',
 			 'borrowItem': 'showBorrowerItemForm',
@@ -1017,6 +1018,17 @@ function($, Backbone, _, mainView, AccountModule, ProductModule, WarehouseModule
 
         printStockCardReportWithdrawReceiving(){
         	$('#modal-all-stock-card-r-w-report').modal('show');	
+        },
+
+        removeStockCard(){
+        	this.navigate('products');
+        	var id = $('#hidden-pid').val();
+        	if (Number(sessionStorage.getItem('usertype')) === 1) {
+        		var item = products.get(id);
+        		item.destroy();
+        	}else {
+        		alert('Access Denied');
+        	}
         },
 
         showItemReports: function(){

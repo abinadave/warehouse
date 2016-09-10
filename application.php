@@ -7,8 +7,14 @@
     $app->get('/product_usertype_code/:usertype/:code', function($usertype, $code) use ($app){
         include_once 'class/class.product.php';
         $product = new Product();
-        $rows = $product->fetch($usertype, $code);
+        $rows = array();
+        if ($usertype == 3) {
+            $rows = $product->fetch($usertype, $code);
+        }else {
+            $rows = $product->fetchAll();
+        }
         echo json_encode($rows);
+        
     });
 
     $app->run();

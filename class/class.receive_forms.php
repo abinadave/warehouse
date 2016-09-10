@@ -173,10 +173,9 @@
 			}
 		}
 
-		public function getAllForms($code){
+		public function getAllForms(){
 			$sql = "SELECT * FROM receive_form ORDER BY id DESC";
-			$query = self::$handler->prepare($sql);
-			$query->execute();
+			$query = self::$handler->query($sql);
 			if ($query) {
 				$json = $query->fetchAll(PDO::FETCH_OBJ);
 				return $json;

@@ -3,7 +3,6 @@
     <div class="panel-footer bg-info">
         
        <% if(Number(sessionStorage.getItem('usertype')) === 3){ %>
-
            <a style="margin-right: 10px; text-decoration: none; cursor: pointer"  class="text-success pull-right" id="btnCreateStockCards" onclick="$('#modalAddProduct').modal('show')"> / <b>Add</b></a>
            <a style="margin-right: 10px; text-decoration: none; cursor: pointer" id="update-product" class="text-info pull-right"><b>Edit</b> </a>
        <% } %>
@@ -17,7 +16,6 @@
               <option value="running_bal">Running Bal</option>
               <option value="reorder_point">Reorder point</option>
           </select>
-
         &nbsp;&nbsp;&nbsp;
           Type
           <select id="type-by" class="form-control input-sm" style="width: 120px; display: inline">
@@ -40,7 +38,8 @@
                              <% } %>
                              <div class="pull-right">
                                 <a href="#stockCardInventoryReport"><b>Inventory Report </b></a> &nbsp; / &nbsp;
-                                <a href="#stockCardInventoryReportWithdrawalReceiving"><b>Stock Card Report </b></a>
+                                <a href="#stockCardInventoryReportWithdrawalReceiving"><b>Stock Card Report </b></a> &nbsp; / &nbsp;
+                                <a href="#deleteStockCardForAdminOnly"><b>Delete</b></a>
                              </div>
                         </div>  
 

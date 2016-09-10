@@ -8,6 +8,14 @@ class Product
 		self::$handler = Database::connect();
 	}
 
+	public function destroy($id)
+	{
+		$sql = "DELETE FROM products WHERE id = ?";
+		$query = self::$handler->prepare($sql);
+		$rs = $query->execute(array($id));
+		return $rs;
+	}
+
 	public function getByIndexType($index, $type, $model)
 	{
 		$sql = "SELECT * FROM products ORDER BY $index $type";
@@ -24,6 +32,17 @@ class Product
 			echo "FETCH ALL";
 		}
 	}
+
+	public function fetchAll()
+	{
+		require_once 'class.functions.php';
+		$model = new Model();
+		$sql = "SELECT * FROM products ORDER BY id DESC";
+		$query = self::$handler->query($sql);
+		$rows = $query->fetchAll(PDO::FETCH_ASSOC);
+		return $model->utf8_encode_all($rows);
+	}
+
 	public function getIncharge($code)
 	{
 		require_once 'class.functions.php';

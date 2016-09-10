@@ -5,6 +5,13 @@
 	\Slim\Slim::registerAutoloader();
 	$app = new \Slim\Slim();
 
+	$app->delete('/product/:id', function($id) use ($app){
+		require_once 'class/class.product.php';
+		$product = new Product();
+		$rs = $product->destroy($id);
+		echo json_encode(array('success' => $rs));
+	});
+
 	$app->get('/product/:index/:type', function($index, $type) use ($app){
 		/* some code here */
 		include 'class/class.product.php';
@@ -72,7 +79,7 @@
 		if ($usertype == 3) {
 			$data = $receive_form->getFormsIncharge($code);
 		}else {
-			$data =  $receive_form->getAllForms();
+			$data = $receive_form->getAllForms();
 		}
 		echo json_encode($data);
 	});
@@ -95,8 +102,9 @@
 	$app->get('/product', function() use ($app){
 		include 'class/class.products.php';
 		$products = new Products();
+		$model = new Model();
 		$data = $products::get_products();
-		echo json_encode($data);
+		echo json_encode($model->utf8_encode_all($data));
 	});
 
 	$app->get('/receive_item', function() use ($app){

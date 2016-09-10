@@ -35,7 +35,7 @@ define(
                 })).then( () => {
                     self.populateAll();   
                 }, () => {
-                    alert('failed in fetching item (Stock cards)');
+                    // alert('failed in fetching item (Stock cards)');
                 });  
             },
 
