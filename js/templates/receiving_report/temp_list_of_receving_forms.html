@@ -1,7 +1,8 @@
 <% library.forEach(function(model) { %>
 <% var duration = moment(model.date).fromNow() %>
    <tr id="<%= model.id %>">
-       <td class="remove-this"><a id="<%= model.id %>" data-placement="left" title="Click this to print"><span class="glyphicon glyphicon-print"></span></a></td>
+       <td class="remove-this"><a class="print" id="<%= model.id %>" data-placement="left" title="Click this to print"><span class="glyphicon glyphicon-print"></span></a></td>
+       <td class="remove-this" width="1"><a href="#deleteReceiveItems/<%= model.id %>"><span class="glyphicon glyphicon-trash text-danger"></span></a></td>
        <td style="text-align: center"><%= moment(model.date).format('dddd MMMM DD, YYYY ') %> <span class="remove-this">(<%= duration %>)</span></td>
        <td style="text-align: center"><%= model.time %></td>
        <td style="text-align: center"><%= (model.location_receive != '') ? model.location_receive : '-' %></td>

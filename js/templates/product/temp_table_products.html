@@ -38,8 +38,11 @@
                              <% } %>
                              <div class="pull-right">
                                 <a href="#stockCardInventoryReport"><b>Inventory Report </b></a> &nbsp; / &nbsp;
-                                <a href="#stockCardInventoryReportWithdrawalReceiving"><b>Stock Card Report </b></a> &nbsp; / &nbsp;
-                                <a href="#deleteStockCardForAdminOnly"><b>Delete</b></a>
+                                <a href="#stockCardInventoryReportWithdrawalReceiving"><b>Stock Card Report </b></a>
+                                <% if(Number(sessionStorage.getItem('usertype')) === 1){ %>
+                                    nbsp; / &nbsp;
+                                    <a href="#deleteStockCardForAdminOnly"><b>Delete</b></a>
+                                <% } %>
                              </div>
                         </div>  
 
@@ -110,7 +113,7 @@
     <input type="hidden" id="selected-category-prodcut" name="selected_category_product" />   
     <div id="placeholder-modal-show-all-receive-items"></div>
     <div id="placeholder-modal-withdraw-items"></div>
-    <div id="placeholder-modal-table-deliver-items"></div>
+    
     <div id="placeholder-modal-stock-card-inventory-report"></div>
     <div id="placeholder-all-stock-card-r-w-report"></div>
     <div id="placeholder-modal-withdrawitems"></div>

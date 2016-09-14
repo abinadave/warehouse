@@ -1,5 +1,10 @@
-<div style="margin-top: 20px">
+                      <div style="margin-top: 20px">
+                          
                           <form>Date range:
+
+                              <div class="input-group pull-right" style="width: 220px; margin-top: -60px">
+                                  <input type="text" id="search" class="form-control" placeholder="Search for...">
+                              </div>
 
                                <label><input type="text" class="form-control" style="width: 200px" id="from" placeholder="From"></label>
 
@@ -8,14 +13,9 @@
 
                                <a href="#products" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-step-backward" ></span></a>
                                <button type="reset" class="btn btn-sm btn-default" id="btnRefreshReports"><i class="fa fa-refresh"></i></button>
-                               <button type="reset" class="btn btn-sm btn-default" id="btnPrint"><i class="fa fa-print"></i></button>
-
-                              <div class="input-group pull-right" style="width: 220px; margin-top: -60px">
-                                  <input type="text" id="search" class="form-control" placeholder="Search for...">
-              
-                              </div>
-                               
-                           </form>
+                               <button type="reset" class="btn btn-sm btn-default" id="btnPrint"><i class="fa fa-print"></i></button>                               
+                           
+                          </form>
 
                             <div>
                            
@@ -24,7 +24,7 @@
                                    <table id="table-receiving-reports" class="table table-hover table-bordered" style="font-size: 12px; ">
                                          <thead style="cursor: pointer">
                                             <tr>
-                                              <th class="remove-this" width="1"></th>
+                                              <th class="remove-this" colspan="2" width="1"></th>
                                               <th id="date" style="text-align: center">Date</th>
                                               <th id="time" style="text-align: center">Time</th>
                                               <th id="location_receive" style="text-align: center">From</th>

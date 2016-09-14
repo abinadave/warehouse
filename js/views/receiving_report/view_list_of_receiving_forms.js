@@ -32,9 +32,7 @@ define(
                     RFM.formInit(self, self.collection.length);    
                 });
     	        return self;
-        	},
-    
-        	
+        	}	
     
     });
    

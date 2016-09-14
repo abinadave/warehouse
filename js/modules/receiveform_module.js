@@ -307,7 +307,7 @@ define(
                  });
 
                  $(function() {
-                     self.$el.find('a').click(function(event) {
+                     self.$el.find('a.print').click(function(event) {
                         var id = this.id;
 
                              require([

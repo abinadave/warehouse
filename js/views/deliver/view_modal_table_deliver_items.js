@@ -8,10 +8,8 @@ define(
     var ViewModalTableDeliverItems = Backbone.View.extend({
     
         	initialize: function(){
-        		//console.log('View initialized..');
+                this.render();
         	},
-
-            navigation: '',
     
         	tagName: 'div',
     
@@ -35,7 +33,6 @@ define(
     
         	init: function(){
                 var self = this;
-                
 
                 $(function() {
                     self.$el.find('th, td').css({

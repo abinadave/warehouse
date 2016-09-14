@@ -74,6 +74,7 @@ function($, Backbone, _, mainView, AccountModule, ProductModule, WarehouseModule
 			 'printInventoryReport': 'printStockCardReport',
 			 'stockCardInventoryReportWithdrawalReceiving': 'printStockCardReportWithdrawReceiving',
 			 'deleteStockCardForAdminOnly': 'removeStockCard',
+			 'deleteReceiveItems/:id': 'removeReceivedItems',
 
 			 'backupDatabase': 'generateBackupFile',
 			 'borrowItem': 'showBorrowerItemForm',
@@ -1029,6 +1030,11 @@ function($, Backbone, _, mainView, AccountModule, ProductModule, WarehouseModule
         	}else {
         		alert('Access Denied');
         	}
+        },
+
+        removeReceivedItems(id){
+        	this.navigate('itemReports');
+        	console.log(id);
         },
 
         showItemReports: function(){

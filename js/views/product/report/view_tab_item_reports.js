@@ -2,8 +2,9 @@ define(
 	[
 		'underscore',
 		'backbone',
-		'text!templates/product/report/temp_tab_item_reports.html'
-	],  function(_, Backbone, template) {
+		'text!templates/product/report/temp_tab_item_reports.html',
+        'views/deliver/view_modal_table_deliver_items'
+	],  function(_, Backbone, template, SubviewDeliveryReceipt) {
    
     var Subview = Backbone.View.extend({
     
@@ -33,6 +34,11 @@ define(
     
         	init: function(){
         		var self = this;
+
+                $(function() {
+                    new SubviewDeliveryReceipt();
+                });
+
                 $(function(){
                     //jQuery
                     self.onRender();
