@@ -38,12 +38,6 @@ define(
         	init: function(){
                 var self = this;
 
-                $(function() {
-                    self.$el.find('#print-receipt').click(function(event) {
-                        alert(1);
-                    });
-                });
-
                 $(function(){
                     self.$el.find('th, td').css({
                         padding: '2px',

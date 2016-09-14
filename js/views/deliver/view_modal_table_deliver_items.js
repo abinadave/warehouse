@@ -2,8 +2,9 @@ define(
 	[
 		'underscore',
 		'backbone',
-		'text!templates/deliver/temp_modal_table_deliver_items.html'
-	],  function(_, Backbone, template) {
+		'text!templates/deliver/temp_modal_table_deliver_items.html',
+        'printarea'
+	],  function(_, Backbone, template, printArea) {
    
     var ViewModalTableDeliverItems = Backbone.View.extend({
     
@@ -19,7 +20,7 @@ define(
     
             events: {
                 // bound events
-                'click #btnPrintDeliveryReceipt': 'printDelivery'
+                // 'click #btnPrintDeliveryReceipt': 'printDelivery'
             },
     
         	render: function(){
@@ -34,6 +35,12 @@ define(
         	init: function(){
                 var self = this;
 
+                $(function() {
+                    self.$el.find('#printDR').click(function(event) {
+                        /* Act on the event */
+                        $('#division-modal').printArea();
+                    });
+                });
                 $(function() {
                     self.$el.find('th, td').css({
                         padding: '2px',

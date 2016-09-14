@@ -403,11 +403,10 @@ function($, Backbone, _, mainView, AccountModule, ProductModule, WarehouseModule
 				     var library = DeliverItemModule.findItemsWhereIdOf(id);
 				     $('#modalTableDeliverItems').modal('show');
 				     DeliverItemModule.appendListOfDeliverItems(library);
-				     // alert(library.length);
 				     DeliverItemModule.appendDeliveryReceiptHeader(id);
 				});
 			}else {
-				// console.log('cant find items.')
+				console.log('cant find deliver items.');
 			}
 		},
 
