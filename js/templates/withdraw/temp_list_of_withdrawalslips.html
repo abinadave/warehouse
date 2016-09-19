@@ -4,8 +4,8 @@
       <td class="remove-this"><a id="<%= model.id %>"><span class="glyphicon glyphicon-print"></span></a></td>
       <td><%= moment(model.date).format('dddd MMMM DD YYYY') %> <span class="remove-this">(<%= moment(duration).fromNow() %>)</span></td>
       <td><%= model.time %></td>
-      <td><%= model.linked_to %></td>
-      <td><%= model.no %></td>
+      <td><%= model.id %></td>
+      <td><%= self.getGetNo(model) %></td>
       <td><%= model.requested_by %></td>
       <td class="remove-this"><%= model.requested_by_position %></td>
       <td><%= model.issued_by %></td>

@@ -87,8 +87,8 @@ define(
                 var self = this;
                 var linked_to = self.$el.find('#linked-to').val();                
                 var form = {
-                    linked_to: linked_to,
-                    no: self.generateNo(linked_to),
+                    // linked_to: 0,
+                    // no: self.generateNo(),
                     requested_by: self.$el.find('#requested-by').val(),
                     requested_by_position: self.$el.find('#position-withdraw').val(),
                     issued_by: sessionStorage.getItem('name'),
@@ -100,7 +100,7 @@ define(
                 var withdraw_form = new Withdraw_form(form);
                 withdraw_forms.create(withdraw_form.attributes, {
                     success: self.saveWithdrawItems
-                })              
+                });              
             },
 
             getPosition(usertype){
@@ -148,10 +148,10 @@ define(
 
             },
 
-            generateNo(linked_to){
+            generateNo(){
                 var warehouse = warehouses.get(sessionStorage.getItem('code'));
                 var pad = fn.zeroPad(linked_to, 5);
-                return warehouse.get('receipt_loc') + '-' + warehouse.get('id') + '-8' + moment().format('YY') + '-' + pad;
+                return warehouse.get('receipt_loc') + '-' + warehouse.get('id') + '-8' + moment().format('YY') + '-';
             }
     
     });

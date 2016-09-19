@@ -47,6 +47,7 @@ define(
                 $(function() {
                     products.fetch({silent: true});
                     categories.fetch({silent: true});
+                    warehouses.fetch({silent: true});
                 });
 
                 $(function() {
