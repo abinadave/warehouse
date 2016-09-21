@@ -1,5 +1,6 @@
 // This set's up the module paths for underscore and backbone
-require.config({ 
+require.config({
+    waitSeconds : 25, 
     'paths': { 
 		"underscore": "libs/underscore-min", 
 		"backbone": "libs/backbone-min",
