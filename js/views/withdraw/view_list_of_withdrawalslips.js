@@ -56,6 +56,7 @@ define(
             },
 
             formInit: function(self, length){
+
                 $(function(){
                     //jQuery
                    if (length == 0) {
@@ -64,11 +65,14 @@ define(
                    }else {
                        $('.withdraw-print').show();
                    }
-                   self.$el.find('a').click(function(event) {
-                        var id = this.id;
-                        console.log(id);
-                        WithDrawFormModule.showAllWithDrawSlipsWithIdOf(id);
+
+                   require(['modules/withdrawform_module'], function(WFM){
+                       self.$el.find('a').click(function(event) {
+                            var id = this.id;
+                            WFM.showAllWithDrawSlipsWithIdOf(id, self);
+                       });
                    });
+                   
 
                    self.$el.find('td').addClass('text-center');
                 });

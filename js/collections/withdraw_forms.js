@@ -12,8 +12,8 @@ define(
     	initialize: function(){
     		this.on('all', function(model){
                 this.refresh();
-                console.log('all event triggered')
             });
+            
     		this.on('add', function(model){
     			console.log('New Withdraw_forms was added');
                 // pubnub.publish({channel: 'withdraw_forms', message: {model, type: 'add', m: sessionStorage.getItem('uid')}});

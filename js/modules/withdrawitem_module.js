@@ -103,15 +103,16 @@ define(
             view.render();
         },
 
-        appendWithDrawalDetails: function(rid){
+        appendWithDrawalDetails: function(rid, self_view_withdrawslip){
             var $modal = $('#modalWithDrawItemTable');
             var rsItem = withdraw_forms.where({id: rid.toString()});
             if (rsItem.length) {
                 var item = withdraw_forms.get(rid.toString());
+                var ws_no = self_view_withdrawslip.getGetNo(rsItem[0]);
                 require(['modules/warehousemen_module'], function(WarehousemenModule){ 
                     $modal.find('#date-issued').text(moment(item.get('date')).format('dddd MMMM DD, YYYY')).end()
                     .find('#time-issued').text(item.get('time')).end()
-                    .find('#no').text(item.get('no')).end()
+                    .find('#no').text(ws_no).end()
                     .find('#linked-to').text(item.get('linked_to')).end()
                     .find('#requested-by').text(item.get('requested_by')).end()
                     .find('#requested-by-position').text(item.get('requested_by_position')).end()
@@ -122,6 +123,8 @@ define(
                 console.log('cant find id with: '+rid+' in withdrawforms')
             }
         },
+
+
 
         appendImageWithdrawSlip: function(){
             var view = new ViewImageWithdrawItems();

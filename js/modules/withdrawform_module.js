@@ -8,7 +8,6 @@ define(
    
     var WithDrawFormModule = {
 
-
         fetchData: function(){
             if (withdraw_forms.length) {
                 WithDrawFormModule.populateAll();
@@ -254,7 +253,7 @@ define(
             view.render();
         },
 
-        showAllWithDrawSlipsWithIdOf: function(rid){
+        showAllWithDrawSlipsWithIdOf: function(rid, self_view_withdrawslip){
             //this.navigate('withdrawalSlips', true);
             var result = withdraw_items.where({withdraw_id: rid});
             var $modal = $('#modalWithDrawItemTable');
@@ -272,7 +271,7 @@ define(
                             $modal.modal('show');
  
                             WithDrawItemModule.appendListOfWithDrawItem(models);
-                            WithDrawItemModule.appendWithDrawalDetails(rid);
+                            WithDrawItemModule.appendWithDrawalDetails(rid, self_view_withdrawslip);
 
                         }else {
                             router.alertify_error('Nothing was found');
