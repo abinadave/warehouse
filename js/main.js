@@ -1,7 +1,7 @@
 // This set's up the module paths for underscore and backbone
 require.config({
     waitSeconds : 25, 
-    'paths': { 
+    'paths': {
 		"underscore": "libs/underscore-min", 
 		"backbone": "libs/backbone-min",
 		"domReady": "libs/requirejs/domReady",

@@ -41,6 +41,13 @@ define(
                         $('#division-modal').printArea();
                     });
                 });
+
+                $(function() {
+                    self.$el.find('#printCopies').on('click', function(event) {
+                        self.printDelivery(event);
+                    });
+                });
+
                 $(function() {
                     self.$el.find('th, td').css({
                         padding: '2px',
