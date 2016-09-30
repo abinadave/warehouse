@@ -1,6 +1,7 @@
 define(['underscore','backbone',
-	'text!templates/withdraw/temp_list_of_withdraw_history.html','moment'], 
-	function(_, Backbone, template, moment) {
+	'text!templates/withdraw/temp_list_of_withdraw_history.html','moment',
+    'modules/functions'], 
+	function(_, Backbone, template, moment, FN) {
    
     var ListOfHistories = Backbone.View.extend({
     
@@ -22,7 +23,11 @@ define(['underscore','backbone',
         	    var self = this;
                 self.$el.off();
                 self.$el.empty();
-                var output = self.template({'library': self.collection.toJSON(), 'moment': moment });
+                var output = self.template({
+                    'library': self.collection.toJSON(), 
+                    'moment': moment,
+                    'self': self
+                });
                 self.$el.append(output);
                 self.onRender();
     	        return self;
@@ -36,7 +41,21 @@ define(['underscore','backbone',
                         fn.datatablePlugin('#table-withdraw-history');
                     });
                 });
-        	}
+
+                
+        	},
+
+            getWsNo(model){
+                var year = moment(model.date).format('YY');
+                var id = FN.zeroPad(Number(model.id), 5); 
+                var code = sessionStorage.getItem('code');
+                var rs = warehouses.where({id: code});
+                if (rs.length) {
+                    return rs[0].get('receipt_loc') + '-'+code+'-8'+year+'-'+id;
+                }else {
+                    return '-';
+                }
+            },
     
     });
    

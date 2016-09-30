@@ -5,6 +5,12 @@
 	\Slim\Slim::registerAutoloader();
 	$app = new \Slim\Slim();
 
+	$app->get('/withdraw_item', function() use ($app){
+		$model = new Model();
+		$data = $model::select('withdraw_item');
+		echo json_encode($data);
+	});
+
 	$app->delete('/product/:id', function($id) use ($app){
 		require_once 'class/class.product.php';
 		$product = new Product();

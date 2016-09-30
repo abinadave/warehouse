@@ -91,7 +91,6 @@ define(
 
             printDelivery: function(event){
                var $modal = $('#modalTableDeliverItems');
-        
                $modal.modal('hide');
                setTimeout(function() {
                    var array = ['Guard Copy','Warehouse Copy','Return Copy','Recipient Copy'];
@@ -101,12 +100,10 @@ define(
                          var output = $modal.find('#division-modal').html();
                          $('#main').prepend(output);
                      });
-                   // window.print();
                    require(['libs/jquery.print'], function(){
                        $.print('#main');
                    });
                }, 500);
-               
             }
     
     });

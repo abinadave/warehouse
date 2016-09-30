@@ -1,7 +1,7 @@
 <% library.forEach(function(model) { %>
 <tr>
    <td><%= model.qty %></td>
-   <td><%= model.no %></td>
+   <td><%= self.getWsNo(model) %></td>
    <td><%= model.requested_by %></td>
    <td><%= model.issued_by %></td>
    <td><%= moment(model.date).format('MMMM DD, YYYY ddd') %></td>

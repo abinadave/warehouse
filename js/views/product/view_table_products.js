@@ -71,6 +71,7 @@
                         accounts.fetch({silent: true,
                             url: 'api.php/get/accounts'
                         });
+                        withdraw_items.fetch({silent: true});
                     });
 
                     $(function() {
