@@ -33,15 +33,15 @@ class Withdraw
 			$query = self::$handler->prepare($sql);
 			$query->execute(array($code));
 			if ($query) {
-				$json = $query->fetchAll(PDO::FETCH_OBJ);
+				$json = $query->fetchAll(PDO::FETCH_ASSOC);
 				return $json;
 			}
 		}else {
-			$sql = "SELECT * FROM withdraw_form ORDER BY date DESC";
+			$sql = "SELECT * FROM withdraw_form ORDER BY id DESC";
 			$query = self::$handler->prepare($sql);
 			$query->execute();
 			if ($query) {
-				$json = $query->fetchAll(PDO::FETCH_OBJ);
+				$json = $query->fetchAll(PDO::FETCH_ASSOC);
 				return $json;
 			}
 		}

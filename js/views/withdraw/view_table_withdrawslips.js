@@ -33,6 +33,8 @@ define(
                 var $panel = $('#panel-withdrawslip');
                 var self = this;
 
+
+
                 $(function() {
                     self.$el.find('#btnSummaryOfPullout').on('click', (event) => {
                        require(['views/withdraw/summary/view_modal_monthly_withdrawals'], 

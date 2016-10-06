@@ -74,8 +74,12 @@
 
 	$app->get('/withdraw_form', function() use ($app){
 		include_once 'class/withdraw.php';
+		$model = new Model();
 		$withdraw = new Withdraw();
-		echo json_encode($withdraw->getForms());
+		$data = $withdraw->getForms();
+		echo json_encode($model->utf8_encode_all($data));
+		// echo json_encode($data);
+		// print_r($data);
 	});
 
 	$app->get('/receive_form/:usertype/:code', function($usertype, $code) use ($app){
