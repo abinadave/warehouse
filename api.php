@@ -129,12 +129,12 @@
 
 	$app->get('/get_order_by/:table/:index/:type', function($tbl, $index, $type) use ($app){
 		$model = new Model();
-		$resp = $model::fetchOrderBy(array(
+		$data = $model::fetchOrderBy(array(
 			'table' => $tbl,
 			'index' => $index,
 			'type'  => $type
 		));
-		echo json_encode($resp);
+		echo json_encode($model->utf8_encode_all($data));
 	});
 
 

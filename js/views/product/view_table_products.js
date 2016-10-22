@@ -7,7 +7,9 @@
             'modules/product_module',
             'views/withdraw/report/view_inventory_report_stock_cards',
             'views/iso/view_modal_all_stock_card_receiving_withdrawal_report',
-        ],  function(_, Backbone, template, ProductModule, SubviewModalReport, SubviewAllStockCardReport) {
+            'views/product/view_list_of_products'
+        ],  function(_, Backbone, template, ProductModule, SubviewModalReport, 
+            SubviewAllStockCardReport, SubviewListOfItems) {
        
         var ViewProducts = Backbone.View.extend({
         
@@ -180,57 +182,24 @@
                     jQuery(document).ready(function($) {
                         $('#search-product').keyup(function(event) {
                             clearTimeout(self.timer);
+                            var value = $(this).val().toLowerCase();
+                            var cid = $('#products-display-by-category').val();
                             self.timer = setTimeout(function() {
-                            require(['modules/product_module'], function(module){
-                            
-                                var cid = $('#selected-category-prodcut').val();
-                                if (cid > 0) {
-                                    var ids = modulemodulemodule.searchAndReturnIdsWithCategoryOf(cid);
-                                    var value = event.currentTarget.value;
-                                    var found = [];
-                                    ids.forEach(function(model) {
-                                        var product = products.get(model);
-                                        if (product.get('id') == value || 
-                                            product.get('name').toLowerCase().indexOf(value.toLowerCase()) !== -1 || 
-                                            product.get('category').toLowerCase().indexOf(value.toLowerCase()) !== -1 || 
-                                            product.get('area').toLowerCase().indexOf(value.toLowerCase()) !== -1 || 
-                                            product.get('shelf').toLowerCase().indexOf(value.toLowerCase()) !== -1 || 
-                                            product.get('reorder_point').toLowerCase().indexOf(value.toLowerCase()) !== -1 || 
-                                            product.get('row').toLowerCase().indexOf(value.toLowerCase()) !== -1 || 
-                                            product.get('running_bal').toLowerCase().indexOf(value.toLowerCase()) !== -1 || 
-                                            product.get('add_desc').toLowerCase().indexOf(value.toLowerCase()) !== -1 || 
-                                            product.get('unit').toLowerCase().indexOf(value.toLowerCase()) !== -1) {
-                                            found.push(product.get('id'));
-                                        }
+                                if (Number(cid) === 0) {
+                                    var view = new SubviewListOfItems({
+                                        collection: new Backbone.Collection(self.searchAll(value, products.toJSON()))
                                     });
-
-                                   module.appendListOfProductsById(found);
-
+                                    view.render();
                                 }else {
-                                    var ids = module.searchAndReturnIds(event.currentTarget.value);
-                                    if (ids.length) {
-                                         module.appendListOfProductsById(ids);
-                                    }else {
-                                         var output = ''; output += '<tr class="text-danger">'; output += '<td>-</td>'; output += '<td>-</td>'; output += '<td>No data was found for: '+ event.currentTarget.value +'</td>';   output += '<td>-</td>';     output += '<td>-</td>';     output += '<td>-</td>';     output += '<td>-</td>';     output += '<td>-</td>';     output += '<td>-</td>';     output += '<td>-</td>';     output += '<td>-</td>';          output += '</tr>';
-                                         $('#list-of-products').html(output);
-                                    }
+                                    var foundItems = new Backbone.Collection(self.getproductsWhereCid(cid));
+                                    var view = new SubviewListOfItems({
+                                        collection: new Backbone.Collection(
+                                            self.searchAll(value, foundItems.toJSON())
+                                        )
+                                    });
+                                    view.render();
                                 }
-
-                                var ids = categories.searchAndReturnIds(event.currentTarget.value);
-                                var found = [];
-                                ids.forEach(function(cid) {
-                                    products.forEach(function(prod) {
-                                        if (prod.get('category') == cid) {
-                                            found.push(prod.get('id'));
-                                        };
-                                    }); 
-                                });
-
-                                if (found.length) {
-                                    module.appendListOfProductsById(found);
-                                };
-                               
-                        });
+                                
                             }, 1000);
                         });
                     });
@@ -541,6 +510,24 @@
                     var value = event.currentTarget.value;
                     var ids = categories.searchAndReturnIds(value);
                     categories.appendListOfCategoriesSearchableDropdown(ids);
+                },
+
+                searchAll(value, jsonProducts){
+                    return jsonProducts.filter(function(index) {
+                        return index.name.toLowerCase().indexOf(value) != -1 ||
+                               index.area.toLowerCase().indexOf(value) != -1 ||
+                               index.row.toLowerCase().indexOf(value) != -1 ||
+                               index.shelf.toLowerCase().indexOf(value) != -1 ||
+                               index.add_desc.toLowerCase().indexOf(value) != -1 ||
+                               Number(index.runnin_bal) === Number(value) ||
+                               Number(index.reorder_point) === Number(value);
+                    });
+                },
+
+                getproductsWhereCid(cid){
+                    return products.toJSON().filter(function(index) {
+                        return Number(index.category) === Number(cid);
+                    });
                 }
         
         });

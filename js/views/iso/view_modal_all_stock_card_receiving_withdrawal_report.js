@@ -38,7 +38,7 @@ define(['underscore','backbone',
                     });
 
                     $('#modal-all-stock-card-r-w-report').on('hidden.bs.modal', function(event) {
-                    	router.navigate('products');
+                    	router.navigate('products');get_reports_withdrawal_receiving.php
                     });
                 });
 
@@ -58,13 +58,13 @@ define(['underscore','backbone',
             clientRender(){
                 var self = this;
                 $.when(products.fetch({
-                    silent: true,
-                    url: 'api.php/get_order_by/products/name/asc'
-                })).then( () => {
+                    silent: true
+                })).then( (resp) => {
                     new SubviewReport({
                         collection: products
                     });
                 }, (errorResponse) => {
+                    console.log('error');
                     alert(errorResponse);
                 });
             }
