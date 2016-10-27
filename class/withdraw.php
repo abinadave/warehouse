@@ -7,6 +7,18 @@ class Withdraw
 	{
 		self::$handler = Database::connect();
 	}
+	
+	public function getAllWithdrawals($id){
+		$sql = "SELECT * FROM withdraw_item WHERE item = ?";
+		$query = self::$handler->prepare($sql);
+		$query->execute(array($id));
+		if ($query->rowCount() > 0) {
+			$rows = $query->fetchAll(PDO::FETCH_OBJ);
+			return $rows;
+		}else {
+			return [];
+		}
+	}
 
 	public function saveItem($item, $model)
 	{

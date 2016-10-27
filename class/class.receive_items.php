@@ -11,6 +11,18 @@
 			self::$handler = Database::connect();
 		}
 
+		public function getAllReceiving($id){
+			$sql = "SELECT * FROM receive_item WHERE receive_id = ?";
+			$query = self::$handler->prepare($sql);
+			$query->execute(array($id));
+			if ($query->rowCount() > 0) {
+				$rows = $query->fetchAll(PDO::FETCH_OBJ);
+				return $rows;
+			}else {
+				return [];
+			}
+		}
+
 		public function setId($value){
 			self::$id = $value;
 			return $this;

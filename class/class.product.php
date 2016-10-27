@@ -7,6 +7,19 @@ class Product
 		require_once 'class.database.php';
 		self::$handler = Database::connect();
 	}
+	
+	public function getCurrentProduct($id){
+		$sql = "SELECT * FROM products WHERE id = ?";
+		$query = self::$handler->prepare($sql);
+		$query->execute(array(
+			$id
+		));
+		if ($query->rowCount() > 0) {
+			return $query->fetch(PDO::FETCH_OBJ);
+		}else {
+			return array('running_bal' => 0);
+		}
+	}
 
 	public function destroy($id)
 	{
@@ -47,7 +60,7 @@ class Product
 	{
 		require_once 'class.functions.php';
 		$model = new Model();
-		$sql = "SELECT * FROM products WHERE warehouse_code = ?";
+		$sql = "SELECT * FROM products WHERE warehouse_code = ? ORDER BY id DESC";
 		$query = self::$handler->prepare($sql);
 		$query->execute(array($code));
 		$rows = $query->fetchAll(PDO::FETCH_ASSOC);

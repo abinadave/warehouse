@@ -37,12 +37,9 @@ define(['underscore','backbone','text!templates/product/history/temp_table_recei
                         var str = current.toString().split('/');
                         var stock_id = str[1];
                         var rs = receive_items.where({receive_id: stock_id});
-                        // if (rs.length) {
-                            var list = rim.findReceiving(stock_id);
-                            rim.appendReceiveHistoryItems(list);
-                        // }else {
-                            // router.alertify_error('Cant find that item.');
-                        // }
+                        var list = rim.findReceiving(stock_id);
+                        rim.appendReceiveHistoryItems(list);
+                        
                     };
                     
                 });
@@ -50,6 +47,8 @@ define(['underscore','backbone','text!templates/product/history/temp_table_recei
                 $(function() {
                     self.$el.find('th').addClass('text-center');
                 });
+
+                
         	}
     
     });
