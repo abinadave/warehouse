@@ -36,7 +36,6 @@ define(['underscore','backbone',
                     	self.clientRender();        
                         // self.backEndRender();         	
                     });
-
                     $('#modal-all-stock-card-r-w-report').on('hidden.bs.modal', function(event) {
                     	router.navigate('products');get_reports_withdrawal_receiving.php
                     });
