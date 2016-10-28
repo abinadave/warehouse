@@ -6,6 +6,7 @@ define(
    
     var Product = Backbone.Model.extend({
 		initialize: function(){
+			var self = this;
 			this.on('change', function(){			
                 this.afterChanged();
                 
@@ -17,11 +18,21 @@ define(
                 	});
                 }
 
+                if (this.hasChanged('id')) {
+                	console.log('changed in iD')
+                	require(['views/product/view_list_of_products',], function(SubviewProdList){
+                        var list = self.getConvertedIdList(products.toJSON());
+                        var view = new SubviewProdList({
+                            collection: new Backbone.Collection(list)
+                        });
+                        view.render();
+                   });
+                }
+
             });
 		},
 
 		defaults: {
-			id: 0,
 			category: 'no category',
 			name: 'no name',
 			area: 'no area',
@@ -33,6 +44,12 @@ define(
 			unit: 'not unit'
 		},
 
+        getConvertedIdList(list){
+            _.each(list, function(model){
+                model.id = Number(model.id);
+            });
+            return _.sortBy(list, 'id','desc').reverse();
+        },
 
 		afterChanged: function(){
 			require(['modules/product_module'], function(module){

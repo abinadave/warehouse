@@ -60,12 +60,11 @@ define(
                     $('#form-add-product').submit(function(event) {
                         /* Act on the event */
                         event.preventDefault();
-                        
                         var form = $(this).serialize();
-                        require(['modules/product_module'], function(module){
-                            module.saveDB(form);
-                            //  
-                        });
+                        var item = self.getItem();
+                        // require(['modules/product_module'], function(module){
+                        //     module.saveDB(form);
+                        // });
                         var ids = products.pluck
                     });
                 });
@@ -89,6 +88,28 @@ define(
                 
 
                 
+            },
+
+            getItem(){
+                var self = this;
+                var obj = {
+                    name: self.$el.find('#prod-name').val(),
+                    category: self.$el.find('input[name="prodCategory"]').val(),
+                    area: self.$el.find('#hidden-area').val(),
+                    row: self.$el.find('#hidden-row').val(),
+                    shelf: self.$el.find('#hidden-shelf').val(),
+                    reorder_point: self.$el.find('#reorder-point').val(),
+                    unit: self.$el.find('#unit').val(),
+                    add_desc: self.$el.find('#add-desc').val(),
+                    running_bal: 0,
+                    warehouse_code: sessionStorage.getItem('code'),
+                    table: 'products'
+                };
+                $.when(products.create(obj)).then((resp) => {
+                   console.log(resp);
+                }, (resp) => {
+                    console.log(resp);
+                });                
             }
     
     });

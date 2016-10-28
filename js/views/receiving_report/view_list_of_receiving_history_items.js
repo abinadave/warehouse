@@ -89,7 +89,7 @@ define(['underscore','backbone',
                     if (!json.receivings.length) {
                         let quantities = _.pluck(json.withdrawals, 'qty');
                         if (quantities.length) {
-                            return _.reduce(quantities, function(memo, num){ return memo + num; });
+                            return _.reduce(quantities, function(memo, num){ return Number(memo) + Number(num); });
                         }else {
                             return 0;
                         }

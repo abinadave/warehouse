@@ -11,6 +11,13 @@
 		echo json_encode($data);
 	});
 
+	$app->post('/product', function() use ($app){
+		$data = json_decode($app->request->getBody());
+		$product =  (array) $data;
+		$model = new Model();
+		echo json_encode($model::save($product));
+	});
+
 	$app->delete('/product/:id', function($id) use ($app){
 		require_once 'class/class.product.php';
 		$product = new Product();
