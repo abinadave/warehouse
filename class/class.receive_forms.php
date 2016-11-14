@@ -7,11 +7,16 @@
 	include_once 'validator/Validator.php';
 	class Receive_forms
 	{
-		public static $handler, $id, $location, $supplier, $crm, $received_by, $hour, $today, $verified_by, $position, $code;
+		public static $handler, $id, $location, $person_received_from, $supplier, $crm, $received_by, $hour, $today, $verified_by, $position, $code;
 		function __construct()
 		{
 			include_once 'class.database.php';
 			self::$handler = Database::connect();
+		}
+
+		public function setPersonReceivedForm($value){
+			self::$person_received_from = $value;
+			return $this;
 		}
 
 		public function getReceivedItems(){
@@ -76,6 +81,7 @@
 			if (isset(self::$location) || isset(self::$supplier) || isset(self::$crm) || isset(self::$received_by)) {
 				$sql = "INSERT INTO receive_form 
 					SET location_receive = ?, 
+					person_received_from = ?,
 					supplier_name = ?, 
 					crm_id = ?, 
 					received_by = ?,
@@ -87,6 +93,7 @@
 				$query = self::$handler->prepare($sql);
 				$query->execute(array(
 					self::$location,
+					self::$person_received_from,
 					self::$supplier,
 					self::$crm,
 					self::$received_by,

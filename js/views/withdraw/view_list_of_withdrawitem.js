@@ -41,6 +41,22 @@ define(
                         fontSize: '12px'
                     }); 
                 });
+
+                $(function() {
+                    let count = self.collection.length;
+                    let rows_to_append = 10 - count;
+                    let html = '';
+                    for (var i = 0; i < rows_to_append; i++) {
+                        html += '<tr>';
+                            html += '<td style="color: white; !important"><span style="color: transparent !important">-</span></td>'
+                            html += '<td style="color: white; !important"><span style="color: transparent !important">-</span></td>'
+                            html += '<td style="color: white; !important"><span style="color: transparent !important">-</span></td>'
+                            html += '<td style="color: white; !important"><span style="color: transparent !important">-</span></td>'
+                            html += '<td style="color: white; !important"><span style="color: transparent !important">-</span></td>'
+                        html += '</tr>';
+                    }
+                    self.$el.append(html);
+                });
         	}
     
     });

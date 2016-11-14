@@ -11,35 +11,41 @@
        </div>
    </div>
 
-   <div style="float: left; margin-top: -70px; border: 2px solid #ddd; padding: 15px; border-radius: 4px" class="pull-right">
+   <div style="float: left; margin-top: -70px; border: 2px solid black; padding: 7px; width: 35%" class="pull-right text-center">
       <div >
-           <center style="font-size: 9px">RR No.</center>
-          <p id="rr-no" class="text-danger" style="font-size: 9px"></p>
+           <center style="font-size: 12px; font-weight: bolder">RR No.</center>
+          <p id="rr-no" class="text-danger" style="font-size: 14px"></p>
       </div>
    </div>
-    <h3 class="text-center" style="font-size: 12px">Receiving Report</h3>
+   <h3 class="text-center" style="font-size: 12px; font-weight: bolder">RECEIVING REPORT</h3>
 
 
-<div style="margin-top: 20px">
-  <table class="table table-hover table-bordered" style="font-size: 12px">
+<div>
+  <table border="1" style="font-size: 12px; width: 100%">
     <thead>
        <tr>
-           <th width="170" id="just-received">From Location</th>
-           <td width="300" id="just-received"><span id="location-receive"></span></td>
-           <th>Supplier Name</th>
-           <td width="300"><span id="supplier-name"></span></td>
+          <th width="170">Location Received From</th>
+          <td width="320">
+             <span id="supplier-name"></span>
+          </td>
+          <th width="70">Date</th>
+          <td width="150"><span id="date-receive"></td>
        </tr>
        <tr>
-          <th width="170">Date Received From</th>
-           <td><span id="date-receive"></span></td>
-            <th width="170">Time Received</th>
-           <td><span id="time-receive"></span></td>
+          <th width="170">Person Received From</th>
+          <td id="person-received-from"></span></td>
+          <th width="70">Time</th>
+          <td><span id="time-receive"></span></td>
        </tr>
        <tr>
             <th>Receive Through</th>
-            <td width="300" colspan="3"><span id="receive-through">Delivery Receipt</span></td>
+            <td width="300" colspan="3">
+                &nbsp;&nbsp;&nbsp;<input type="checkbox"> Invoice &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;<input type="checkbox"> D.R
+            </td>
        </tr>
     </thead>
   </table>
 </div>
+
 </div>

@@ -1,60 +1,80 @@
                             <div class="modal fade" id="modalShowAllReceivingItems" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" id="div-modalShowAllReceivingItems" style="width: 700px">
+                                
+                                <div class="modal-dialog" id="div-modalShowAllReceivingItems" style="width: 800px">
 
                                     <div class="modal-content">
+                                        
                                         <div id="modal-content">
+                                        
                                         <div class="modal-header" >
 
                                         </div>
+
                                         <div class="modal-body" id="print-receivable">
                                         
                                             <div id="modalShowAllReceivingItems-header"></div>
 
+                                            <br>
+                                            
                                             <div>
-                                                <table class="table table-hover table-bordered" style="font-size: 12px; margin-top: -10px">
+                                                <table border="1" style="font-size: 12px; margin-top: -10px; width: 100%">
                                                      <thead>
                                                           <tr>
                                                              <th width="1" style="text-align: center">Quantity</th>
                                                              <th width="90" style="text-align: center">Unit</th>
                                                              <th style="text-align: center">Item</th>
-                                                             <th>Remarks</th>
+                                                             <th style="text-align: center">Remarks</th>
                                                              <th width="90" style="text-align: center">Stock ID</th>
                                                           </tr>
                                                      </thead>
                                                      <tbody id="list-of-receiving-items"></tbody>
                                                 </table>
-                                            </div>
+                                           </div>
 
-                                             <table class="table table-hover table-condensed table-bordered" 
-                                        style="margin-top: -10px">
+                                      <br>
+
+                                      <table border="1" 
+                                        style="margin-top: -10px; width: 100%">
                                           <tr>
-                                              <th width="150">Received by</th>
-                                              <td><span id="received-by">-</span></td>
-                                             
-                                          </tr>
-                                          <tr>
-                                             <th width="150">Verified by</th>
-                                             <td>
+                                             <th width="110" class="text-center" style="padding: 2px">
+                                                  <p>Received by<br>
+                                                     <span style="font-size: 8px">(Name and Signature)</span>
+                                                  </p>
+                                             </th>
+                                             <td class="text-center"><span id="received-by">-</span></td>                                             
+                                             <th width="110" class="text-center">
+                                                  <p>Verified by<br>
+                                                     <span style="font-size: 8px">(Name and Signature)</span>
+                                                  </p>
+                                             </th>
+                                             <td class="text-center">
                                                   <span id="verifier">-</span> (
                                                   <span id="position"></span>)
                                              </td>
                                           </tr>
-                                           
-
                                         </table>
 
-                                        <div id="slip-footer"></div>
-
-
+                                        <div>
+                                           <table border="1" style="width: 100%;">
+                                               <tr>
+                                                <td style="font-size: 8px">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <b style="font-size: 10px">Form No.</b> <span style="font-size: 10px">FM-HRD-24</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    &nbsp;&nbsp;&nbsp;
+                                                    <b style="margin-left: 20%;font-size: 10px;">Revision No.</b> <span style="font-size: 10px">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    &nbsp;&nbsp;&nbsp;
+                                                    <b style="margin-left: 10%;font-size: 10px;">Eff. Date</b> <span style="font-size: 10px">July 1, 2015</span>
+                                                </td>
+                                               </tr>
+                                            </table>
                                         </div>
+                                        </div>
+
                                         </div>
                                         <div class="modal-footer" id="modalShowAllReceivingItems-footer">
-
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                             <button type="button" class="btn btn-primary" id="printReceivingReport"><span class="glyphicon glyphicon-print"></span> print</button>
                                         </div>
                                     </div>
-                                    <!-- /.modal-content -->
                                 </div>
-                                <!-- /.modal-dialog -->
                             </div>

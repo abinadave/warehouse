@@ -3,8 +3,9 @@ define(
 		'underscore',
 		'backbone',
 		'text!templates/receiving_report/temp_modal_show_recieve_items.html',
+        'views/warehouse/view_slip_footer',
         'printarea'
-	],  function(_, Backbone, template) {
+	],  function(_, Backbone, template, SubviewSlipFooter, printarea) {
    
     var ViewModalShowReceiveItems = Backbone.View.extend({
     
@@ -34,6 +35,12 @@ define(
     
         	init: function(){
                 var self = this;
+                
+                $(function() {
+                    let subviewSlipFooter = new SubviewSlipFooter();
+                    subviewSlipFooter.render();
+                });
+
                 (function() {
 
                     var beforePrint = function() {

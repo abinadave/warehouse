@@ -34,18 +34,15 @@ define([
     
         	onRender: function(){
                 var self = this;
-
                 $(function() {
                     self.$el.find('#loading-indicator').html(self.loadingIndicator);
                 });
-
                 $(function() {
                     $('#modal-stock-card-inventory-report').on('hidden.bs.modal', function(event) {
                         router.navigate('products', ($('#table-products').length > 0) ? false : true);
                         self.$el.find('#list-of-report-stock-cards').empty();
                     });  
                 });
-
                 $(function(){
                     $('#modal-stock-card-inventory-report').on('shown.bs.modal', function(event) {
                         setTimeout(function() {
@@ -80,7 +77,6 @@ define([
 				while(arr.length) newArr.push(arr.splice(0,21));
 				require(['views/withdraw/report/view_list_of_inventory_report_stock_cards'], 
 					function(SubviewList){
-
                     var pageNumber = 1;
 					newArr.forEach(function(models) {
 						var models = self.findModels(models);

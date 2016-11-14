@@ -7,8 +7,10 @@ define(
         'views/withdraw/view_modal_table_withdrawitems',
         'views/withdraw/view_list_of_withdrawitem',
         'views/withdraw/view_image_withdrawitems',
-        'views/withdraw/view_list_of_withdraw_by_prod_id'
-	],  function(_, Backbone, moment, Mycollection, ViewTableWithDrawItems, ViewListOfWithdrawItems, ViewImageWithdrawItems, ViewListOfWithdrawById) {
+        'views/withdraw/view_list_of_withdraw_by_prod_id',
+        'modules/functions'
+	],  function(_, Backbone, moment, Mycollection, ViewTableWithDrawItems, 
+        ViewListOfWithdrawItems, ViewImageWithdrawItems, ViewListOfWithdrawById, FN) {
    
     var WithDrawItemModule = {
         
@@ -102,13 +104,23 @@ define(
             });
             view.render();
         },
-
+        getGetNo(model){
+            var year = moment(model.date).format('YY');
+            var id = FN.zeroPad(Number(model.id), 5); 
+            var code = sessionStorage.getItem('code');
+            var rs = warehouses.where({id: code});
+            if (rs.length) {
+                return rs[0].get('receipt_loc') + '-'+code+'-8'+year+'-'+id;
+            }else {
+                return '-';
+            }
+        },
         appendWithDrawalDetails: function(rid, self_view_withdrawslip){
             var $modal = $('#modalWithDrawItemTable');
             var rsItem = withdraw_forms.where({id: rid.toString()});
             if (rsItem.length) {
                 var item = withdraw_forms.get(rid.toString());
-                var ws_no = self_view_withdrawslip.getGetNo(rsItem[0]);
+                var ws_no = this.getGetNo(rsItem[0]);
                 require(['modules/warehousemen_module'], function(WarehousemenModule){ 
                     $modal.find('#date-issued').text(moment(item.get('date')).format('dddd MMMM DD, YYYY')).end()
                     .find('#time-issued').text(item.get('time')).end()

@@ -1,9 +1,8 @@
                             <div class="modal fade" id="modalTableDeliverItems" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" id="div-modalTabeDeliverItems" style="width: 700px">
+                                <div class="modal-dialog" id="div-modalTabeDeliverItems" style="width: 800px">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <!-- <h4 class="modal-title" id="myModalLabel">Delivered Items</h4> -->
                                         </div>
                                         <div class="modal-body" id="print-delivery">
 
@@ -14,20 +13,20 @@
                                               </div>   
                                               <div style="margin-left: 90px">
                                                  <p  style="font-size: 18px; font-family: Harabara" id="ezjones">Ezjones Construction, Inc.</p>
-                                                 <p style="font-size: 12px; margin-top: -8px" >Sitio Buchasan, Brgy. Cawayan<br/>
+                                                 <p style="font-size: 12px; margin-top: -8px; font-style: calibri" >Sitio Buchasan, Brgy. Cawayan<br/>
                                                  Catarman N. Samar</p>
                                               </div>
-                                              <div class="pull-right" style="margin-top: -30px">
-                                                 <center style="font-size: 10px"><b>DR No.<br/>
+                                              <div class="pull-right" style="margin-top: -30px; border: 2px solid black; padding: 10px; width: 30%">
+                                                 <center style="font-size: 15px; font-style: calibri"><b>D.R No.<br/>
                                                  <span style="font-size: 10px" id="rr-no" class="text-danger"></span></b></center
                                               </div>
                                           </div><br/>
 
                                             <div >
                                                <div id="specific-name" style="display:inline-block; vertical-align:top; border: 2px solid red; border-radius: 2px; width: 150px; height: 20px; margin-bottom: 7px; text-align: center"></div>
-                                               <div style="display:inline-block; vertical-align:top; margin-left: 150px"><h5 style="font-size: 11px">Delivery Receipt</h5></div>
+                                               <div style="display:inline-block; vertical-align:top;"><h5 style="font-size: 18px; font-weight: bolder; font-style: calibr; margin-left: 100px">DELIVERY RECEIPT</h5></div>
                                             </div>
-                                            <table class="table table-hover table-bordered" style="font-size: 12px">
+                                            <table border="1" style="font-size: 12px; width: 100%">
                                                <tr>
                                                    <th width="100">Date Issued</th>
                                                    <td id="date-issued">-</td>
@@ -46,31 +45,35 @@
                                                </tr>  
                                             </table>
 
-                                            <table class="table table-hover table-bordered" style="font-size: 12px">
+                                            <table border="1" style="font-size: 12px; width: 100%; margin-top: 10px">
                                                <thead>
                                                    <tr>
-                                                       <th>Qty</th>
-                                                       <th>Unit</th>
-                                                       <th>Item Description</th>
-                                                       <th>Remarks/Purpose</th>
-                                                       <th>Stock ID</th>
+                                                       <th style="text-align: center">Qty</th>
+                                                       <th style="text-align: center">Unit</th>
+                                                       <th style="text-align: center">Item Description</th>
+                                                       <th style="text-align: center">Remarks/Purpose</th>
+                                                       <th style="text-align: center">Stock ID</th>
                                                    </tr>
                                                </thead>
                                                <tbody id="list-of-delivered-items-by-id"></tbody>
                                             </table>
 
-                                            <table class="table table-hover table-bordered">
+                                            <table border="1" style="width: 100%; margin-top: 10px">
                                                 <tr>
-                                                    <th width="80">Prepared By</th>
+                                                    <th width="120" class="text-center">
+                                                       Prepared by<br>
+                                                       <span>(Name & Signature)</span>
+                                                    </th>
                                                     <td id="prepared-by"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Delivered By</th>
+                                                    <th class="text-center" width="120">
+                                                       Delivered by<br>
+                                                       <span>(Name & Signature)</span>
+                                                    </th>
                                                     <td id="delivered-by"></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Received By</th>
-                                                    <td id="receive-by"></td>
+                                                    <th class="text-center" width="120">Received By<br><span>(Name & Signature)</span></th>
+                                                    <td id="receive-by" colspan="3"></td>
                                                 </tr>
                                             </table>  
 

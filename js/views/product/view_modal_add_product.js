@@ -106,7 +106,9 @@ define(
                     table: 'products'
                 };
                 $.when(products.create(obj)).then((resp) => {
-                   console.log(resp);
+                   require(['modules/userlog_module'], function(userlog_module){
+                       userlog_module.saveDB('New item was added');
+                   });
                 }, (resp) => {
                     console.log(resp);
                 });                

@@ -1,3 +1,4 @@
+
                             <div class="modal fade" id="modalWithDrawItemTable" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" id="div-modalWithDrawItemTable" style="width: 800px">
                                     <div class="modal-content">
@@ -9,56 +10,81 @@
                                           <div id="image-table-withdrawitems" style="margin-top: 40px">
                                               
                                           </div>
-                                          <div style="float: left; margin-top: -70px; border: 2px solid #ddd; padding: 11px; border-radius: 4px; font-size: 11px" class="pull-right">
-                                                <center style="font-size: 10px" >W.S no</center>
-                                                <p  style="font-size: 10px" id="no"></p>
+
+                                          <div style="float: left; width: 30%; 
+                                               margin-top: -70px; border: 2px solid black; 
+                                               padding: 5px; font-size: 11px" 
+                                               class="pull-right text-center">
+                                                <center 
+                                                style="font-size: 12px; 
+                                                font-style: calibri;
+                                                font-weight: bolder;" >W.S No.</center>
+                                                <p
+                                                style="font-size: 10px;
+                                                font-style: calibri;" id="no"></p>
                                            </div>
-                                          <h5 class="text-center">Withdrawal slip</h5>
+                                          <h5 class="text-center" 
+                                          style="font-style: calibri;
+                                          font-weight: bolder;
+                                          ">WITHDRAWAL SLIP</h5>
                                           
-                                            <table class="table table-hover table-bordered">
+                                            <table border="1px" style="width: 100%">
                                                 <tr>
-                                                    <th width="100">Date Issued</th>
+                                                    <th width="60">&nbsp;&nbsp;Date</th>
                                                     <td id="date-issued" colspan="">-</td>
-                                                    <th width="100">Time Issued</th>
-                                                    <td id="time-issued" colspan="">-</td>
+                                                    
                                                 </tr>  
                                                 <tr>
-                                                    <th width="100">Linked to</th>
-                                                    <td id="linked-to" width="400" colspan="3">-</td>
+                                                    <!-- 
+                                                      <th width="100">Linked to</th>
+                                                      <td id="linked-to" width="400" colspan="3">-</td>
+                                                    -->
+                                                    <th width="60">&nbsp;&nbsp;Time</th>
+                                                    <td id="time-issued" colspan="">-</td> 
                                                 </tr>
                                             </table>
-                                            
-                                            <table class="table table-hover table-bordered"> 
+                                            <br>
+                                            <table border="1px" style="width: 100%"> 
                                                  <thead>
                                                  <tr>
-                                                    <th>Qty</th>
-                                                    <th>Unit</th>
-                                                    <th>Item Description</th>
-                                                    <th>Remarks/Purpose</th>
-                                                    <th>Stock ID</th>
+                                                    <th class="text-center">Qty</th>
+                                                    <th class="text-center">Unit</th>
+                                                    <th class="text-center">Item Description</th>
+                                                    <th class="text-center">Remarks/Purpose</th>
+                                                    <th class="text-center">Stock ID</th>
                                                  </tr>
                                                  </thead>
                                                  <tbody id="list-of-withdrawitem"></tbody>
                                             </table>
 
                                             
-                                            
-                                    <table class="table table-hover table-bordered" 
-                                        style="margin-top: 10px">
+                                    <table border="1px"
+                                        style="margin-top: 10px; width: 100%">
                                           <tr>
-                                              <th width="150">Requested by</th>
-                                              <td><label id="requested-by">-</label> (<span id="requested-by-position"></span>)</td>
-                                             
+                                              <th class="text-center" width="110">
+                                                 <p style="font-size: 11px; padding: 5px">Requested by<br>
+                                                    <span style="font-size: 8px; margin-top:">(Name and Signature)</span>
+                                                 </p>
+                                              </th>
+                                              <td class="text-center" id="collpase-td">
+                                                <label id="requested-by" style="font-size: 12px">-</label> 
+                                                (<span id="requested-by-position"></span>)
+                                              </td>
+                                              <th class="text-center" width="110">
+                                                  <p style="font-size: 11px; padding: 5px">Issued by<br>
+                                                     <span style="font-size: 8px; margin-top:">(Name and Signature)</span>
+                                                  </p>
+                                              </th>
+                                              <td class="text-center">
+                                                  <label style="font-size: 12px" id="issued-by">
+                                                        
+                                                  </label> (
+                                                  <span style="font-size: 10px" id="issued-by-position">
+                                                     
+                                                  </span>)
+                                              </td>
                                           </tr>
                                        
-                                           <tr>
-                                             <th width="150">Issued by</th>
-                                             <td>
-                                                 <label id="issued-by">-</label> (
-                                                 <span id="issued-by-position"></span>)
-                                             </td>
-                                          </tr>
-
                                         </table>
                                         
                                         <div id="slip-footer"></div>

@@ -12,7 +12,10 @@
                                         </div>
 
                                         <div class="modal-body">  
-                                                    
+                                                    <label>
+                                                        Person Received From
+                                                        <input name="person_received_from" type="text" class="form-control" id="person-received-from" />
+                                                    </label>
                                                     <% if(carts.isDelivered){ %>
                                                         <label for="location">From (Location): 
                                                            <input type="text" id="location" name="location_receive_from" class="form-control input-auto" placeholder="Location" style="width: 220px; height: 33px" readonly/>
@@ -31,7 +34,8 @@
                                                         <input type="text" name="verifier_position" id="position" class="form-control" placeholder="Position" style="width: 210px; height: 33px"/>
                                                     </label>
 
-                                                    <label class="pull-right" style="text-align: center; margin-top: -30px">RR No. 
+                                                    <label class="pull-right" style="text-align: center; margin-top: -30px">
+                                                         RR No. 
                                                          <br/><span class="text-info" id="cart-rr-no"></span>
                                                     </label>
 
