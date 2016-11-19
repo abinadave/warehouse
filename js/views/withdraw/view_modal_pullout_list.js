@@ -87,8 +87,6 @@ define(
                 var self = this;
                 var linked_to = self.$el.find('#linked-to').val();                
                 var form = {
-                    // linked_to: 0,
-                    // no: self.generateNo(),
                     requested_by: self.$el.find('#requested-by').val(),
                     requested_by_position: self.$el.find('#position-withdraw').val(),
                     issued_by: sessionStorage.getItem('name'),

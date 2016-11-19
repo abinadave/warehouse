@@ -27,7 +27,7 @@ session_start();
 					$Receive_forms->setPersonReceivedForm($personReceivedFrom)->setLocation($location)->setSupplier($supplier)->setCrm($crm)->setRb($received_by)->setHour($hour)->setToday($today)->setVerifiedBy($verified_by)->setPosition($position)->setCode($code);
 					$data = $Receive_forms::validate();
 					if (is_array($data)) {
-						
+							
 						echo $data['id'];
 
 						$json = array(

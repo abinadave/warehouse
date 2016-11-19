@@ -53,6 +53,7 @@ define(
 		'collections/borrower_pforms',
 		'collections/borrower_pitems',
 		'collections/current_stocks',
+		'collections/dr_invoice_others',
 
 		//view items...
 		'views/view_home',
@@ -125,6 +126,7 @@ define(
 		Borrower_pforms,
 		Borrower_pitems,
 		Current_stocks,
+		Dr_invoice_other,
 
 		ViewHome,
 		ViewCategory,
@@ -197,10 +199,7 @@ define(
 		borrower_pforms = new Borrower_pforms();
 		borrower_pitems = new Borrower_pitems();
 		current_stocks = new Current_stocks();
-
-		require(['modules/functions','modules/bulletin_module'], function(fn, BulletinModule){
-		    var obj = fn.backboneCollection('Bulletins','bulletins', BulletinModule);
-		});
+		dr_invoice_other = new Dr_invoice_other();
 
 		//view
 		view_home = new ViewHome();

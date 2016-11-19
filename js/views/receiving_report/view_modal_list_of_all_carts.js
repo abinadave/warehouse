@@ -31,7 +31,12 @@ define(
         	init: function(){
                 var self = this;
 
-                
+                $(function() {
+                    self.$el.find('input[name="inlineRadioOptions"]').on('change', function(event){
+                        let value = $(this).val();
+                        self.$el.find('#dr-invoice-others').attr('placeholder', value);
+                    });
+                });
 
                 $(function(){
 
@@ -65,11 +70,14 @@ define(
                             function(module, fn, moment){
                                 var form = $('#form-receive-item').serialize();
                                 form +='&date='+ moment().format("YYYY-MM-DD HH:mm:ss");
-
+                                let dr_invoice_ob = {
+                                    value: self.$el.find('#dr-invoice-others').val(),
+                                    type: self.getTypeOfDrNo()
+                                };
                                 if (carts.isDelivered) {
                                     self.callbackSave(form);
                                 }else {
-                                    module.saveDB(form);
+                                    module.saveDB(form, dr_invoice_ob);
                                 }
                             
                         });
@@ -83,6 +91,12 @@ define(
                 });
 
         	},
+
+            getTypeOfDrNo(){
+                let self = this;
+                let value = $('input[name="inlineRadioOptions"]').val();
+                console.log(value);
+            },
 
             callbackSave: function(form){
                 var self = this;

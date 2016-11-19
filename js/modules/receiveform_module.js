@@ -23,18 +23,23 @@ define(
                 }
             },
 
-    	    saveDB: function(form){
+            saveDrInvoiceOthers(obj){
+                console.log(obj)
+            },
+
+    	    saveDB: function(form, dr_invoice_others_obj){
                 form += '&hour=' + router.getCurrectHour();
                 $.post('ajax/save/save_receive_form.php', form , function(data, textStatus, xhr) {
                     $('#output-modal-list-of-all-carts').hide().html(data).fadeIn('fast');
                 }).success(function(data){
+                    // alert(data);
                     $('#form-receive-item')[0].reset();
                     var id = parseInt(data);
                     var id_tomodel = parseInt(data);
                     var a = carts.length;
                     var b = 0;
                     if (id > 0) {
-
+                        ReceiveFormModule.saveDrInvoiceOthers(dr_invoice_others_obj);
                         //router.alertify_success('Process completed');
                         $('#modalListOfAllCarts').modal('hide');
 
