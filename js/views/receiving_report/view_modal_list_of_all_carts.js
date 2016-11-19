@@ -74,6 +74,7 @@ define(
                                     value: self.$el.find('#dr-invoice-others').val(),
                                     type: self.getTypeOfDrNo()
                                 };
+                                console.log(dr_invoice_ob);
                                 if (carts.isDelivered) {
                                     self.callbackSave(form);
                                 }else {
@@ -94,8 +95,14 @@ define(
 
             getTypeOfDrNo(){
                 let self = this;
-                let value = $('input[name="inlineRadioOptions"]').val();
-                console.log(value);
+                let value = $('input[name="inlineRadioOptions"]:checked').attr('id');
+                if (Number(value) === 1) {
+                    return 'dr';
+                }else if(Number(value) === 2){
+                    return 'invoice';
+                }else {
+                    return 'others';
+                }
             },
 
             callbackSave: function(form){
