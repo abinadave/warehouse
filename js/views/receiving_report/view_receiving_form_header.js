@@ -63,6 +63,24 @@ define(
                         fontSize: '12px'
                     });
                 });
+
+                $(function() {
+                    let rs = dr_invoice_others.where({receiving_id: id});
+                    if (rs.length) {
+                        let model = _.first(rs);
+                        let th_text = '';
+                        if (model.get('type') === 'dr') {
+                            th_text = 'Delivery Receipt';
+                        }else if(model.get('type') === 'invoice'){
+                            th_text = 'Invoice';
+                        }else {
+                            th_text = 'Others';
+                        }
+                        self.$el.find('#th-received-through').text(th_text);
+                        self.$el.find('#td-received-through').text(model.get('value'))
+                    }
+                });
+                
         	}
     
     });

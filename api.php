@@ -5,8 +5,10 @@
 	\Slim\Slim::registerAutoloader();
 	$app = new \Slim\Slim();
 
-	$app->post('/dr_invoice', function () use ($app){
-		echo "Hit";
+	$app->get('/dr_invoice', function () use ($app){
+		$model = new Model();
+		$data = $model::select('dr_invoice_others');
+		echo json_encode($data);
 	});
 
 	$app->get('/withdraw_item', function() use ($app){
