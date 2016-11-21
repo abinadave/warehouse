@@ -1,9 +1,10 @@
 define(['underscore','backbone',
-	'models/dr_invoice_other'], function(_, Backbone, Model) {
+	'models/dr_invoice_other'], function(_, Backbone, Dr_invoice_other) {
    
     var Dr_invoice_others = Backbone.Collection.extend({
-    
-    	model: Model,
+        url: 'api.php/dr_invoice',
+
+    	model: Dr_invoice_other,
     		
     	initialize: function(){
     		this.on('add', function(model){

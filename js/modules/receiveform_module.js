@@ -24,7 +24,13 @@ define(
             },
 
             saveDrInvoiceOthers(obj){
-                console.log(obj)
+                $.post('ajax/save/save_dr_invoice.php', obj, function(data, textStatus, xhr) {
+                    /*optional stuff to do after success */
+                }).success(function(data){
+                    console.log(data);
+                }).fail(function(xhr){
+                    alert('error type: '+xhr.status);
+                });
             },
 
     	    saveDB: function(form, dr_invoice_others_obj){
@@ -39,6 +45,7 @@ define(
                     var a = carts.length;
                     var b = 0;
                     if (id > 0) {
+                        dr_invoice_others_obj.rid = id_tomodel;
                         ReceiveFormModule.saveDrInvoiceOthers(dr_invoice_others_obj);
                         //router.alertify_success('Process completed');
                         $('#modalListOfAllCarts').modal('hide');

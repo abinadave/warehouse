@@ -126,7 +126,7 @@ define(
 		Borrower_pforms,
 		Borrower_pitems,
 		Current_stocks,
-		Dr_invoice_other,
+		Dr_invoice_others,
 
 		ViewHome,
 		ViewCategory,
@@ -199,7 +199,7 @@ define(
 		borrower_pforms = new Borrower_pforms();
 		borrower_pitems = new Borrower_pitems();
 		current_stocks = new Current_stocks();
-		dr_invoice_other = new Dr_invoice_other();
+		dr_invoice_others = new Dr_invoice_others();
 
 		//view
 		view_home = new ViewHome();
