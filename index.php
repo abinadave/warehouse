@@ -139,7 +139,9 @@
                     <ul class="nav" id="side-menu">
                         
                         <li id="manage-navigation">
-
+                            <li>
+                               <a class="li-side-menu" href="#dashboard" id="dashboard"><i class="fa fa-dashboard fa-fw"></i>&nbsp;&nbsp;&nbsp;  Dashboard</a>
+                           </li>
                            <li>
                                <a class="li-side-menu" href="#products" id="products"><i class="glyphicon glyphicon-briefcase"></i>&nbsp;&nbsp;&nbsp;  Items</a>
                            </li>

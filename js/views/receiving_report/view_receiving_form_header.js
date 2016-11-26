@@ -77,10 +77,10 @@ define(
                             th_text = 'Others';
                         }
                         self.$el.find('#th-received-through').text(th_text);
-                        self.$el.find('#td-received-through').text(model.get('value'))
+                        self.$el.find('#td-received-through').text(model.get('value'));
                     }
                 });
-                
+
         	}
     
     });

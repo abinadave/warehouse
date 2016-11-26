@@ -42,13 +42,11 @@ define(
                 });
                 
                 $(function(){
-                
                     //jQuery
                     $('#form-add-product').find('input[type="text"], select').css({
                         width: '300px',
                         margin: '5px'
                     }).end().find('label').addClass('text-info');
-
                     setTimeout(function(){
                         $('#prod-name').focus();
                     },1500);
@@ -62,10 +60,6 @@ define(
                         event.preventDefault();
                         var form = $(this).serialize();
                         var item = self.getItem();
-                        // require(['modules/product_module'], function(module){
-                        //     module.saveDB(form);
-                        // });
-                        var ids = products.pluck
                     });
                 });
 
@@ -106,9 +100,10 @@ define(
                     table: 'products'
                 };
                 $.when(products.create(obj)).then((resp) => {
-                   require(['modules/userlog_module'], function(userlog_module){
+                    $('#modalAddProduct').find('form')[0].reset();
+                    require(['modules/userlog_module'], function(userlog_module){
                        userlog_module.saveDB('New item was added');
-                   });
+                    });
                 }, (resp) => {
                     console.log(resp);
                 });                

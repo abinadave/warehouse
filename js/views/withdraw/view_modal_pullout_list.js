@@ -117,8 +117,10 @@ define(
                 extracts.b = 0;
                 extracts.forEach(function(model) {
                     var product = products.get(model.get('id'));
+                    
                     withdraw_items.create({ withdraw_id: b.id, qty: model.get('qty'), remarks: model.get('remarks'), item: model.get('id'), name: product.get('name'), unit: product.get('unit') }, {
                         success: function(a, b, c){
+                            console.log(product.toJSON());
                             $.when(product.save()).then((response) => {
                                 if (response.updated) {
                                     ++extracts.b;

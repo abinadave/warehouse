@@ -68,6 +68,7 @@ define(
 		'views/product/view_product_history',
 		//view tools...
 		'views/tool/available/view_table_tools',
+		'views/dashboard/view_dashboard_warehouse_incharge',
 
 
 		//router
@@ -139,6 +140,7 @@ define(
 		ViewNavigation,
 		ViewProductHistory,
 		ViewTableTools,
+		ViewDashBoardIncharge,
 
 		Router
 
@@ -213,6 +215,7 @@ define(
 		view_navigation = new ViewNavigation();
 		view_product_history = new ViewProductHistory();
 		view_tool = new ViewTableTools();
+		view_dashboard_incharge = new ViewDashBoardIncharge();
 
 		//router
 		router = new Router();

@@ -75,6 +75,7 @@ function($, Backbone, _, mainView, AccountModule, ProductModule, WarehouseModule
 			 'stockCardInventoryReportWithdrawalReceiving': 'printStockCardReportWithdrawReceiving',
 			 'deleteStockCardForAdminOnly': 'removeStockCard',
 			 'deleteReceiveItems/:id': 'removeReceivedItems',
+			 'dashboard': 'displayDashboard',
 
 			 'backupDatabase': 'generateBackupFile',
 			 'borrowItem': 'showBorrowerItemForm',
@@ -94,6 +95,10 @@ function($, Backbone, _, mainView, AccountModule, ProductModule, WarehouseModule
 		homePage: function(){
 			view_home.render();
 			AccountModule.fetchUserDetails();
+		},
+
+		displayDashboard(){
+			view_dashboard_incharge.render();
 		},
 
 		showDashboard: function(){

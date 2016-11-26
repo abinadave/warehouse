@@ -44,6 +44,7 @@
 		$data = json_decode($app->request->getBody());
 		$product =  (array) $data;
 		unset($product['id']);
+		unset($product['table']);
 		$model = new Model();
 		$rs = $model::update(array(
 			'table'  => 'products',
@@ -52,6 +53,7 @@
 			'value'  => $data->id
 		));
 		echo json_encode(array('updated' => $rs));
+		// print_r($product);
 	});
 
 	$app->post('/withdraw_item', function() use ($app){
