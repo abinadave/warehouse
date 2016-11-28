@@ -101,8 +101,13 @@ define(
                 };
                 $.when(products.create(obj)).then((resp) => {
                     $('#modalAddProduct').find('form')[0].reset();
-                    require(['modules/userlog_module'], function(userlog_module){
+                    require([
+                        'modules/userlog_module',
+                        'modules/product_module'], 
+                        function(userlog_module, product_module){
+                       product_module.fetchData();
                        userlog_module.saveDB('New item was added');
+                       
                     });
                 }, (resp) => {
                     console.log(resp);

@@ -20,4 +20,8 @@ class Dr_invoice
 		return $rs;
 	}
 
+	public function id(){
+		return self::$handler->lastInsertId();
+	}
+
 }

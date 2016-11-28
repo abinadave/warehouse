@@ -74,7 +74,6 @@ define(
                                     value: self.$el.find('#dr-invoice-others').val(),
                                     type: self.getTypeOfDrNo()
                                 };
-                                console.log(dr_invoice_ob);
                                 if (carts.isDelivered) {
                                     self.callbackSave(form);
                                 }else {

@@ -53,7 +53,6 @@
 			'value'  => $data->id
 		));
 		echo json_encode(array('updated' => $rs));
-		// print_r($product);
 	});
 
 	$app->post('/withdraw_item', function() use ($app){

@@ -7,7 +7,7 @@
 			$dr_invoice->type = $_POST['type'];
 			$dr_invoice->rid = $_POST['rid'];
 			$resp = $dr_invoice->save();
-			echo json_encode(array('succes' => $resp));
+			echo json_encode(array('succes' => $resp, 'id' => $dr_invoice->id()));
 		}else {
 			echo "Not found class";
 		}

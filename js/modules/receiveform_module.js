@@ -25,9 +25,12 @@ define(
 
             saveDrInvoiceOthers(obj){
                 $.post('ajax/save/save_dr_invoice.php', obj, function(data, textStatus, xhr) {
-                    /*optional stuff to do after success */
+                    /* optional stuff to do after success */
                 }).success(function(data){
-                    console.log(data);
+                    let json = JSON.parse(data);
+                    obj.id = json.id;
+                    obj.rid = obj.rid.toString();
+                    dr_invoice_others.add(obj);
                 }).fail(function(xhr){
                     alert('error type: '+xhr.status);
                 });

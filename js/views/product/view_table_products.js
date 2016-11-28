@@ -103,7 +103,7 @@
 
                     jQuery(document).ready(function($) {
                         $('#btnCreateStockCards').click(function(event) {
-                            router.add_loading_btn('#btnSaveItem', 2000); 
+                            // router.add_loading_btn('#btnSaveItem', 2000); 
                         });
                     });
 
@@ -248,7 +248,7 @@
 
                     jQuery(document).ready(function($) {
                         $('#btnCreateProduct').click(function(event) {
-                           router.add_loading_btn('#btnSaveItem', 2000);
+                           // router.add_loading_btn('#btnSaveItem', 700);
                         });
                     });
 
@@ -502,7 +502,7 @@
                 },
 
                 createProduct: function(){
-                   router.add_loading_btn('#btnSaveItem', 2000);
+                   // router.add_loading_btn('#btnSaveItem', 2000);
                 },
 
                 searchCategory: function(event){
