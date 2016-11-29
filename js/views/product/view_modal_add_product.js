@@ -83,9 +83,35 @@ define(
 
                 
             },
-
+            validateProduct(item){
+                let self = this;
+                let arrOfErrors = [];
+                if (products.where({name: item.name}).length > 0) {
+                    arrOfErrors.push(item.name + ' already exist from the list');
+                }
+                if (!item.name) {
+                    arrOfErrors.push('Stock card name is required.');
+                }
+                if (!item.category) {
+                    arrOfErrors.push('Stock card category is required.');
+                }
+                if (!item.area) {
+                    arrOfErrors.push('Stock card area is required.');
+                }
+                if (!item.row) {
+                    arrOfErrors.push('Stock card row is required.');
+                }
+                if (!item.shelf) {
+                    arrOfErrors.push('Stock card shelf is required.');
+                }
+                if (!item.unit) {
+                    arrOfErrors.push('Stock card unit is required.');
+                };
+                return arrOfErrors;
+            },
             getItem(){
                 var self = this;
+
                 var obj = {
                     name: self.$el.find('#prod-name').val(),
                     category: self.$el.find('input[name="prodCategory"]').val(),
@@ -99,19 +125,28 @@ define(
                     warehouse_code: sessionStorage.getItem('code'),
                     table: 'products'
                 };
-                $.when(products.create(obj)).then((resp) => {
-                    $('#modalAddProduct').find('form')[0].reset();
-                    require([
-                        'modules/userlog_module',
-                        'modules/product_module'], 
-                        function(userlog_module, product_module){
-                       product_module.fetchData();
-                       userlog_module.saveDB('New item was added');
-                       
-                    });
-                }, (resp) => {
-                    console.log(resp);
-                });                
+                let errors = self.validateProduct(obj);
+                errors.forEach( function(error) {
+                    router.alertify_error(error);
+                });
+                if (!errors.length) {
+                    $.when(products.create(obj)).then((resp) => {
+                        $('#modalAddProduct').find('form')[0].reset();
+                        require([
+                            'modules/userlog_module',
+                            'modules/product_module'], 
+                            function(userlog_module, product_module){
+                           product_module.fetchData();
+                           userlog_module.saveDB('New item was added');
+                           router.alertify_success('Item saved');
+                           self.$el.find('input:first').focus();
+                           
+                        });
+                    }, (resp) => {
+                        console.log(resp);
+                    });    
+                }
+                           
             }
     
     });

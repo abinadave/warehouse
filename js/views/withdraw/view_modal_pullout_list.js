@@ -84,6 +84,7 @@ define(
             },
 
             withdrawOnly(){
+                alert('withdrawing...')
                 var self = this;
                 var linked_to = self.$el.find('#linked-to').val();                
                 var form = {
@@ -96,9 +97,10 @@ define(
                     warehouse_code: sessionStorage.getItem('code')
                 };
                 var withdraw_form = new Withdraw_form(form);
-                withdraw_forms.create(withdraw_form.attributes, {
-                    success: self.saveWithdrawItems
-                });              
+                withdraw_form.save();
+                // withdraw_forms.create(withdraw_form.attributes, {
+                    // success: self.saveWithdrawItems
+                // });              
             },
 
             getPosition(usertype){
