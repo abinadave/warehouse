@@ -7,8 +7,9 @@ define(
         'modules/withdrawform_module',
         'modules/functions',
         'models/withdraw_form',
-        'modules/withdrawitem_module'
-	],  function(_, Backbone, template, moment, WFM, fn, Withdraw_form, WIM) {
+        'modules/withdrawitem_module',
+        'models/withdraw_item'
+	],  function(_, Backbone, template, moment, WFM, fn, Withdraw_form, WIM, Withdraw_item) {
    
     var ViewPulloutList = Backbone.View.extend({
     
@@ -84,9 +85,9 @@ define(
             },
 
             withdrawOnly(){
-                alert('withdrawing...')
                 var self = this;
-                var linked_to = self.$el.find('#linked-to').val();                
+                var linked_to = self.$el.find('#linked-to').val();     
+                self.$el.find('#btnWithdrawOnly').text('Please wait...').prop('disabled', true);           
                 var form = {
                     requested_by: self.$el.find('#requested-by').val(),
                     requested_by_position: self.$el.find('#position-withdraw').val(),
@@ -97,10 +98,15 @@ define(
                     warehouse_code: sessionStorage.getItem('code')
                 };
                 var withdraw_form = new Withdraw_form(form);
-                withdraw_form.save();
-                // withdraw_forms.create(withdraw_form.attributes, {
-                    // success: self.saveWithdrawItems
-                // });              
+                $.when(withdraw_form.save()).then((resp) => {
+                    let id = resp.id;
+                    if (Number(id) > 0) {
+                        self.saveWithdrawItems(resp);
+                    }
+                }, (resp) => {
+                    console.log(resp);
+                });
+                       
             },
 
             getPosition(usertype){
@@ -113,41 +119,40 @@ define(
                 }
             },
 
-            saveWithdrawItems(a, b, c){
+            saveWithdrawItems(resp){
                 var self = this;
-                extracts.a = extracts.length;
-                extracts.b = 0;
+                let a = extracts.length;
+                let b = 0;
                 extracts.forEach(function(model) {
                     var product = products.get(model.get('id'));
-                    
-                    withdraw_items.create({ withdraw_id: b.id, qty: model.get('qty'), remarks: model.get('remarks'), item: model.get('id'), name: product.get('name'), unit: product.get('unit') }, {
-                        success: function(a, b, c){
-                            console.log(product.toJSON());
-                            $.when(product.save()).then((response) => {
-                                if (response.updated) {
-                                    ++extracts.b;
-                                    if (extracts.a === extracts.b) {
-                                        extracts.reset();
-                                        $('#modalPullOutList').modal('hide');
-                                        var myCollection = WIM.getItemsWhereidOf(b.withdraw_id.toString());
-                                        WIM.appendListOfWithDrawItem(myCollection);
-                                        WIM.appendWithDrawalDetails(b.withdraw_id.toString());
-                                        setTimeout(function() {
-                                            $('#modalWithDrawItemTable').modal('show');
-                                            $('#modalWithDrawItemTable').find('#btnPrintWithdrawSlip').trigger('click');
-                                        }, 1000);
-                                    }
-                                }
-                            }, (errorResponse) =>{
-
-                            });
+                    let obj = {
+                        withdraw_id: resp.id,
+                        qty: model.get('qty'),
+                        remarks: model.get('remarks'),
+                        item: product.get('id'),
+                        unit: product.get('unit'),
+                        name: product.get('name')
+                    };
+                    let withdraw_item = new Withdraw_item(obj);
+                    $.when(withdraw_item.save()).then((resp) => {
+                        if (resp.hasOwnProperty('remaining_balance')) {
+                            ++b;
+                            if (a === b) {
+                                self.doneSaving()
+                            }
                         }
+                    }, (resp) => {
+                        console.log(resp);
                     });
                 });
             },
 
             doneSaving(){
-
+                let self = this;
+                extracts.reset();
+                self.$el.find('#btnWithdrawOnly').text('Witdraw').prop('disabled', false);
+                $('#modalPullOutList').modal('hide');
+                router.alertify_success('Transaction Completed.');
             },
 
             generateNo(){

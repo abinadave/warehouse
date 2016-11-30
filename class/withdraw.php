@@ -26,7 +26,30 @@ class Withdraw
 		$product = new Product();
 		$item['table'] = 'withdraw_item';
 		$result = $model::save($item);
-		echo json_encode($result);
+		if($result){
+			$remainBalance = $this->deductItem($item);
+			$result['remaining_balance'] = $remainBalance;
+			echo json_encode($result);
+		}
+	}
+
+	public function deductItem($item){
+		$sql = "SELECT * FROM products WHERE id = ?";
+		$query = self::$handler->prepare($sql);
+		$query->execute(array(
+			$item['item']
+		));
+		if ($query->rowCount() > 0) {
+			$stockCard = $query->fetch(PDO::FETCH_OBJ);
+			$totalBalance = $stockCard->running_bal - $item['qty'];
+			$sql = "UPDATE products SET running_bal = ? WHERE id = ?";
+			$query = self::$handler->prepare($sql);
+			$query->execute(array(
+				$totalBalance,
+				$item['item']
+			));
+			return $totalBalance;
+		}
 	}
 
 	public function getMaxId()

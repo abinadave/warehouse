@@ -5,7 +5,7 @@ define(
 	],  function(_, Backbone) {
    
     var Withdraw_form = Backbone.Model.extend({
-
+        url: 'api.php/withdraw_form',
     	initialize: function(){
     		//console.log('model Withdraw_form initialized');
     		this.on('change', function(){
