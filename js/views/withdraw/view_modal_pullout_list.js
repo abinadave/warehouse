@@ -138,7 +138,7 @@ define(
                         if (resp.hasOwnProperty('remaining_balance')) {
                             ++b;
                             if (a === b) {
-                                self.doneSaving()
+                                self.doneSaving(resp.id)
                             }
                         }
                     }, (resp) => {
@@ -147,12 +147,15 @@ define(
                 });
             },
 
-            doneSaving(){
+            doneSaving(rid){
                 let self = this;
                 extracts.reset();
                 self.$el.find('#btnWithdrawOnly').text('Witdraw').prop('disabled', false);
                 $('#modalPullOutList').modal('hide');
                 router.alertify_success('Transaction Completed.');
+                require(['modules/withdrawform_module'], function(WFM){
+                    WFM.showAllWithDrawSlipsWithIdOf(rid, self);
+                });
             },
 
             generateNo(){
