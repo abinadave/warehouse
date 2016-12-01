@@ -99,6 +99,7 @@ define(
                 };
                 var withdraw_form = new Withdraw_form(form);
                 $.when(withdraw_form.save()).then((resp) => {
+                    withdraw_forms.add(resp);
                     let id = resp.id;
                     if (Number(id) > 0) {
                         self.saveWithdrawItems(resp);
@@ -134,8 +135,8 @@ define(
                         name: product.get('name')
                     };
                     let withdraw_item = new Withdraw_item(obj);
-                    $.when(withdraw_item.save()).then((resp) => {
-                        if (resp.hasOwnProperty('remaining_balance')) {
+                    $.when(withdraw_item.save()).then((respItem) => {
+                        if (respItem.hasOwnProperty('remaining_balance')) {
                             ++b;
                             if (a === b) {
                                 self.doneSaving(resp.id)
@@ -154,6 +155,7 @@ define(
                 $('#modalPullOutList').modal('hide');
                 router.alertify_success('Transaction Completed.');
                 require(['modules/withdrawform_module'], function(WFM){
+                    console.log(rid);
                     WFM.showAllWithDrawSlipsWithIdOf(rid, self);
                 });
             },
