@@ -137,9 +137,10 @@ define(
                     let withdraw_item = new Withdraw_item(obj);
                     $.when(withdraw_item.save()).then((respItem) => {
                         if (respItem.hasOwnProperty('remaining_balance')) {
+                            withdraw_items.add(respItem);
                             ++b;
                             if (a === b) {
-                                self.doneSaving(resp.id)
+                                self.doneSaving(resp.id);
                             }
                         }
                     }, (resp) => {
@@ -155,7 +156,6 @@ define(
                 $('#modalPullOutList').modal('hide');
                 router.alertify_success('Transaction Completed.');
                 require(['modules/withdrawform_module'], function(WFM){
-                    console.log(rid);
                     WFM.showAllWithDrawSlipsWithIdOf(rid, self);
                 });
             },
