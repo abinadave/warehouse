@@ -56,7 +56,6 @@ define(
                                     });
                                 });
 
-
                             }else {
                                 cart_module.appendListOfSelectedCarts();
                             }
@@ -79,7 +78,6 @@ define(
                                 }else {
                                     module.saveDB(form, dr_invoice_ob);
                                 }
-                            
                         });
                         
                     });

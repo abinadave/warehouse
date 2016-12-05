@@ -29,7 +29,7 @@ define(
                 }).success(function(data){
                     let json = JSON.parse(data);
                     obj.id = json.id;
-                    obj.rid = obj.rid.toString();
+                    obj.receiving_id = obj.rid.toString();
                     dr_invoice_others.add(obj);
                 }).fail(function(xhr){
                     alert('error type: '+xhr.status);
@@ -49,8 +49,11 @@ define(
                     var b = 0;
                     if (id > 0) {
                         dr_invoice_others_obj.rid = id_tomodel;
+
                         ReceiveFormModule.saveDrInvoiceOthers(dr_invoice_others_obj);
+
                         //router.alertify_success('Process completed');
+
                         $('#modalListOfAllCarts').modal('hide');
 
                         require(['modules/product_module'], function(ProductModule){  
@@ -90,7 +93,8 @@ define(
                                                     setTimeout(function() {
                                                         ReceiveItemModule.appendReceivingItem(myCollection);
                                                         ReceiveFormModule.appendReceivingHeader(id);
-                                                    }, 500);
+                                                        ReceiveFormModule.setDeliveryType(id);
+;                                                    }, 500);
                                                     
 
                                                     loadCSS('js/libs/alertify/css/alertify.core.css');
@@ -99,7 +103,8 @@ define(
                                                     alertify.confirm('print Receiving report?', function(e){
                                                         if (e) {
                                                             setTimeout(function() {
-                                                                $('#modalShowAllReceivingItems').find('#printReceivingReport').trigger('click');
+                                                                $('#modalShowAllReceivingItems').modal('show');
+                                                                // $('#modalShowAllReceivingItems').find('#printReceivingReport').trigger('click');
                                                             }, 700);
                                                         }else {
                                                             console.log(e);
@@ -126,6 +131,17 @@ define(
                 }).fail(function(xhr){
                     alert('error type: '+xhr.status);
                 });
+            },
+
+            setDeliveryType(rid){
+                let self = this;
+                let rs = dr_invoice_others.where({ receiving_id: rid.toString()});
+                let $el = $('#td-received-through');
+                if (rs.length) {
+                    let dr = _.first(rs).attributes;
+                    $el.text(dr.value);
+                }
+                
             },
 
             saveModel: function(json, type){
