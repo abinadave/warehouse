@@ -1,4 +1,5 @@
 $(function() {
+
 	$('#logout').click(function(event) {
 
 		// require(['modules/account_module'], function(AM){
@@ -197,6 +198,7 @@ $(function() {
 	    $.post('ajax/others/refresh_session.php', sessionStorage , function(data, textStatus, xhr) {
 	    	/*optional stuff to do after success */
 	    }).success(function(data){
+	    	// console.log(data)
 	    	console.log('refreshed the session');
 	    }).fail(function(xhr){
 	    	alert('cant refresh you session right now.: '+xhr.status);
@@ -210,5 +212,16 @@ $(function() {
 		require(['modules/account_module'], function(am){
 		    am.appendModalEditSetting();
 		});
+	});
+});
+
+$(function() {
+	$.get('ajax/select/get_current_branch.php').then((resp) => {
+		let json = JSON.parse(resp);
+		if (!json.admin) {
+			$('#branch-name').text(json.branch_name.toUpperCase());
+		}
+	}, (resp) => {
+		console.log(resp)
 	});
 });

@@ -35,6 +35,7 @@ define(
                      $.getJSON('ajax/select/get_userdetails.php', function(json, textStatus, xhr) {
                      /*optional stuff to do after success */
                      }).success(function(json){
+                        // alert(json)
                          if(json.usertype === undefined)
                          {
                             json.usertype = "3";

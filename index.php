@@ -85,12 +85,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand text-danger" href="#">Ezjones Construction Inc. &nbsp;</a>
+                <a class="navbar-brand text-danger">Ezjones Constructions, <span class="text-primary" id="branch-name"></span></a>
                 <p class="navbar-text">Signed in as <span id="nav-users-name"><span class="fa fa-spinner fa-spin"></span></span> </p>
             </div>
    
             <img id="image-user" src="images/user.jpeg" alt="" class="img-thumbnail" style="position: absolute; width: 60px; height: 50px; padding: 4px; cursor: pointer">
-  
+
             <ul class="nav navbar-top-links navbar-right">
                 
                 <!-- /.dropdown -->
