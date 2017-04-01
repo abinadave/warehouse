@@ -220,8 +220,10 @@ $(function() {
 		let json = JSON.parse(resp);
 		if (!json.admin) {
 			$('#branch-name').text(json.branch_name.toUpperCase());
+		}else {
+			$('#branch-name').text('ADMINISTRATOR');
 		}
 	}, (resp) => {
-		console.log(resp)
+		console.log(resp);
 	});
 });

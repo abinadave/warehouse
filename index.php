@@ -92,20 +92,16 @@
             <img id="image-user" src="images/user.jpeg" alt="" class="img-thumbnail" style="position: absolute; width: 60px; height: 50px; padding: 4px; cursor: pointer">
 
             <ul class="nav navbar-top-links navbar-right">
-                
-                <!-- /.dropdown -->
-                       <?php 
-                            if ($_SESSION['usertype'] == 1) {
-                                ?>
-                                    <li>
-                                       <a href="#userlogs"><span class="glyphicon glyphicon-time"></span> &nbsp;&nbsp;Userlogs</a></li>   
-                                    </li>
-                                     <!-- <li><a href="#backupDatabase"><i class="glyphicon glyphicon-cloud-download"></i></a></li> -->
-                                <?php
-                            }   
+               <?php 
+                    if ($_SESSION['usertype'] == 1) {
                         ?>
-                <!-- /.dropdown -->
-
+                            <li>
+                               <a href="#userlogs"><span class="glyphicon glyphicon-time"></span> &nbsp;&nbsp;Userlogs</a></li>   
+                            </li>
+                             <!-- <li><a href="#backupDatabase"><i class="glyphicon glyphicon-cloud-download"></i></a></li> -->
+                        <?php
+                    }
+                ?>
                 <li class="dropdown" id="bell-notifications">
                 
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">

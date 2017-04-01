@@ -5,10 +5,6 @@
 	\Slim\Slim::registerAutoloader();
 	$app = new \Slim\Slim();
 
-	$app->get('/fetch/user/details', function() use($_SESSION){
-		print_r($_SESSION);
-	});
-
 	$app->get('/dr_invoice', function () use ($app){
 		$model = new Model();
 		$data = $model::select('dr_invoice_others');

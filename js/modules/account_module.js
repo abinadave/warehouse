@@ -279,7 +279,7 @@ define(
 
                 $(function(){
                     require(['libs/fileuploader/fileuploader'], function(){
-                         new qq.FileUploader({
+                        new qq.FileUploader({
                             element: $('#account-photo')[0],
                             action: 'upload_account.php',
                             allowedExtensions: ['jpg','gif','jpeg','png'],
